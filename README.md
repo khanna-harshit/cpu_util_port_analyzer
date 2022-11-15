@@ -21,6 +21,8 @@ When ever we work on any device in enterprise level then our main concern always
 8. show processes summary
 9. docker stats  --no-stream
 
+“show processes” commands provide a wrapper over linux’s “top” command. “show process cpu” sorts the processes being displayed by cpu-utilization, whereas “show process memory” does it attending to processes’ memory-utilization.
+
 # prerequisit before running the tool
 
 1. It needs an IP address, username , password of the device which you want to work with.
@@ -35,7 +37,7 @@ When ever we work on any device in enterprise level then our main concern always
 4. Email ID (where you get the alerts)
 5. Number of snapshots you want to take.
 
-“show processes” commands provide a wrapper over linux’s “top” command. “show process cpu” sorts the processes being displayed by cpu-utilization, whereas “show process memory” does it attending to processes’ memory-utilization.
+
 
 
 
