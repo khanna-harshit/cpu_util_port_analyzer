@@ -28,6 +28,8 @@ from bokeh.models import ColumnDataSource, FactorRange
 from bokeh.plotting import figure
 from bokeh.models import TabPanel, Tabs
 from bokeh.transform import dodge
+from email_validator import validate_email, EmailNotValidError
+
 
 # reference
 
@@ -54,7 +56,7 @@ counters_names = []
 counters = []
 
 
-def main(command, ip_address, username, password, snapshot_count):
+def main(command, ip_address, username, password, snapshot_count, email):
     # initialised variable
     try:
         combined_result = ''
@@ -225,7 +227,7 @@ def main(command, ip_address, username, password, snapshot_count):
             counters.append(counters_temp)
 
         # alert
-        # alert(overall_alert_temp, overall_alert_cpu)
+        alert(overall_alert_temp, overall_alert_cpu)
         # print(counters)
         for i in range(0, len(counters[0])):
             counters_names.append(counters[0][i][0])
@@ -752,13 +754,13 @@ def alert(overall_alert_temp, overall_alert_cpu):
 
         # Sending the Email
         if start_temp or start_cpu:
-            smtp.sendmail("cpuutil@gmail.com", "harshit.19B101021@abes.ac.in", message)
+            smtp.sendmail("cpuutil@gmail.com", email, message)
 
         # Terminating the session
         smtp.quit()
 
     except Exception as ex:
-        print("Something went wrong....", ex)
+        print("Not able to send mail ....", ex)
 
 
 # update command
@@ -963,5 +965,21 @@ command.append('docker stats  --no-stream')
 ip_address = input("Enter the Ip address : ")
 username = input("Enter the username : ")
 password = input("Enter the password : ")
+email = input("Enter the correct email id : ")
 snapshot_count = int(input("Enter the snaphshot count you : "))
-main(command, ip_address, username, password, snapshot_count)
+
+
+def check(email):
+    try:
+        # validate and get info
+        v = validate_email(email)
+        # replace with normalized form
+        e = v["email"]
+        return True
+    except:
+        # email is not valid, exception message is human-readable
+        print("\nEmail id is not valid")
+        return False
+
+if check(email):
+    main(command, ip_address, username, password, snapshot_count, email)
