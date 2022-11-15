@@ -31,6 +31,8 @@ Whenever we work on any device in enterprise level then our main concern always 
 
 # INPUT
 
+![alt text](https://github.com/khanna-harshit/cpu_util_port_analyzer/blob/main/assets/input.png)
+
 1. IP address of the device
 2. Username
 3. Password
