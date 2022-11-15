@@ -1,6 +1,6 @@
 # cpu_util_port_analyzer
 
-cpu port util analyzer is a tool which is used to get the visualization how the cpu, memory, docker, temperature is being used. This basically creates graphs, csv files, text files etc.
+When ever we work on any device in enterprise level then our main concern always float around cpu usage, memory usage, temperature, docker, etc. This tool does same for us it basically gives us visualization how the cpu, memory, docker, temperature is being used. It creates graphs, csv files, text files etc. For making graphs we are using BOKEH which is a python libarary, similarly we are using CSV module of python for making csv files and NETMIKO for making SSH connection with the device.
 
 # How it works
 
