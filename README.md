@@ -9,6 +9,18 @@ When ever we work on any device in enterprise level then our main concern always
 3. : Extracting required data from snapshots to make graphs, csv file, text files etc.
 4. : plots graphs, makes csv files, makes text files and gives us an output.
 
+# commands included in each snapshots
+
+1. show processes cpu
+2. show version
+3. show platform temperature
+4. show system-memory
+5. show processes memory
+6. show interface counters
+7. date
+8. show processes summary
+9. docker stats  --no-stream
+
 # prerequisit before running the tool
 
 1. It needs an IP address, username , password of the device which you want to work with.
@@ -23,22 +35,10 @@ When ever we work on any device in enterprise level then our main concern always
 4. Email ID (where you get the alerts)
 5. Number of snapshots you want to take.
 
+“show processes” commands provide a wrapper over linux’s “top” command. “show process cpu” sorts the processes being displayed by cpu-utilization, whereas “show process memory” does it attending to processes’ memory-utilization.
 
 
 
 
 
 
-python script should be run in the Sonic device in background to fetch data for time based data-
-points which in turn should be stored in an excel sheet for further analysis. If, there are any performace
-concerns due the script running in background, the script can fetch the required output from outside the
-device. The CLI commands are explained below:
-The below commands is used to determine the CPU utilization. It also lists the active processes along
-with their corresponding process ID and other relevant parameters.
-This sub-section explains the various &quot;processes&quot; specific data that includes the following.
-1. cpu Show processes CPU info
-2. memory Show processes memory info
-3. summary Show processes info
-“show processes” commands provide a wrapper over linux’s “top” command. “show process cpu” sorts
-the processes being displayed by cpu-utilization, whereas “show process memory” does it attending to
-processes’ memory-utilization.
