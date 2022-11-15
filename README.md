@@ -4,16 +4,16 @@ cpu port util analyzer is a tool which is used to get the visualization how the 
 
 # How it works
 
-STEP 1. : It makes remote SSH session with the device with the help of NETMIKO (python libarary used to make SSH connection).
-STEP 2. : Taking snapshots of varoius commands timely.
-STEP 3. : Extracting required data from snapshots to make graphs, csv file, text files etc.
-STEP 4. : plots graphs, makes csv files, makes text files and gives us an output.
+1. : It makes remote SSH session with the device with the help of NETMIKO (python libarary used to make SSH connection).
+2. : Taking snapshots of varoius commands timely.
+3. : Extracting required data from snapshots to make graphs, csv file, text files etc.
+4. : plots graphs, makes csv files, makes text files and gives us an output.
 
 # prerequisit before running the tool
 
-1. It needs an IP address, username , password of the device which you wnat to work with.
+1. It needs an IP address, username , password of the device which you want to work with.
 2. The device should be accessable.
-3. You need some pacakages to be install which [are mentioned in the requirement.txt file.
+3. You need some pacakages to be install which are mentioned in the requirement.txt file.
 
 # INPUT
 
