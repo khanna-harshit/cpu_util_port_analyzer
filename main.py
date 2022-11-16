@@ -30,7 +30,6 @@ from bokeh.models import TabPanel, Tabs
 from bokeh.transform import dodge
 from email_validator import validate_email, EmailNotValidError
 
-
 # reference
 
 # ['show process cpu', 'show version', 'show platform temperature', 'date',
@@ -198,8 +197,6 @@ def main(command, ip_address, username, password, snapshot_count, email):
                     index = 6
                     result += show_interface_counters(counters_temp, index, x)
 
-
-
                 if command_running[7]:
                     pass
 
@@ -227,7 +224,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
             counters.append(counters_temp)
 
         # alert
-        alert(overall_alert_temp, overall_alert_cpu)
+        # alert(overall_alert_temp, overall_alert_cpu)
         # print(counters)
         for i in range(0, len(counters[0])):
             counters_names.append(counters[0][i][0])
@@ -236,12 +233,14 @@ def main(command, ip_address, username, password, snapshot_count, email):
         plot_temp(temp_graph, temp_sensor_names, date)
         plot_memory(memory_graph, date)
         plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date)
+        plot_interface_counter(counters, counters_names, date)
         to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph,
-               docker_stats_sensor_names)
+               docker_stats_sensor_names, counters, counters_names)
         final_result = '\n\n########################################################################## \n\n'
-        final_result += min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, docker_stats_graph,
-                                        docker_stats_sensor_names)
-        final_result += combined_result
+        final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
+                                                      docker_stats_graph,
+                                                      docker_stats_sensor_names, counters, counters_names)
+        final_result = final_result + combined_result
         text_file(final_result)
 
         # Closing the connection
@@ -249,7 +248,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
         connection.disconnect()
 
     except:
-        # print(exception)
+        print(exception)
         print(
             "* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
         print("* Closing program... Bye!")
@@ -259,14 +258,15 @@ def main(command, ip_address, username, password, snapshot_count, email):
 def average(lst):
     sum_of_list = 0
     for i in range(0, len(lst)):
-        sum_of_list += lst[i]
+        sum_of_list = sum_of_list + lst[i]
     avg = sum_of_list / len(lst)
     return avg
 
 
 # minimum maximum average
 def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, docker_stats_graph,
-                    docker_stats_sensor_names):
+                    docker_stats_sensor_names, counters, counters_names):
+    sep_line_for_min_max_average = '\n<------------------------------------------------------------->\n\n'
     result = ''
     # cpu data
     result += 'CPU usage data' + '\n'
@@ -275,7 +275,7 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
     result += 'average CPU usage ' + str(average(cpu_graph)) + '\n\n'
 
     # temperature data
-
+    result += sep_line_for_min_max_average
     result += "Temperature data\n"
     for i in range(0, len(temp_sensor_names)):
         temporary = []
@@ -298,6 +298,7 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
         free_list.append(memory_graph[i][2])
         other_list.append(memory_graph[i][0] - memory_graph[i][1] - memory_graph[i][2])
 
+    result += sep_line_for_min_max_average
     result += 'memory data' + '\n'
     result += 'Total ---> Minimum ' + str(min(total_list)) + ' Maximum ' + str(max(total_list)) + ' Average ' + str(
         round(average(total_list), 3)) + '\n'
@@ -309,6 +310,7 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
         round(average(other_list), 3)) + '\n\n'
 
     # docker stats data
+    result += sep_line_for_min_max_average
     result += 'docker stats data' + '\n'
     for i in range(0, len(docker_stats_graph[0])):
         temporary = []
@@ -317,11 +319,45 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
         result += docker_stats_sensor_names[i] + '   ---> Minimum ' + str(min(temporary)) + ' Maximum ' + str(
             max(temporary)) + ' Average ' + str(
             round(average(temporary), 3)) + '\n'
+
+    # interface counters data
+    result += sep_line_for_min_max_average
+    result += '\ninterface counters data' + '\n'
+
+    total_rx_ox = 0
+    total_tx_ox = 0
+    for i in range(1, len(counters[0])):
+        for j in range(0, len(counters)):
+            total_rx_ox += counters[j][i][2]
+            total_tx_ox += counters[j][i][3]
+    result += '\nTotal RX-OX from all interfaces ---> ' + str(total_rx_ox) + '\n'
+    result += 'Total TX-OX from all interfaces ---> ' + str(total_tx_ox) + '\n\n'
+    for i in range(1, len(counters[0])):
+        temporary_rx_ox = []
+        temporary_tx_ox = []
+        for j in range(0, len(counters)):
+            total_rx_ox += counters[j][i][2]
+            total_tx_ox += counters[j][i][3]
+            temporary_rx_ox.append(counters[j][i][2])
+            temporary_tx_ox.append(counters[j][i][3])
+
+        result += counters_names[i] + '\n'
+        result += " RX-OX" + '   ---> Minimum ' + str(min(temporary_rx_ox)) + ' Maximum ' + str(
+            max(temporary_rx_ox)) + ' Average ' + str(round(average(temporary_rx_ox), 3)) + ' Total ' + str(
+            total(temporary_rx_ox)) + '\n'
+        result += " TX-OX" + '   ---> Minimum ' + str(min(temporary_tx_ox)) + ' Maximum ' + str(
+            max(temporary_tx_ox)) + ' Average ' + str(round(average(temporary_tx_ox), 3)) +' Total ' + str(
+            total(temporary_rx_ox)) + '\n\n'
     return result
 
-
+def total(lst):
+    total_value = 0
+    for i in lst:
+        total_value += i
+    return total_value
 # create csv files
-def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph, docker_stats_sensor_names):
+def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph, docker_stats_sensor_names,
+           counters, counters_names):
     # to convert date string to datetime object
     date_ = []
     for i in date:
@@ -344,6 +380,9 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     cpu_list = []
     # store memory_usage data
     memory_list = []
+    # interface_counter_usage
+    interface_counters_list = []
+
     for i in range(0, len(temp_graph)):
         temporary = []
         for j in range(0, len(temp_graph[0])):
@@ -363,6 +402,13 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     for i in range(0, len(date)):
         memory_list.append([date_[i], memory_graph[i][0], memory_graph[i][1], memory_graph[i][2],
                             memory_graph[i][0] - memory_graph[i][1] - memory_graph[i][2]])
+    for i in range(0, len(counters)):
+        temperory = []
+        for j in range(1, len(counters[0])):
+            temperory.append(counters[i][j][2])
+            temperory.append(counters[i][j][3])
+        temperory.append(date_[i])
+        interface_counters_list.append(temperory)
 
     # header of temperature
     header_temp = []
@@ -377,6 +423,11 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     header_docker = docker_stats_sensor_names
     header_docker.append('System CPU%')
     header_docker.append('Time')
+    header_counter = []
+    for i in range(1, len(counters_names)):
+        header_counter.append(counters_names[i] + " RX-OX")
+        header_counter.append(counters_names[i] + " TX-OX")
+    header_counter.append("Time")
 
     # make directory for showing output
     CURR_DIR = os.getcwd()
@@ -386,28 +437,39 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
         os.mkdir(CURR_DIR + '\output\csv', mode=0o666)
 
     # creating and storing data in temp_graph_PSU1.csv
-    f1 = open(CURR_DIR + '/output/csv/temp_graph.csv', 'w')
-    writer = csv.writer(f1)
-    writer.writerow(header_temp)
-    writer.writerows(temp_list)
+    if len(header_temp) != 1:
+        f1 = open(CURR_DIR + '/output/csv/temp_graph.csv', 'w')
+        writer = csv.writer(f1)
+        writer.writerow(header_temp)
+        writer.writerows(temp_list)
 
     # creating and storing data in cpu_usage.csv
-    f2 = open(CURR_DIR + '/output/csv/cpu_usage.csv', 'w')
-    writer = csv.writer(f2)
-    writer.writerow(header_cpu)
-    writer.writerows(cpu_list)
+    if len(header_cpu) != 1:
+        f2 = open(CURR_DIR + '/output/csv/cpu_usage.csv', 'w')
+        writer = csv.writer(f2)
+        writer.writerow(header_cpu)
+        writer.writerows(cpu_list)
 
     # creating and storing data in memory_usage.csv
-    f3 = open(CURR_DIR + '/output/csv/memory_usage.csv', 'w')
-    writer = csv.writer(f3)
-    writer.writerow(header_memory)
-    writer.writerows(memory_list)
+    if len(header_memory)!= 1:
+        f3 = open(CURR_DIR + '/output/csv/memory_usage.csv', 'w')
+        writer = csv.writer(f3)
+        writer.writerow(header_memory)
+        writer.writerows(memory_list)
 
     # creating and storing data in memory_usage.csv
-    f4 = open(CURR_DIR + '/output/csv/docker_stats.csv', 'w')
-    writer = csv.writer(f4)
-    writer.writerow(header_docker)
-    writer.writerows(docker_list)
+    if len(header_docker) != 1:
+        f4 = open(CURR_DIR + '/output/csv/docker_stats.csv', 'w')
+        writer = csv.writer(f4)
+        writer.writerow(header_docker)
+        writer.writerows(docker_list)
+
+    # creating and storing data in interface_counter_usage.csv
+    if len(header_counter) != 1:
+        f5 = open(CURR_DIR + '/output/csv/interface_counter_usage.csv', 'w')
+        writer = csv.writer(f5)
+        writer.writerow(header_counter)
+        writer.writerows(interface_counters_list)
 
 
 # creating result.txt
@@ -415,6 +477,97 @@ def text_file(combined_result):
     f = open("result.txt", "w+")
     f.write(combined_result)
     f.close()
+
+
+# plotting interface counter graph
+def plot_interface_counter(counters, counters_names, date):
+    # saving file
+    CURR_DIR = os.getcwd()
+    if not os.path.exists(CURR_DIR + '\output'):
+        os.mkdir(CURR_DIR + '\output', mode=0o666)
+    if not os.path.exists(CURR_DIR + '\output\graphs'):
+        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
+    output_file(CURR_DIR + '/output/graphs/interface_counters_graphs.html')
+    time = []
+    date_ = []
+    for i in date:
+        lst = i.split()
+        str = ''
+        str += month[lst[2]]
+        str += '/'
+        str += lst[1]
+        str += '/'
+        str += lst[3][2:]
+        datetime_str = str + " " + lst[4]
+        datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
+        date_.append(datetime_object)
+    for i in date:
+        lst = i.split()
+        time.append(lst[4])
+    name_list = []
+    for i in range(1, len(counters[0])):
+        rx_ox = []
+        tx_ox = []
+        for j in range(0, len(counters)):
+            rx_ox.append(counters[j][i][2])
+            tx_ox.append(counters[j][i][3])
+        data = {'date': time,
+                'RX-OX': rx_ox,
+                'TX-OX': tx_ox,
+                'date_' : date_,
+                }
+
+        source = ColumnDataSource(data=data)
+
+        name_bar = figure(x_range=time, title=counters_names[i],
+                          toolbar_location=None, tools="", x_axis_label='Date Time',
+                          y_axis_label='RX-OX and TX-OX data')
+
+        name_bar.vbar(x=dodge('date', -0.25, range=name_bar.x_range), top='RX-OX', width=0.2, source=source,
+                      color="#FF0000", legend_label="RX-OX", name='RX-OX')
+
+        name_bar.vbar(x=dodge('date', 0.0, range=name_bar.x_range), top='TX-OX', width=0.2, source=source,
+                      color="#32CD32", legend_label="TX-OX", name='TX-OX')
+
+        hover = HoverTool()
+        hover.tooltips = """
+                <div>
+                    <div><strong>Time : </strong>@date</div>
+                    <div><strong>Value : </strong>@$name</div>
+                </div>"""
+        name_bar.add_tools(hover)
+        name_bar.x_range.range_padding = 0.1
+        name_bar.xgrid.grid_line_color = None
+        name_bar.legend.location = "top_left"
+        name_bar.legend.orientation = "horizontal"
+        name_bar.xaxis.major_label_orientation = "vertical"
+
+        tab2 = TabPanel(child=name_bar, title="bar")
+        hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
+        name_line = figure(title=counters_names[i], x_axis_label='Date Time',
+                           y_axis_label='RX-OX and TX-OX data',
+                           x_axis_type='datetime', tools=[hover])
+        name_line.line(x='date_', y='RX-OX', source=data, legend_label="RX-OX", line_width=2, name='RX-OX',
+                       color='#FF0000')
+        name_line.line(x='date_', y='TX-OX', source=data, legend_label="TX-OX", line_width=2, name='TX-OX',
+                       color="#32CD32")
+        tab1 = TabPanel(child=name_line, title="line")
+
+        hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
+        name_circle = figure(title=counters_names[i], x_axis_label='Date Time',
+                             y_axis_label='RX-OX and TX-OX data',
+                             x_axis_type='datetime', tools=[hover])
+        name_circle.circle(x='date_', y='RX-OX', source=data, legend_label="RX-OX", line_width=2, name='RX-OX',
+                           color='#FF0000')
+        name_circle.circle(x='date_', y='TX-OX', source=data, legend_label="TX-OX", line_width=2, name='TX-OX',
+                           color="#32CD32")
+
+        tab3 = TabPanel(child=name_circle, title="circle")
+
+        tabs = Tabs(tabs=[tab2, tab1, tab3])
+        name_list.append(tabs)
+    if len(name_list) != 0:
+        save(name_list)
 
 
 # plotting docker stats graph
@@ -464,7 +617,7 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
         source = ColumnDataSource(data=data)
 
         name_bar = figure(x_range=date_, title=docker_stats_sensor_names[i],
-                          toolbar_location=None, tools="", x_axis_label='Date Time', y_axis_label='CPU %')
+                          toolbar_location=None, tools="", x_axis_label='Date Time', y_axis_label='Percentage change')
 
         name_bar.vbar(x=dodge('date', -0.25, range=name_bar.x_range), top='cpu%', width=0.2, source=source,
                       color="#FF0000", legend_label="cpu%", name='cpu%')
@@ -488,9 +641,9 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
         name_bar.add_layout(high_box)
         tab2 = TabPanel(child=name_bar, title="bar")
 
-        name_line = 'p_line' + "% s" % i
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date')])
-        name_line = figure(title=docker_stats_sensor_names[i], x_axis_label='Date Time', y_axis_label='Percentage change',
+        name_line = figure(title=docker_stats_sensor_names[i], x_axis_label='Date Time',
+                           y_axis_label='Percentage change',
                            x_axis_type='datetime', tools=[hover])
         name_line.line(x='time', y='cpu%', source=data, legend_label="CPU %", line_width=2, name='cpu%',
                        color='#FF0000')
@@ -500,9 +653,9 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
         name_line.add_layout(high_box)
         tab1 = TabPanel(child=name_line, title="line")
 
-        name_circle = 'p_circle' + "% s" % i
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date')])
-        name_circle = figure(title=docker_stats_sensor_names[i], x_axis_label='Date Time', y_axis_label='percentage change',
+        name_circle = figure(title=docker_stats_sensor_names[i], x_axis_label='Date Time',
+                             y_axis_label='percentage change',
                              x_axis_type='datetime', tools=[hover])
         name_circle.circle(x='time', y='cpu%', source=data, legend_label="CPU %", line_width=2, name='cpu%',
                            color='#FF0000')
@@ -514,8 +667,8 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
 
         tabs = Tabs(tabs=[tab2, tab1, tab3])
         name_list.append(tabs)
-
-    save(name_list)
+    if len(name_list) != 0:
+        save(name_list)
 
 
 # plotting memory graphs
@@ -579,7 +732,8 @@ def plot_memory(memory_graph, date):
         name.axis.visible = False
         name.grid.grid_line_color = None
         name_list.append(name)
-    save(name_list)
+    if len(name_list) != 0:
+        save(name_list)
 
 
 # plotting temperature graph
@@ -625,14 +779,16 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         name_line.add_layout(high_box)
         tab1 = TabPanel(child=name_line, title="line")
 
-        name_circle = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time', y_axis_label='Temperature', x_axis_type='datetime',
+        name_circle = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time',
+                             y_axis_label='Temperature', x_axis_type='datetime',
                              tools=[hover])
         name_circle.circle(x='date', y='value', source=data, legend_label="Temperature", line_width=2)
         name_circle.add_layout(low_box)
         name_circle.add_layout(high_box)
         tab2 = TabPanel(child=name_circle, title="circle")
 
-        name_bar = figure(x_range=time, title="Temperature plot of " + temp_sensor_names[i], toolbar_location=None, tools="", x_axis_label='Date Time',
+        name_bar = figure(x_range=time, title="Temperature plot of " + temp_sensor_names[i], toolbar_location=None,
+                          tools="", x_axis_label='Date Time',
                           y_axis_label='Temperature')
         name_bar.vbar(x='time', top='value', width=0.2, legend_label='Temperature', name='value', source=source)
         name_bar.xgrid.grid_line_color = None
@@ -910,7 +1066,6 @@ def show_processes_memory(index, process_taken, process_count, x):
     a = re.search("%Cpu", x)
     b = re.search('MiB Mem :', x)
     c = re.search('PID', x)
-
     if a:
         result += x + '\n'
     if b:
@@ -934,11 +1089,28 @@ def show_interface_counters(counters_dict, index, x):
         if line_counter[index] == 1:
             result += sep_line
             result += 'show interface counters\n\n'
-        line_counter[index] += 1
         lst = x.split()
-        counters_dict.append([lst[0], lst[1], lst[2], lst[8]])
+        line_counter[index] += 1
+        rx_ox = ''
+        tx_ox = ''
+        rx_ox_lst = lst[2].split(',')
+        tx_ox_lst = lst[9].split(',')
+
+        for i in rx_ox_lst:
+            rx_ox = rx_ox + i
+        for i in tx_ox_lst:
+            tx_ox = tx_ox + i
+
+        if line_counter[index] == 2:
+            counters_dict.append([lst[0], lst[1], lst[2], lst[8]])
+        else:
+            counters_dict.append([lst[0], lst[1], int(rx_ox), int(tx_ox)])
+
+        if line_counter[index] == 2:
+            j = [lst[1], lst[2], lst[8]]
+        else:
+            j = [lst[1], lst[2], lst[9]]
         i = lst[0]
-        j = [lst[1], lst[2], lst[8]]
         new_i = i
         for length in range(len(i), 15):
             new_i += ' '
@@ -980,6 +1152,7 @@ def check(email):
         # email is not valid, exception message is human-readable
         print("\nEmail id is not valid")
         return False
+
 
 if check(email):
     main(command, ip_address, username, password, snapshot_count, email)
