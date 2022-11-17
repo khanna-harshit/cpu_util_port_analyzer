@@ -21,6 +21,7 @@ from bokeh.transform import cumsum
 from bokeh.transform import factor_cmap
 from bokeh.models import LabelSet, ColumnDataSource
 from bokeh.models import HoverTool
+from bokeh.palettes import GnBu3, OrRd3
 from netmiko import ConnectHandler
 from bokeh.io import output_file, show
 from bokeh.palettes import Spectral6, Dark2
@@ -53,6 +54,9 @@ docker_stats_graph = []
 docker_stats_sensor_names = []
 counters_names = []
 counters = []
+process_memory = []
+process_memory_names = []
+
 
 
 def main(command, ip_address, username, password, snapshot_count, email):
@@ -86,6 +90,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
             temp_memory_graph_point = []
             temp_graph_temp = []
             docker_stats_graph_temp = []
+            process_memory_temp = []
             # f = ''
             # for i in command:
             # (stdin, stdout, stderr)=session.exec_command(i+'\n\n')
@@ -179,9 +184,9 @@ def main(command, ip_address, username, password, snapshot_count, email):
                     a = re.search('Mem:', x)
                     if a:
                         lst = x.split()
-                        temp_memory_graph_point.append(int(lst[1]))
-                        temp_memory_graph_point.append(int(lst[2]))
-                        temp_memory_graph_point.append(int(lst[3]))
+                        temp_memory_graph_point.append(float(lst[1]))
+                        temp_memory_graph_point.append(float(lst[2]))
+                        temp_memory_graph_point.append(float(lst[3]))
                     result += show_system_memory(index, x)
 
                 # show processes memory
@@ -191,6 +196,12 @@ def main(command, ip_address, username, password, snapshot_count, email):
                     result += ans[0]
                     process_taken = ans[1]
                     process_count = ans[2]
+                    if ans[3] != '-1':
+                        lst = x.split()
+                        if len(process_memory) == 0:
+                            process_memory_names.append(lst[11])
+                        process_memory_temp.append(float(lst[9]))
+
 
                 # show interface counters
                 if command_running[6]:
@@ -222,10 +233,12 @@ def main(command, ip_address, username, password, snapshot_count, email):
             overall_alert_cpu.append(alert_cpu)
             overall_alert_temp.append(alert_temp)
             counters.append(counters_temp)
-
+            process_memory.append(process_memory_temp)
         # alert
         # alert(overall_alert_temp, overall_alert_cpu)
         # print(counters)
+        # print(process_memory)
+        # print(process_memory_names)
         for i in range(0, len(counters[0])):
             counters_names.append(counters[0][i][0])
         # print(counters_names)
@@ -234,12 +247,13 @@ def main(command, ip_address, username, password, snapshot_count, email):
         plot_memory(memory_graph, date)
         plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date)
         plot_interface_counter(counters, counters_names, date)
+        plot_process_memory(process_memory, process_memory_names, date)
         to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph,
-               docker_stats_sensor_names, counters, counters_names)
+               docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
         final_result = '\n\n########################################################################## \n\n'
         final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
                                                       docker_stats_graph,
-                                                      docker_stats_sensor_names, counters, counters_names)
+                                                      docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
         final_result = final_result + combined_result
         text_file(final_result)
 
@@ -265,18 +279,18 @@ def average(lst):
 
 # minimum maximum average
 def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, docker_stats_graph,
-                    docker_stats_sensor_names, counters, counters_names):
+                    docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names):
     sep_line_for_min_max_average = '\n<------------------------------------------------------------->\n\n'
     result = ''
     # cpu data
-    result += 'CPU usage data' + '\n'
+    result += 'show processes cpu' + '\n'
     result += 'minimum CPU usage ' + str(min(cpu_graph)) + '\n'
     result += 'maximum CPU usage ' + str(max(cpu_graph)) + '\n'
     result += 'average CPU usage ' + str(average(cpu_graph)) + '\n\n'
 
     # temperature data
     result += sep_line_for_min_max_average
-    result += "Temperature data\n"
+    result += "show platform temperature\n"
     for i in range(0, len(temp_sensor_names)):
         temporary = []
         for j in range(0, len(temp_graph)):
@@ -299,7 +313,7 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
         other_list.append(memory_graph[i][0] - memory_graph[i][1] - memory_graph[i][2])
 
     result += sep_line_for_min_max_average
-    result += 'memory data' + '\n'
+    result += 'show system memory' + '\n'
     result += 'Total ---> Minimum ' + str(min(total_list)) + ' Maximum ' + str(max(total_list)) + ' Average ' + str(
         round(average(total_list), 3)) + '\n'
     result += 'Used  ---> Minimum ' + str(min(used_list)) + ' Maximum ' + str(max(used_list)) + ' Average ' + str(
@@ -311,7 +325,7 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
 
     # docker stats data
     result += sep_line_for_min_max_average
-    result += 'docker stats data' + '\n'
+    result += 'docker stats  --no-stream' + '\n'
     for i in range(0, len(docker_stats_graph[0])):
         temporary = []
         for j in range(0, len(docker_stats_graph)):
@@ -320,9 +334,20 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
             max(temporary)) + ' Average ' + str(
             round(average(temporary), 3)) + '\n'
 
+    # process memory data
+    result += sep_line_for_min_max_average
+    result += 'show processes memory' + '\n'
+    for i in range(0, len(process_memory[0])):
+        temporary = []
+        for j in range(0, len(process_memory)):
+            temporary.append(process_memory[j][i])
+        result += process_memory_names[i] + '   ---> Minimum ' + str(min(temporary)) + ' Maximum ' + str(
+            max(temporary)) + ' Average ' + str(
+            round(average(temporary), 3)) + '\n'
+
     # interface counters data
     result += sep_line_for_min_max_average
-    result += '\ninterface counters data' + '\n'
+    result += '\nshow interface counters' + '\n'
 
     total_rx_ox = 0
     total_tx_ox = 0
@@ -357,7 +382,7 @@ def total(lst):
     return total_value
 # create csv files
 def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph, docker_stats_sensor_names,
-           counters, counters_names):
+           counters, counters_names, process_memory, process_memory_names):
     # to convert date string to datetime object
     date_ = []
     for i in date:
@@ -382,6 +407,8 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     memory_list = []
     # interface_counter_usage
     interface_counters_list = []
+    # process_memory_usage
+    process_memory_list = []
 
     for i in range(0, len(temp_graph)):
         temporary = []
@@ -409,6 +436,12 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
             temperory.append(counters[i][j][3])
         temperory.append(date_[i])
         interface_counters_list.append(temperory)
+    for i in range(0, len(process_memory)):
+        temperory = []
+        for j in range(0, len(process_memory[0])):
+            temperory.append(process_memory[i][j])
+        temperory.append(date_[i])
+        process_memory_list.append(temperory)
 
     # header of temperature
     header_temp = []
@@ -428,6 +461,10 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
         header_counter.append(counters_names[i] + " RX-OX")
         header_counter.append(counters_names[i] + " TX-OX")
     header_counter.append("Time")
+    header_process_memory = []
+    for i in range(0, len(process_memory_names)):
+        header_process_memory.append(process_memory_names[i])
+    header_process_memory.append("Time")
 
     # make directory for showing output
     CURR_DIR = os.getcwd()
@@ -470,6 +507,12 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
         writer = csv.writer(f5)
         writer.writerow(header_counter)
         writer.writerows(interface_counters_list)
+    # creating and storing data in process_memory_usage.csv
+    if len(header_counter) != 1:
+        f6 = open(CURR_DIR + '/output/csv/processes_memory_usage.csv', 'w')
+        writer = csv.writer(f6)
+        writer.writerow(header_process_memory)
+        writer.writerows(process_memory_list)
 
 
 # creating result.txt
@@ -477,6 +520,42 @@ def text_file(combined_result):
     f = open("result.txt", "w+")
     f.write(combined_result)
     f.close()
+
+# plotting processes memory
+def plot_process_memory(process_memory, process_memory_names, date):
+    # saving file
+    # print(process_memory)
+    CURR_DIR = os.getcwd()
+    if not os.path.exists(CURR_DIR + '\output'):
+        os.mkdir(CURR_DIR + '\output', mode=0o666)
+    if not os.path.exists(CURR_DIR + '\output\graphs'):
+        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
+    output_file(CURR_DIR + '/output/graphs/process_memory_graph.html')
+    date_ = []
+    for i in date:
+        lst = i.split()
+        date_.append(lst[4])
+    name_list = []
+    for i in range(0, len(process_memory)):
+        data = {
+                'value': process_memory[i],
+                'name': process_memory_names,
+                }
+        source = ColumnDataSource(data=data)
+        low_box = BoxAnnotation(bottom=0, top=35, fill_alpha=0.1, fill_color='green')
+        high_box = BoxAnnotation(bottom=35, fill_alpha=0.1, fill_color='red')
+        p3 = figure(x_range=process_memory_names, title="PROCESS MEMORY USAGE at " + date[i], toolbar_location=None, tools="", x_axis_label='Process names',
+                    y_axis_label='memory %')
+        p3.vbar(x='name', top='value', width=0.2, legend_label='memory %', name='value', source=source)
+        p3.xgrid.grid_line_color = None
+        p3.y_range.start = 0
+        p3.add_tools(HoverTool(tooltips=[("Value", '@$name')]))
+        p3.xaxis.major_label_orientation = "vertical"
+        p3.add_layout(low_box)
+        p3.add_layout(high_box)
+        name_list.append(p3)
+    save(name_list)
+
 
 
 # plotting interface counter graph
@@ -546,7 +625,7 @@ def plot_interface_counter(counters, counters_names, date):
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
         name_line = figure(title=counters_names[i], x_axis_label='Date Time',
                            y_axis_label='RX-OX and TX-OX data',
-                           x_axis_type='datetime', tools=[hover])
+                           x_axis_type='datetime', tools=[hover],toolbar_location=None)
         name_line.line(x='date_', y='RX-OX', source=data, legend_label="RX-OX", line_width=2, name='RX-OX',
                        color='#FF0000')
         name_line.line(x='date_', y='TX-OX', source=data, legend_label="TX-OX", line_width=2, name='TX-OX',
@@ -556,7 +635,7 @@ def plot_interface_counter(counters, counters_names, date):
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
         name_circle = figure(title=counters_names[i], x_axis_label='Date Time',
                              y_axis_label='RX-OX and TX-OX data',
-                             x_axis_type='datetime', tools=[hover])
+                             x_axis_type='datetime', tools=[hover], toolbar_location=None)
         name_circle.circle(x='date_', y='RX-OX', source=data, legend_label="RX-OX", line_width=2, name='RX-OX',
                            color='#FF0000')
         name_circle.circle(x='date_', y='TX-OX', source=data, legend_label="TX-OX", line_width=2, name='TX-OX',
@@ -564,7 +643,7 @@ def plot_interface_counter(counters, counters_names, date):
 
         tab3 = TabPanel(child=name_circle, title="circle")
 
-        tabs = Tabs(tabs=[tab2, tab1, tab3])
+        tabs = Tabs(tabs=[ tab1, tab3, tab2])
         name_list.append(tabs)
     if len(name_list) != 0:
         save(name_list)
@@ -772,7 +851,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         source = ColumnDataSource(data=data)
         hover = HoverTool(tooltips=[('value', '@value'), ('time', '@time')])
         name_line = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time',
-                           y_axis_label='Temperature', x_axis_type='datetime',
+                           y_axis_label='Temperature', x_axis_type='datetime',  toolbar_location=None,
                            tools=[hover])
         name_line.line(x='date', y='value', source=data, legend_label="Temperature", line_width=2)
         name_line.add_layout(low_box)
@@ -780,7 +859,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         tab1 = TabPanel(child=name_line, title="line")
 
         name_circle = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time',
-                             y_axis_label='Temperature', x_axis_type='datetime',
+                             y_axis_label='Temperature', x_axis_type='datetime', toolbar_location=None,
                              tools=[hover])
         name_circle.circle(x='date', y='value', source=data, legend_label="Temperature", line_width=2)
         name_circle.add_layout(low_box)
@@ -1059,6 +1138,7 @@ def show_docker_stats(index, x):
 # show processes memory
 def show_processes_memory(index, process_taken, process_count, x):
     result = ''
+    add_or_not = '-1'
     if line_counter[index] == 1:
         result += sep_line
         result += 'show processes memory\n\n'
@@ -1072,12 +1152,14 @@ def show_processes_memory(index, process_taken, process_count, x):
         result += x + '\n'
     if c:
         process_taken = True
-    if process_taken and process_count < 4:
+    if process_taken and process_count < 11:
         result += x + '\n'
+        if process_count >0:
+            add_or_not = x
         process_count += 1
-        if process_count == 4:
+        if process_count == 11:
             result += '\n\n\n'
-    return [result, process_taken, process_count]
+    return [result, process_taken, process_count, add_or_not]
 
 
 # show interface counters
