@@ -2,14 +2,11 @@
 
 import re
 import smtplib
-import matplotlib.pyplot as plt
 from datetime import datetime
 import numpy as np
-from matplotlib.backends.backend_pdf import PdfPages
 import csv
 import os
 from bokeh.models import BoxAnnotation
-import paramiko
 import time
 from bokeh.plotting import figure, output_file, show, save
 from math import pi
@@ -67,6 +64,8 @@ def main(command, ip_address, username, password, snapshot_count, email):
         # session=paramiko.SSHClient()
         # session.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         # session.connect(ip_address,username=username,password=password)
+
+        # making SSH connection to device using NETMIKO
         linux = {
             'device_type': 'linux',
             'ip': ip_address,
@@ -74,10 +73,14 @@ def main(command, ip_address, username, password, snapshot_count, email):
             'password': password,
         }
         connection = ConnectHandler(**linux)
+
+        # Taking snapshots
         for number in range(0, snapshot_count):
 
             # initialised variables
             print("Taking snapshot : " + str(number + 1))
+
+            # some initialized variable
             result = '\n\n\n'
             process_taken = False
             cpu_taken = False
@@ -96,9 +99,13 @@ def main(command, ip_address, username, password, snapshot_count, email):
             # (stdin, stdout, stderr)=session.exec_command(i+'\n\n')
             # router_output = stdout.read()
             # f = f +'admin@sonic:~$ '+ i+'\n\n'+router_output.decode("utf-8")+'\n'
+
+            # getting output of commands and storing result in f (variable)
             f = connection.send_config_set(command)
             result_list = f.split('\n')
             counter = 0
+
+            # traversing in result_list
             for x in result_list:
                 counter = counter + 1
                 # checking which command starts
@@ -236,25 +243,41 @@ def main(command, ip_address, username, password, snapshot_count, email):
             process_memory.append(process_memory_temp)
         # alert
         # alert(overall_alert_temp, overall_alert_cpu)
-        # print(counters)
-        # print(process_memory)
-        # print(process_memory_names)
+
         for i in range(0, len(counters[0])):
             counters_names.append(counters[0][i][0])
         # print(counters_names)
+
+        # plotting cpu graph
         plot_cpu(cpu_graph, date)
+
+        # plotting temperature graph
         plot_temp(temp_graph, temp_sensor_names, date)
+
+        # plotting memory graph
         plot_memory(memory_graph, date)
+
+        # plotting docker graph
         plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date)
+
+        # plotting interface counters graph
         plot_interface_counter(counters, counters_names, date)
+
+        # plotting process memory graph
         plot_process_memory(process_memory, process_memory_names, date)
+
+        # making csv files
         to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph,
                docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
         final_result = '\n\n########################################################################## \n\n'
+
+        # adding minimum maximum average value in final_result
         final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
                                                       docker_stats_graph,
                                                       docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
         final_result = final_result + combined_result
+
+        # creating text file
         text_file(final_result)
 
         # Closing the connection
@@ -262,6 +285,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
         connection.disconnect()
 
     except:
+
         print(exception)
         print(
             "* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
@@ -375,26 +399,19 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
             total(temporary_rx_ox)) + '\n\n'
     return result
 
+# returning sum
 def total(lst):
     total_value = 0
     for i in lst:
         total_value += i
     return total_value
+
 # create csv files
 def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph, docker_stats_sensor_names,
            counters, counters_names, process_memory, process_memory_names):
     # to convert date string to datetime object
     date_ = []
     for i in date:
-        lst = i.split()
-        str = ''
-        str += month[lst[2]]
-        str += '/'
-        str += lst[1]
-        str += '/'
-        str += lst[3][2:]
-        datetime_str = str + " " + lst[4]
-        # datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         date_.append(i)
 
     # store temp_graph data
@@ -410,14 +427,19 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     # process_memory_usage
     process_memory_list = []
 
+    # adding temperature data in temp_list
     for i in range(0, len(temp_graph)):
         temporary = []
         for j in range(0, len(temp_graph[0])):
             temporary.append(temp_graph[i][j])
         temporary.append(date_[i])
         temp_list.append(temporary)
+
+    # adding cpu data in cpu_list
     for i in range(0, len(date)):
         cpu_list.append([cpu_graph[i], date_[i]])
+
+    # adding docker data in docker_list
     for i in range(0, len(docker_stats_graph)):
         temporary = []
         for j in range(0, len(docker_stats_graph[0])):
@@ -426,9 +448,12 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
         temporary.append(date_[i])
         docker_list.append(temporary)
 
+    # adding memory data in memory_list
     for i in range(0, len(date)):
         memory_list.append([date_[i], memory_graph[i][0], memory_graph[i][1], memory_graph[i][2],
                             memory_graph[i][0] - memory_graph[i][1] - memory_graph[i][2]])
+
+    # adding interface counters data in interface_counters_list
     for i in range(0, len(counters)):
         temperory = []
         for j in range(1, len(counters[0])):
@@ -436,6 +461,8 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
             temperory.append(counters[i][j][3])
         temperory.append(date_[i])
         interface_counters_list.append(temperory)
+
+    # adding processes memory data in process_memory_list
     for i in range(0, len(process_memory)):
         temperory = []
         for j in range(0, len(process_memory[0])):
@@ -448,14 +475,19 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     for i in temp_sensor_names:
         header_temp.append(i)
     header_temp.append('Time')
+
     # header of cpu_usage
     header_cpu = ['CPU usage percentage', 'Time']
+
     # header of memory_usage
     header_memory = ['Time', 'Total', 'Used', 'Free', 'Other']
+
     # header of docker stats
     header_docker = docker_stats_sensor_names
     header_docker.append('System CPU%')
     header_docker.append('Time')
+
+    # header of interface counters
     header_counter = []
     for i in range(1, len(counters_names)):
         header_counter.append(counters_names[i] + " RX-OX")
@@ -523,27 +555,36 @@ def text_file(combined_result):
 
 # plotting processes memory
 def plot_process_memory(process_memory, process_memory_names, date):
+
     # saving file
-    # print(process_memory)
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '\output'):
         os.mkdir(CURR_DIR + '\output', mode=0o666)
     if not os.path.exists(CURR_DIR + '\output\graphs'):
         os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/process_memory_graph.html')
+    output_file(CURR_DIR + '/output/graphs/process_memory_graph.html',  title='Process memory graphs')
+    # adding time in date_ list
     date_ = []
     for i in date:
         lst = i.split()
         date_.append(lst[4])
+
+    # list which store process memory graphs
     name_list = []
     for i in range(0, len(process_memory)):
+
+        # dictionary of points
         data = {
                 'value': process_memory[i],
                 'name': process_memory_names,
                 }
         source = ColumnDataSource(data=data)
+
+        # to show alert color
         low_box = BoxAnnotation(bottom=0, top=35, fill_alpha=0.1, fill_color='green')
         high_box = BoxAnnotation(bottom=35, fill_alpha=0.1, fill_color='red')
+
+        # making bar chart
         p3 = figure(x_range=process_memory_names, title="PROCESS MEMORY USAGE at " + date[i], toolbar_location=None, tools="", x_axis_label='Process names',
                     y_axis_label='memory %')
         p3.vbar(x='name', top='value', width=0.2, legend_label='memory %', name='value', source=source)
@@ -554,9 +595,8 @@ def plot_process_memory(process_memory, process_memory_names, date):
         p3.add_layout(low_box)
         p3.add_layout(high_box)
         name_list.append(p3)
+    # saving the graphs in process_memory_graph.html page.
     save(name_list)
-
-
 
 # plotting interface counter graph
 def plot_interface_counter(counters, counters_names, date):
@@ -566,9 +606,13 @@ def plot_interface_counter(counters, counters_names, date):
         os.mkdir(CURR_DIR + '\output', mode=0o666)
     if not os.path.exists(CURR_DIR + '\output\graphs'):
         os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/interface_counters_graphs.html')
+    output_file(CURR_DIR + '/output/graphs/interface_counters_graphs.html',  title='Interface counters graphs')
+
+    # storing string of time
     time = []
+    # storing datetime objects
     date_ = []
+
     for i in date:
         lst = i.split()
         str = ''
@@ -590,6 +634,7 @@ def plot_interface_counter(counters, counters_names, date):
         for j in range(0, len(counters)):
             rx_ox.append(counters[j][i][2])
             tx_ox.append(counters[j][i][3])
+        # dictionary of points
         data = {'date': time,
                 'RX-OX': rx_ox,
                 'TX-OX': tx_ox,
@@ -598,6 +643,7 @@ def plot_interface_counter(counters, counters_names, date):
 
         source = ColumnDataSource(data=data)
 
+        # creating bar chart
         name_bar = figure(x_range=time, title=counters_names[i],
                           toolbar_location=None, tools="", x_axis_label='Date Time',
                           y_axis_label='RX-OX and TX-OX data')
@@ -622,6 +668,8 @@ def plot_interface_counter(counters, counters_names, date):
         name_bar.xaxis.major_label_orientation = "vertical"
 
         tab2 = TabPanel(child=name_bar, title="bar")
+
+        # creating line chart
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
         name_line = figure(title=counters_names[i], x_axis_label='Date Time',
                            y_axis_label='RX-OX and TX-OX data',
@@ -632,6 +680,7 @@ def plot_interface_counter(counters, counters_names, date):
                        color="#32CD32")
         tab1 = TabPanel(child=name_line, title="line")
 
+        # creating circle chart
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
         name_circle = figure(title=counters_names[i], x_axis_label='Date Time',
                              y_axis_label='RX-OX and TX-OX data',
@@ -645,13 +694,24 @@ def plot_interface_counter(counters, counters_names, date):
 
         tabs = Tabs(tabs=[ tab1, tab3, tab2])
         name_list.append(tabs)
+
+    # storing graphs in interface_counters_graph.html page
     if len(name_list) != 0:
         save(name_list)
 
 
 # plotting docker stats graph
 def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
+
+    # saving file
     CURR_DIR = os.getcwd()
+    if not os.path.exists(CURR_DIR + '\output'):
+        os.mkdir(CURR_DIR + '\output', mode=0o666)
+    if not os.path.exists(CURR_DIR + '\output\graphs'):
+        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
+    output_file(CURR_DIR + '/output/graphs/docker_graphs.html',  title='Docker graphs')
+
+    # strong date time object
     time = []
     for i in date:
         lst = i.split()
@@ -664,11 +724,7 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
         datetime_str = str + " " + lst[4]
         datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         time.append(datetime_object)
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/docker_graphs.html')
+    # storing graphs in list
     name_list = []
     items = ['docker%', 'cpu%']
     for i in range(0, len(docker_stats_graph[0])):
@@ -683,13 +739,15 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
         for j in range(0, len(docker_stats_graph)):
             temp.append(docker_stats_graph[j][i])
             none.append(0)
-
+        # dictionary of items
         data = {'date': date_,
                 'cpu%': cpu_graph,
                 'docker%': temp,
                 'none': none,
                 'time': time
                 }
+
+        # show alerts in graph
         low_box = BoxAnnotation(bottom=0, top=10, fill_alpha=0.1, fill_color='green')
         high_box = BoxAnnotation(bottom=10, fill_alpha=0.1, fill_color='red')
 
@@ -746,6 +804,8 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
 
         tabs = Tabs(tabs=[tab2, tab1, tab3])
         name_list.append(tabs)
+
+    # storing graphs in interface_counters_graph.html page
     if len(name_list) != 0:
         save(name_list)
 
@@ -758,7 +818,7 @@ def plot_memory(memory_graph, date):
         os.mkdir(CURR_DIR + '\output', mode=0o666)
     if not os.path.exists(CURR_DIR + '\output\graphs'):
         os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/memory_graphs.html')
+    output_file(CURR_DIR + '/output/graphs/memory_graphs.html',  title='Memory graphs')
     name_list = []
     # memory data
     total_list = []
@@ -782,6 +842,8 @@ def plot_memory(memory_graph, date):
     data = pd.Series(x).reset_index(name='value').rename(columns={'index': 'memory'})
     data['angle'] = data['value'] / data['value'].sum() * 2 * pi
     data['color'] = colors[:len(x)]
+
+    # plotting pie chart
     name = figure(height=350, title="Average Memory plot", tools="hover", tooltips="@memory: @value",
                   x_range=(-0.5, 1.0))
     name.wedge(x=0, y=1, radius=0.4, start_angle=cumsum('angle', include_zero=True), end_angle=cumsum('angle'),
@@ -811,21 +873,28 @@ def plot_memory(memory_graph, date):
         name.axis.visible = False
         name.grid.grid_line_color = None
         name_list.append(name)
+
+    # storing graphs in interface_counters_graph.html page
     if len(name_list) != 0:
         save(name_list)
 
 
 # plotting temperature graph
 def plot_temp(temp_graph, temp_sensor_names, date):
-    date_ = []
+
     # saving file
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '\output'):
         os.mkdir(CURR_DIR + '\output', mode=0o666)
     if not os.path.exists(CURR_DIR + '\output\graphs'):
         os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/temperature_graphs.html')
+    output_file(CURR_DIR + '/output/graphs/temperature_graphs.html',  title='Temperature graphs')
+
+    # storing datetime object
+    date_ = []
+    # storing time string
     time = []
+
     for i in date:
         lst = i.split()
         str = ''
@@ -838,6 +907,8 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         date_.append(datetime_object)
         time.append(lst[4])
+
+    # storing graphs in list
     name_list = []
     for i in range(0, len(temp_sensor_names)):
         temporary = []
@@ -845,10 +916,13 @@ def plot_temp(temp_graph, temp_sensor_names, date):
             temporary.append(temp_graph[j][i])
         from bokeh.models import DatetimeTickFormatter
         data = pd.DataFrame({'date': date_, 'value': temporary, 'time': time})
+
+        # showing alerts
         low_box = BoxAnnotation(bottom=0, top=35, fill_alpha=0.1, fill_color='green')
         high_box = BoxAnnotation(bottom=35, fill_alpha=0.1, fill_color='red')
-
         source = ColumnDataSource(data=data)
+
+        # plotting line graph
         hover = HoverTool(tooltips=[('value', '@value'), ('time', '@time')])
         name_line = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time',
                            y_axis_label='Temperature', x_axis_type='datetime',  toolbar_location=None,
@@ -858,6 +932,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         name_line.add_layout(high_box)
         tab1 = TabPanel(child=name_line, title="line")
 
+        # plotting circle graph
         name_circle = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time',
                              y_axis_label='Temperature', x_axis_type='datetime', toolbar_location=None,
                              tools=[hover])
@@ -866,6 +941,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         name_circle.add_layout(high_box)
         tab2 = TabPanel(child=name_circle, title="circle")
 
+        # plotting bar chart
         name_bar = figure(x_range=time, title="Temperature plot of " + temp_sensor_names[i], toolbar_location=None,
                           tools="", x_axis_label='Date Time',
                           y_axis_label='Temperature')
@@ -879,6 +955,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         tab3 = TabPanel(child=name_bar, title="bar")
         tabs = Tabs(tabs=[tab1, tab2, tab3])
         name_list.append(tabs)
+    # storing graphs in interface_counters_graph.html page
     if len(name_list) != 0:
         save(name_list)
 
@@ -892,8 +969,11 @@ def plot_cpu(cpu_graph, date):
         os.mkdir(CURR_DIR + '\output', mode=0o666)
     if not os.path.exists(CURR_DIR + '\output\graphs'):
         os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/cpu_graphs.html')
+    output_file(CURR_DIR + '/output/graphs/cpu_graphs.html',  title='CPU Graphs')
+
+    # storing datetime object
     date_ = []
+    # storing time string
     time = []
     for i in date:
         lst = i.split()
@@ -909,12 +989,16 @@ def plot_cpu(cpu_graph, date):
         time.append(lst[4])
 
     from bokeh.models import DatetimeTickFormatter
+    # dictionary of items
     data = pd.DataFrame({'date': date_, 'value': cpu_graph, 'time': time})
 
+    # show alerts
     low_box = BoxAnnotation(bottom=0, top=35, fill_alpha=0.1, fill_color='green')
     high_box = BoxAnnotation(bottom=35, fill_alpha=0.1, fill_color='red')
 
     source = ColumnDataSource(data=data)
+
+    # plotting line chart
     hover = HoverTool(tooltips=[('value', '@value'), ('time', '@time')])
     p1 = figure(title="CPU USAGE", x_axis_label='Date Time', y_axis_label='CPU %', x_axis_type='datetime',
                 tools=[hover])
@@ -923,6 +1007,7 @@ def plot_cpu(cpu_graph, date):
     p1.add_layout(high_box)
     tab1 = TabPanel(child=p1, title="line")
 
+    # plotting circle chart
     p2 = figure(title="CPU USAGE", x_axis_label='Date Time', y_axis_label='CPU %', x_axis_type='datetime',
                 tools=[hover])
     p2.circle(x='date', y='value', source=data, legend_label="CPU %", line_width=2)
@@ -930,6 +1015,7 @@ def plot_cpu(cpu_graph, date):
     p2.add_layout(high_box)
     tab2 = TabPanel(child=p2, title="circle")
 
+    # plotting bar chart
     p3 = figure(x_range=time, title="CPU USAGE", toolbar_location=None, tools="", x_axis_label='Date Time',
                 y_axis_label='CPU %')
     p3.vbar(x='time', top='value', width=0.2, legend_label='CPU %', name='value', source=source)
@@ -942,6 +1028,7 @@ def plot_cpu(cpu_graph, date):
     tab3 = TabPanel(child=p3, title="bar")
 
     tabs = Tabs(tabs=[tab1, tab2, tab3])
+    # storing graphs in  cpu_graphs.html page
     save(tabs)
 
 
@@ -1206,16 +1293,8 @@ def show_interface_counters(counters_dict, index, x):
     return result
 
 
-command = []
-command.append('show processes cpu')
-command.append('show version')
-command.append('show platform temperature')
-command.append('show system-memory')
-command.append('show processes memory')
-command.append('show interface counters')
-command.append('date')
-command.append('show processes summary')
-command.append('docker stats  --no-stream')
+command = ['show processes cpu', 'show version', 'show platform temperature', 'show system-memory', 'show processes memory', 'show interface counters', 'date', 'show processes summary','docker stats  --no-stream' ]
+
 ip_address = input("Enter the Ip address : ")
 username = input("Enter the username : ")
 password = input("Enter the password : ")
