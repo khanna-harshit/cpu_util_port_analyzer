@@ -206,7 +206,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
                     if ans[3] != '-1':
                         lst = x.split()
                         if len(process_memory) == 0:
-                            process_memory_names.append(lst[11])
+                            process_memory_names.append(lst[11]+lst[0])
                         process_memory_temp.append(float(lst[9]))
 
 
@@ -562,7 +562,7 @@ def plot_process_memory(process_memory, process_memory_names, date):
         os.mkdir(CURR_DIR + '\output', mode=0o666)
     if not os.path.exists(CURR_DIR + '\output\graphs'):
         os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/process_memory_graph.html',  title='Process memory graphs')
+    output_file(CURR_DIR + '/output/graphs/process_memory_graph.html', title='Process memory graphs')
     # adding time in date_ list
     date_ = []
     for i in date:
@@ -574,6 +574,7 @@ def plot_process_memory(process_memory, process_memory_names, date):
     for i in range(0, len(process_memory)):
 
         # dictionary of points
+
         data = {
                 'value': process_memory[i],
                 'name': process_memory_names,
