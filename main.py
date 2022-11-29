@@ -507,7 +507,7 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     header_process_memory.append("Time")
 
     # make directory for showing output
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -562,7 +562,7 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
 
 # creating result.txt
 def text_file(final_result):
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -580,7 +580,7 @@ def text_file(final_result):
 # plotting processes memory
 def plot_process_memory(process_memory, process_memory_names, date):
     # saving file
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -633,7 +633,7 @@ def plot_process_memory(process_memory, process_memory_names, date):
 def plot_interface_counter(counters, counters_names, date):
     # saving file
     # saving file
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -654,13 +654,13 @@ def plot_interface_counter(counters, counters_names, date):
 
     for i in date:
         lst = i.split()
-        str = ''
-        str += month[lst[2]]
-        str += '/'
-        str += lst[1]
-        str += '/'
-        str += lst[3][2:]
-        datetime_str = str + " " + lst[4]
+        str_date = ''
+        str_date += month[lst[2]]
+        str_date += '/'
+        str_date += lst[1]
+        str_date += '/'
+        str_date += lst[3][2:]
+        datetime_str = str_date + " " + lst[4]
         datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         date_.append(datetime_object)
     for i in date:
@@ -742,7 +742,7 @@ def plot_interface_counter(counters, counters_names, date):
 # plotting docker stats graph
 def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
     # saving file
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -760,13 +760,13 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
     time = []
     for i in date:
         lst = i.split()
-        str = ''
-        str += month[lst[2]]
-        str += '/'
-        str += lst[1]
-        str += '/'
-        str += lst[3][2:]
-        datetime_str = str + " " + lst[4]
+        str_date = ''
+        str_date += month[lst[2]]
+        str_date += '/'
+        str_date += lst[1]
+        str_date += '/'
+        str_date += lst[3][2:]
+        datetime_str = str_date + " " + lst[4]
         datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         time.append(datetime_object)
     # storing graphs in list
@@ -858,7 +858,7 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
 # plotting memory graphs
 def plot_memory(memory_graph, date):
     # saving file
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -934,7 +934,7 @@ def plot_memory(memory_graph, date):
 # plotting temperature graph
 def plot_temp(temp_graph, temp_sensor_names, date):
     # saving file
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -955,13 +955,13 @@ def plot_temp(temp_graph, temp_sensor_names, date):
 
     for i in date:
         lst = i.split()
-        str = ''
-        str += month[lst[2]]
-        str += '/'
-        str += lst[1]
-        str += '/'
-        str += lst[3][2:]
-        datetime_str = str + " " + lst[4]
+        str_date = ''
+        str_date += month[lst[2]]
+        str_date += '/'
+        str_date += lst[1]
+        str_date += '/'
+        str_date += lst[3][2:]
+        datetime_str = str_date + " " + lst[4]
         datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         date_.append(datetime_object)
         time.append(lst[4])
@@ -1022,7 +1022,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
 def plot_cpu(cpu_graph, date):
     # plotting the points
     # saving
-    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -1041,13 +1041,13 @@ def plot_cpu(cpu_graph, date):
     time = []
     for i in date:
         lst = i.split()
-        str = ''
-        str += month[lst[2]]
-        str += '/'
-        str += lst[1]
-        str += '/'
-        str += lst[3][2:]
-        datetime_str = str + " " + lst[4]
+        str_date = ''
+        str_date += month[lst[2]]
+        str_date += '/'
+        str_date += lst[1]
+        str_date += '/'
+        str_date += lst[3][2:]
+        datetime_str = str_date + " " + lst[4]
         datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
         date_.append(datetime_object)
         time.append(lst[4])
