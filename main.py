@@ -1,5 +1,6 @@
 # imported packages
-
+from re import split as ReSplit
+from datetime import datetime
 import re
 import smtplib
 from datetime import datetime
@@ -28,6 +29,7 @@ from bokeh.models import TabPanel, Tabs
 from bokeh.transform import dodge
 from email_validator import validate_email, EmailNotValidError
 
+
 # reference
 
 # ['show process cpu', 'show version', 'show platform temperature', 'date',
@@ -53,7 +55,6 @@ counters_names = []
 counters = []
 process_memory = []
 process_memory_names = []
-
 
 
 def main(command, ip_address, username, password, snapshot_count, email):
@@ -104,6 +105,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
             f = connection.send_config_set(command)
             result_list = f.split('\n')
             counter = 0
+            # print(f)
 
             # traversing in result_list
             for x in result_list:
@@ -206,9 +208,8 @@ def main(command, ip_address, username, password, snapshot_count, email):
                     if ans[3] != '-1':
                         lst = x.split()
                         if len(process_memory) == 0:
-                            process_memory_names.append(lst[11]+lst[0])
+                            process_memory_names.append(lst[11] + "_" + lst[0])
                         process_memory_temp.append(float(lst[9]))
-
 
                 # show interface counters
                 if command_running[6]:
@@ -242,6 +243,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
             counters.append(counters_temp)
             process_memory.append(process_memory_temp)
         # alert
+
         # alert(overall_alert_temp, overall_alert_cpu)
 
         for i in range(0, len(counters[0])):
@@ -274,7 +276,8 @@ def main(command, ip_address, username, password, snapshot_count, email):
         # adding minimum maximum average value in final_result
         final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
                                                       docker_stats_graph,
-                                                      docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
+                                                      docker_stats_sensor_names, counters, counters_names,
+                                                      process_memory, process_memory_names)
         final_result = final_result + combined_result
 
         # creating text file
@@ -286,9 +289,9 @@ def main(command, ip_address, username, password, snapshot_count, email):
 
     except:
 
-        print(exception)
+        # print(exception)
         print(
-            "* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
+            "\n* Not able to make connection with the device\n* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
         print("* Closing program... Bye!")
 
 
@@ -395,9 +398,10 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
             max(temporary_rx_ox)) + ' Average ' + str(round(average(temporary_rx_ox), 3)) + ' Total ' + str(
             total(temporary_rx_ox)) + '\n'
         result += " TX-OX" + '   ---> Minimum ' + str(min(temporary_tx_ox)) + ' Maximum ' + str(
-            max(temporary_tx_ox)) + ' Average ' + str(round(average(temporary_tx_ox), 3)) +' Total ' + str(
+            max(temporary_tx_ox)) + ' Average ' + str(round(average(temporary_tx_ox), 3)) + ' Total ' + str(
             total(temporary_rx_ox)) + '\n\n'
     return result
+
 
 # returning sum
 def total(lst):
@@ -406,10 +410,14 @@ def total(lst):
         total_value += i
     return total_value
 
+
 # create csv files
 def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph, docker_stats_sensor_names,
            counters, counters_names, process_memory, process_memory_names):
     # to convert date string to datetime object
+    date_time = datetime.now()
+
+
     date_ = []
     for i in date:
         date_.append(i)
@@ -499,70 +507,91 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     header_process_memory.append("Time")
 
     # make directory for showing output
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\csv'):
-        os.mkdir(CURR_DIR + '\output\csv', mode=0o666)
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/csv'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
 
     # creating and storing data in temp_graph_PSU1.csv
     if len(header_temp) != 1:
-        f1 = open(CURR_DIR + '/output/csv/temp_graph.csv', 'w')
+        f1 = open(CURR_DIR + path + '/temp_graph.csv', 'w')
         writer = csv.writer(f1)
         writer.writerow(header_temp)
         writer.writerows(temp_list)
 
     # creating and storing data in cpu_usage.csv
     if len(header_cpu) != 1:
-        f2 = open(CURR_DIR + '/output/csv/cpu_usage.csv', 'w')
+        f2 = open(CURR_DIR +  path +'/cpu_usage.csv', 'w')
         writer = csv.writer(f2)
         writer.writerow(header_cpu)
         writer.writerows(cpu_list)
 
     # creating and storing data in memory_usage.csv
-    if len(header_memory)!= 1:
-        f3 = open(CURR_DIR + '/output/csv/memory_usage.csv', 'w')
+    if len(header_memory) != 1:
+        f3 = open(CURR_DIR + + path +'/memory_usage.csv', 'w')
         writer = csv.writer(f3)
         writer.writerow(header_memory)
         writer.writerows(memory_list)
 
     # creating and storing data in memory_usage.csv
     if len(header_docker) != 1:
-        f4 = open(CURR_DIR + '/output/csv/docker_stats.csv', 'w')
+        f4 = open(CURR_DIR + path +'/docker_stats.csv', 'w')
         writer = csv.writer(f4)
         writer.writerow(header_docker)
         writer.writerows(docker_list)
 
     # creating and storing data in interface_counter_usage.csv
     if len(header_counter) != 1:
-        f5 = open(CURR_DIR + '/output/csv/interface_counter_usage.csv', 'w')
+        f5 = open(CURR_DIR + path +'/interface_counter_usage.csv', 'w')
         writer = csv.writer(f5)
         writer.writerow(header_counter)
         writer.writerows(interface_counters_list)
     # creating and storing data in process_memory_usage.csv
     if len(header_counter) != 1:
-        f6 = open(CURR_DIR + '/output/csv/processes_memory_usage.csv', 'w')
+        f6 = open(CURR_DIR + path +'/processes_memory_usage.csv', 'w')
         writer = csv.writer(f6)
         writer.writerow(header_process_memory)
         writer.writerows(process_memory_list)
 
 
 # creating result.txt
-def text_file(combined_result):
-    f = open("result.txt", "w+")
-    f.write(combined_result)
+def text_file(final_result):
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    CURR_DIR = os.getcwd()
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/text'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    f = open(path+"/result.txt", "w+")
+    f.write(final_result)
     f.close()
+
 
 # plotting processes memory
 def plot_process_memory(process_memory, process_memory_names, date):
-
     # saving file
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/process_memory_graph.html', title='Process memory graphs')
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path+'/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/process_memory_graph.html'
+    output_file(CURR_DIR + path, title='Process memory graphs')
     # adding time in date_ list
     date_ = []
     for i in date:
@@ -572,13 +601,12 @@ def plot_process_memory(process_memory, process_memory_names, date):
     # list which store process memory graphs
     name_list = []
     for i in range(0, len(process_memory)):
-
         # dictionary of points
 
         data = {
-                'value': process_memory[i],
-                'name': process_memory_names,
-                }
+            'value': process_memory[i],
+            'name': process_memory_names,
+        }
         source = ColumnDataSource(data=data)
 
         # to show alert color
@@ -586,7 +614,8 @@ def plot_process_memory(process_memory, process_memory_names, date):
         high_box = BoxAnnotation(bottom=35, fill_alpha=0.1, fill_color='red')
 
         # making bar chart
-        p3 = figure(x_range=process_memory_names, title="PROCESS MEMORY USAGE at " + date[i], toolbar_location=None, tools="", x_axis_label='Process names',
+        p3 = figure(x_range=process_memory_names, title="PROCESS MEMORY USAGE at " + date[i], toolbar_location=None,
+                    tools="", x_axis_label='Process names',
                     y_axis_label='memory %')
         p3.vbar(x='name', top='value', width=0.2, legend_label='memory %', name='value', source=source)
         p3.xgrid.grid_line_color = None
@@ -599,15 +628,24 @@ def plot_process_memory(process_memory, process_memory_names, date):
     # saving the graphs in process_memory_graph.html page.
     save(name_list)
 
+
 # plotting interface counter graph
 def plot_interface_counter(counters, counters_names, date):
     # saving file
+    # saving file
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/interface_counters_graphs.html',  title='Interface counters graphs')
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/interface_counters_graphs.html'
+    output_file(CURR_DIR + path, title='Interface counters graphs')
+
 
     # storing string of time
     time = []
@@ -639,7 +677,7 @@ def plot_interface_counter(counters, counters_names, date):
         data = {'date': time,
                 'RX-OX': rx_ox,
                 'TX-OX': tx_ox,
-                'date_' : date_,
+                'date_': date_,
                 }
 
         source = ColumnDataSource(data=data)
@@ -674,7 +712,7 @@ def plot_interface_counter(counters, counters_names, date):
         hover = HoverTool(tooltips=[('value', '@$name'), ('time', '@date_')])
         name_line = figure(title=counters_names[i], x_axis_label='Date Time',
                            y_axis_label='RX-OX and TX-OX data',
-                           x_axis_type='datetime', tools=[hover],toolbar_location=None)
+                           x_axis_type='datetime', tools=[hover], toolbar_location=None)
         name_line.line(x='date_', y='RX-OX', source=data, legend_label="RX-OX", line_width=2, name='RX-OX',
                        color='#FF0000')
         name_line.line(x='date_', y='TX-OX', source=data, legend_label="TX-OX", line_width=2, name='TX-OX',
@@ -693,7 +731,7 @@ def plot_interface_counter(counters, counters_names, date):
 
         tab3 = TabPanel(child=name_circle, title="circle")
 
-        tabs = Tabs(tabs=[ tab1, tab3, tab2])
+        tabs = Tabs(tabs=[tab1, tab3, tab2])
         name_list.append(tabs)
 
     # storing graphs in interface_counters_graph.html page
@@ -703,14 +741,20 @@ def plot_interface_counter(counters, counters_names, date):
 
 # plotting docker stats graph
 def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
-
     # saving file
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/docker_graphs.html',  title='Docker graphs')
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/docker_graphs.html'
+    output_file(CURR_DIR + path, title='Docker graphs')
+
 
     # strong date time object
     time = []
@@ -814,12 +858,19 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
 # plotting memory graphs
 def plot_memory(memory_graph, date):
     # saving file
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/memory_graphs.html',  title='Memory graphs')
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/memory_graphs.html'
+    output_file(CURR_DIR + path, title='Memory graphs')
+
     name_list = []
     # memory data
     total_list = []
@@ -882,14 +933,20 @@ def plot_memory(memory_graph, date):
 
 # plotting temperature graph
 def plot_temp(temp_graph, temp_sensor_names, date):
-
     # saving file
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/temperature_graphs.html',  title='Temperature graphs')
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/temperature_graphs.html'
+    output_file(CURR_DIR + path, title='Temperature graphs')
+
 
     # storing datetime object
     date_ = []
@@ -926,7 +983,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         # plotting line graph
         hover = HoverTool(tooltips=[('value', '@value'), ('time', '@time')])
         name_line = figure(title="Temperature plot of " + temp_sensor_names[i], x_axis_label='Date Time',
-                           y_axis_label='Temperature', x_axis_type='datetime',  toolbar_location=None,
+                           y_axis_label='Temperature', x_axis_type='datetime', toolbar_location=None,
                            tools=[hover])
         name_line.line(x='date', y='value', source=data, legend_label="Temperature", line_width=2)
         name_line.add_layout(low_box)
@@ -965,12 +1022,18 @@ def plot_temp(temp_graph, temp_sensor_names, date):
 def plot_cpu(cpu_graph, date):
     # plotting the points
     # saving
+    ts_label == "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
-    if not os.path.exists(CURR_DIR + '\output'):
-        os.mkdir(CURR_DIR + '\output', mode=0o666)
-    if not os.path.exists(CURR_DIR + '\output\graphs'):
-        os.mkdir(CURR_DIR + '\output\graphs', mode=0o666)
-    output_file(CURR_DIR + '/output/graphs/cpu_graphs.html',  title='CPU Graphs')
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/cpu_graphs.html'
+    output_file(CURR_DIR + path, title='CPU graphs')
 
     # storing datetime object
     date_ = []
@@ -1164,6 +1227,7 @@ def show_platform_temperature(index, x):
     if line_counter[index] == 1:
         result += sep_line
         result += 'show platform temperature\n\n'
+    # print(x)
     line_counter[index] += 1
     if line_counter[index] >= 5:
         add_or_not = x
@@ -1242,7 +1306,7 @@ def show_processes_memory(index, process_taken, process_count, x):
         process_taken = True
     if process_taken and process_count < 11:
         result += x + '\n'
-        if process_count >0:
+        if process_count > 0:
             add_or_not = x
         process_count += 1
         if process_count == 11:
@@ -1294,7 +1358,9 @@ def show_interface_counters(counters_dict, index, x):
     return result
 
 
-command = ['show processes cpu', 'show version', 'show platform temperature', 'show system-memory', 'show processes memory', 'show interface counters', 'date', 'show processes summary','docker stats  --no-stream' ]
+command = ['show processes cpu', 'show version', 'show platform temperature', 'show system-memory',
+           'show processes memory', 'show interface counters', 'date', 'show processes summary',
+           'docker stats  --no-stream']
 
 ip_address = input("Enter the Ip address : ")
 username = input("Enter the username : ")
