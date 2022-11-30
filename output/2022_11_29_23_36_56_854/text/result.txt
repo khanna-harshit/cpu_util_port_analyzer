@@ -1,0 +1,3906 @@
+
+
+########################################################################## 
+
+show processes cpu
+minimum CPU usage 4.3
+maximum CPU usage 32.1
+average CPU usage 14.576666666666666
+
+
+<------------------------------------------------------------->
+
+show platform temperature
+
+<------------------------------------------------------------->
+
+show system memory
+Total ---> Minimum 3899.0 Maximum 3899.0 Average 3899.0
+Used  ---> Minimum 2233.0 Maximum 2270.0 Average 2239.0
+Free  ---> Minimum 169.0 Maximum 214.0 Average 203.7
+Other ---> Minimum 1452.0 Maximum 1461.0 Average 1456.3
+
+
+<------------------------------------------------------------->
+
+docker stats  --no-stream
+telemetry   ---> Minimum 0.65 Maximum 0.81 Average 0.735
+dhcp_relay   ---> Minimum 0.02 Maximum 0.05 Average 0.029
+snmp   ---> Minimum 0.12 Maximum 19.53 Average 6.474
+mgmt-framework   ---> Minimum 0.02 Maximum 0.04 Average 0.021
+lldp   ---> Minimum 0.03 Maximum 4.5 Average 0.597
+pmon   ---> Minimum 0.03 Maximum 0.06 Average 0.032
+radv   ---> Minimum 0.02 Maximum 0.05 Average 0.028
+bgp   ---> Minimum 0.23 Maximum 11.19 Average 1.908
+teamd   ---> Minimum 0.04 Maximum 0.07 Average 0.051
+syncd   ---> Minimum 9.89 Maximum 17.97 Average 12.893
+swss   ---> Minimum 0.13 Maximum 1.58 Average 0.216
+database   ---> Minimum 3.09 Maximum 18.14 Average 5.693
+
+<------------------------------------------------------------->
+
+show processes memory
+syncd_3417592   ---> Minimum 13.7 Maximum 13.7 Average 13.7
+python3_3417768   ---> Minimum 3.4 Maximum 3.4 Average 3.4
+rest_server_3417538   ---> Minimum 3.1 Maximum 3.1 Average 3.1
+bgpd_3417615   ---> Minimum 2.9 Maximum 2.9 Average 2.9
+dockerd_2014681   ---> Minimum 2.2 Maximum 2.2 Average 2.2
+redis-server_2014895   ---> Minimum 1.5 Maximum 1.5 Average 1.5
+dialout_client__3417755   ---> Minimum 1.5 Maximum 1.5 Average 1.5
+telemetry_3417691   ---> Minimum 1.4 Maximum 1.4 Average 1.4
+docker_2015153   ---> Minimum 1.4 Maximum 1.4 Average 1.4
+zebra_3417496   ---> Minimum 1.4 Maximum 1.4 Average 1.4
+
+<------------------------------------------------------------->
+
+
+show interface counters
+
+Total RX-OX from all interfaces ---> 714307613
+Total TX-OX from all interfaces ---> 932233938
+
+Ethernet0
+ RX-OX   ---> Minimum 1146166 Maximum 1147697 Average 1146940.9 Total 34408227
+ TX-OX   ---> Minimum 1224150 Maximum 1225780 Average 1224975.433 Total 34408227
+
+Ethernet1
+ RX-OX   ---> Minimum 1146099 Maximum 1147629 Average 1146873.467 Total 34406204
+ TX-OX   ---> Minimum 1224264 Maximum 1225894 Average 1225089.4 Total 34406204
+
+Ethernet2
+ RX-OX   ---> Minimum 1670216 Maximum 1672469 Average 1671354.067 Total 50140622
+ TX-OX   ---> Minimum 8228734 Maximum 8254254 Average 8241635.7 Total 50140622
+
+Ethernet3
+ RX-OX   ---> Minimum 1146145 Maximum 1147664 Average 1146910.8 Total 34407324
+ TX-OX   ---> Minimum 1224338 Maximum 1225955 Average 1225152.933 Total 34407324
+
+Ethernet4
+ RX-OX   ---> Minimum 1145963 Maximum 1147495 Average 1146737.7 Total 34402131
+ TX-OX   ---> Minimum 1224134 Maximum 1225765 Average 1224958.7 Total 34402131
+
+Ethernet5
+ RX-OX   ---> Minimum 1146045 Maximum 1147569 Average 1146813.933 Total 34404418
+ TX-OX   ---> Minimum 1224183 Maximum 1225805 Average 1225001.133 Total 34404418
+
+Ethernet6
+ RX-OX   ---> Minimum 1146004 Maximum 1147529 Average 1146773.433 Total 34403203
+ TX-OX   ---> Minimum 1224155 Maximum 1225779 Average 1224974.2 Total 34403203
+
+Ethernet7
+ RX-OX   ---> Minimum 1146117 Maximum 1147646 Average 1146891.2 Total 34406736
+ TX-OX   ---> Minimum 1224310 Maximum 1225939 Average 1225135.333 Total 34406736
+
+Ethernet16
+ RX-OX   ---> Minimum 1146081 Maximum 1147610 Average 1146855.567 Total 34405667
+ TX-OX   ---> Minimum 1224263 Maximum 1225891 Average 1225088.2 Total 34405667
+
+Ethernet17
+ RX-OX   ---> Minimum 1146049 Maximum 1147585 Average 1146827.633 Total 34404829
+ TX-OX   ---> Minimum 1224219 Maximum 1225852 Average 1225046.233 Total 34404829
+
+Ethernet18
+ RX-OX   ---> Minimum 1146061 Maximum 1147581 Average 1146826.533 Total 34404796
+ TX-OX   ---> Minimum 1224286 Maximum 1225904 Average 1225100.533 Total 34404796
+
+Ethernet19
+ RX-OX   ---> Minimum 1146065 Maximum 1147586 Average 1146830.9 Total 34404927
+ TX-OX   ---> Minimum 1224231 Maximum 1225850 Average 1225045.967 Total 34404927
+
+Ethernet24
+ RX-OX   ---> Minimum 774895 Maximum 775932 Average 775419.633 Total 23262589
+ TX-OX   ---> Minimum 753628 Maximum 754631 Average 754135.433 Total 23262589
+
+Ethernet25
+ RX-OX   ---> Minimum 774990 Maximum 776030 Average 775515.533 Total 23265466
+ TX-OX   ---> Minimum 753574 Maximum 754580 Average 754082.333 Total 23265466
+
+Ethernet26
+ RX-OX   ---> Minimum 788992 Maximum 790035 Average 789520.867 Total 23685626
+ TX-OX   ---> Minimum 770699 Maximum 771678 Average 771207.2 Total 23685626
+
+Ethernet27
+ RX-OX   ---> Minimum 973834 Maximum 975139 Average 974500.0 Total 29235000
+ TX-OX   ---> Minimum 1048769 Maximum 1050171 Average 1049483.733 Total 29235000
+
+Ethernet28
+ RX-OX   ---> Minimum 775434 Maximum 776467 Average 775957.067 Total 23278712
+ TX-OX   ---> Minimum 754020 Maximum 755027 Average 754529.467 Total 23278712
+
+Ethernet29
+ RX-OX   ---> Minimum 776439 Maximum 777475 Average 776963.867 Total 23308916
+ TX-OX   ---> Minimum 753348 Maximum 754236 Average 753822.867 Total 23308916
+
+Ethernet30
+ RX-OX   ---> Minimum 775015 Maximum 776052 Average 775540.6 Total 23266218
+ TX-OX   ---> Minimum 753478 Maximum 754483 Average 753986.733 Total 23266218
+
+Ethernet31
+ RX-OX   ---> Minimum 776501 Maximum 777537 Average 777025.267 Total 23310758
+ TX-OX   ---> Minimum 754165 Maximum 755167 Average 754672.067 Total 23310758
+
+Ethernet32
+ RX-OX   ---> Minimum 774129 Maximum 775169 Average 774655.8 Total 23239674
+ TX-OX   ---> Minimum 752997 Maximum 754003 Average 753506.6 Total 23239674
+
+Ethernet33
+ RX-OX   ---> Minimum 774951 Maximum 775989 Average 775475.867 Total 23264276
+ TX-OX   ---> Minimum 752749 Maximum 753753 Average 753256.667 Total 23264276
+
+Ethernet34
+ RX-OX   ---> Minimum 775970 Maximum 777008 Average 776496.267 Total 23294888
+ TX-OX   ---> Minimum 750783 Maximum 751787 Average 751292.067 Total 23294888
+
+Ethernet35
+ RX-OX   ---> Minimum 776021 Maximum 777060 Average 776546.867 Total 23296406
+ TX-OX   ---> Minimum 752777 Maximum 753782 Average 753285.667 Total 23296406
+
+
+
+
+######################################################################
+
+from snapshot 1 ----> 0
+
+######################################################################
+
+
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 23.9 us,  7.0 sy,  0.0 ni, 69.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    217.4 free,   2230.8 used,   1451.0 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20564   7332 R 100.0   0.5   1515:53 systemd
+     12 root      20   0       0      0      0 S   6.2   0.0   3:42.44 ksoftirqd/0
+1124683 root      20   0   10784   3928   3248 R   6.2   0.1   0:00.01 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:06:53 up 20 days,  8:15,  2 users,  load average: 1.98, 2.30, 2.38
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2233         214          59        1450        1339
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 27.9 us, 20.6 sy,  0.0 ni, 51.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    212.8 free,   2235.3 used,   1451.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1397:00 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:50.50 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.12 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:01.54 bgpd
+2014681 root      20   0 2048008  88208  32972 S   0.0   2.2  41:20.84 dockerd
+2014895 root      20   0  124656  61256   5140 S   0.0   1.5   1564:59 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:19.60 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.42 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.68 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.29 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,166      1,224,150      
+Ethernet1      U              1,146,099      1,224,264      
+Ethernet2      U              1,670,216      8,228,734      
+Ethernet3      U              1,146,145      1,224,338      
+Ethernet4      U              1,145,963      1,224,134      
+Ethernet5      U              1,146,045      1,224,183      
+Ethernet6      U              1,146,004      1,224,155      
+Ethernet7      U              1,146,117      1,224,310      
+Ethernet16     U              1,146,081      1,224,263      
+Ethernet17     U              1,146,049      1,224,219      
+Ethernet18     U              1,146,061      1,224,286      
+Ethernet19     U              1,146,065      1,224,231      
+Ethernet24     U              774,895        753,628        
+Ethernet25     U              774,990        753,574        
+Ethernet26     U              788,992        770,699        
+Ethernet27     U              973,834        1,048,769      
+Ethernet28     U              775,434        754,020        
+Ethernet29     U              776,439        753,348        
+Ethernet30     U              775,015        753,478        
+Ethernet31     U              776,501        754,165        
+Ethernet32     U              774,129        752,997        
+Ethernet33     U              774,951        752,749        
+Ethernet34     U              775,970        750,783        
+Ethernet35     U              776,021        752,777        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:07:01 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.75%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.02%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             4.99%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.45%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 896MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            16.01%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         3.09%     90.43MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 2 ----> 1
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 33.8 us, 18.9 sy,  0.0 ni, 47.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    212.0 free,   2235.8 used,   1451.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20564   7332 R  61.1   0.5   1516:09 systemd
+2014895 root      20   0  124656  60860   5140 S  16.7   1.5   1565:00 redis-server
+    451 message+  20   0    8048   3976   3224 S  11.1   0.1 160:48.02 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:07:16 up 20 days,  8:15,  2 users,  load average: 2.43, 2.39, 2.41
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2234         213          59        1451        1337
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 33.3 us, 13.9 sy,  0.0 ni, 52.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    210.2 free,   2237.4 used,   1451.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   5.6  13.7   1397:03 syncd
+3417768 root      20   0  227896 134100  11048 R  22.2   3.4 734:51.74 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.12 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:01.86 bgpd
+2014681 root      20   0 2048008  88732  32972 S   0.0   2.2  41:21.22 dockerd
+2014895 root      20   0  124656  61072   5140 S   0.0   1.5   1565:01 redis-server
+3417755 root      20   0 1393948  60432   6036 S   5.6   1.5  57:19.70 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.51 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.68 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.29 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,225      1,224,215      
+Ethernet1      U              1,146,158      1,224,329      
+Ethernet2      U              1,670,294      8,229,663      
+Ethernet3      U              1,146,196      1,224,393      
+Ethernet4      U              1,146,023      1,224,200      
+Ethernet5      U              1,146,094      1,224,236      
+Ethernet6      U              1,146,060      1,224,216      
+Ethernet7      U              1,146,176      1,224,375      
+Ethernet16     U              1,146,140      1,224,328      
+Ethernet17     U              1,146,110      1,224,284      
+Ethernet18     U              1,146,110      1,224,339      
+Ethernet19     U              1,146,114      1,224,284      
+Ethernet24     U              774,932        753,665        
+Ethernet25     U              775,027        753,611        
+Ethernet26     U              789,029        770,736        
+Ethernet27     U              973,884        1,048,824      
+Ethernet28     U              775,471        754,057        
+Ethernet29     U              776,476        753,385        
+Ethernet30     U              775,052        753,515        
+Ethernet31     U              776,538        754,202        
+Ethernet32     U              774,166        753,034        
+Ethernet33     U              774,988        752,786        
+Ethernet34     U              776,007        750,820        
+Ethernet35     U              776,058        752,814        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:07:28 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.74%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             1.25%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.03%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              3.20%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.04%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            15.11%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         6.47%     90.73MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 3 ----> 2
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 34.8 us, 24.6 sy,  0.0 ni, 40.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    210.2 free,   2237.4 used,   1451.6 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20564   7332 S  43.8   0.5   1516:27 systemd
+3417592 root      20   0 2585632 545668 103188 S  31.2  13.7   1397:05 syncd
+    451 message+  20   0    8048   3976   3224 S  25.0   0.1 160:49.97 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:07:42 up 20 days,  8:16,  2 users,  load average: 2.27, 2.35, 2.40
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2250         197          59        1451        1322
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 26.1 us,  2.9 sy,  0.0 ni, 71.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    212.2 free,   2235.4 used,   1451.6 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   6.2  13.7   1397:06 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:53.05 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.12 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:02.12 bgpd
+2014681 root      20   0 2048008  88692  32972 S   0.0   2.2  41:21.61 dockerd
+2014895 root      20   0  124656  60944   5140 S   0.0   1.5   1565:03 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:19.78 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.62 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.29 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,271      1,224,265      
+Ethernet1      U              1,146,204      1,224,379      
+Ethernet2      U              1,670,364      8,230,463      
+Ethernet3      U              1,146,240      1,224,441      
+Ethernet4      U              1,146,068      1,224,249      
+Ethernet5      U              1,146,140      1,224,286      
+Ethernet6      U              1,146,105      1,224,265      
+Ethernet7      U              1,146,222      1,224,425      
+Ethernet16     U              1,146,186      1,224,378      
+Ethernet17     U              1,146,156      1,224,334      
+Ethernet18     U              1,146,156      1,224,389      
+Ethernet19     U              1,146,160      1,224,334      
+Ethernet24     U              774,964        753,697        
+Ethernet25     U              775,059        753,643        
+Ethernet26     U              789,061        770,768        
+Ethernet27     U              973,926        1,048,869      
+Ethernet28     U              775,503        754,089        
+Ethernet29     U              776,508        753,417        
+Ethernet30     U              775,084        753,547        
+Ethernet31     U              776,570        754,234        
+Ethernet32     U              774,202        753,070        
+Ethernet33     U              775,022        752,820        
+Ethernet34     U              776,043        750,856        
+Ethernet35     U              776,092        752,848        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:07:53 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.77%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             8.21%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.43%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.07%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.05%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.18%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         3.12%     90.47MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 4 ----> 3
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 25.7 us,  4.3 sy,  0.0 ni, 68.6 id,  0.0 wa,  0.0 hi,  1.4 si,  0.0 st
+MiB Mem :   3899.2 total,    210.2 free,   2237.1 used,   1451.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20568   7332 R  93.8   0.5   1516:44 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.51 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:08:05 up 20 days,  8:16,  2 users,  load average: 2.05, 2.30, 2.38
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2234         212          59        1452        1337
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 26.5 us,  8.8 sy,  0.0 ni, 64.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    213.5 free,   2234.0 used,   1451.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  29.4  13.7   1397:09 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:54.18 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.12 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:02.36 bgpd
+2014681 root      20   0 2048008  88952  32972 S   0.0   2.2  41:21.97 dockerd
+2014895 root      20   0  124656  61004   5140 S   0.0   1.5   1565:05 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:19.90 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.72 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.30 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,326      1,224,314      
+Ethernet1      U              1,146,259      1,224,428      
+Ethernet2      U              1,670,441      8,231,243      
+Ethernet3      U              1,146,295      1,224,490      
+Ethernet4      U              1,146,123      1,224,298      
+Ethernet5      U              1,146,195      1,224,335      
+Ethernet6      U              1,146,160      1,224,314      
+Ethernet7      U              1,146,277      1,224,474      
+Ethernet16     U              1,146,241      1,224,427      
+Ethernet17     U              1,146,211      1,224,383      
+Ethernet18     U              1,146,211      1,224,438      
+Ethernet19     U              1,146,215      1,224,383      
+Ethernet24     U              775,005        753,728        
+Ethernet25     U              775,100        753,674        
+Ethernet26     U              789,104        770,801        
+Ethernet27     U              973,976        1,048,913      
+Ethernet28     U              775,546        754,122        
+Ethernet29     U              776,551        753,450        
+Ethernet30     U              775,127        753,580        
+Ethernet31     U              776,611        754,265        
+Ethernet32     U              774,241        753,099        
+Ethernet33     U              775,061        752,849        
+Ethernet34     U              776,082        750,885        
+Ethernet35     U              776,131        752,877        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:08:14 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.72%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             0.18%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.48%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.04%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            12.91%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.50%     90.55MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 5 ----> 4
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 18.6 us, 15.7 sy,  0.0 ni, 64.3 id,  1.4 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    222.5 free,   2224.9 used,   1451.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1128997 root      20   0   20432  13564   5956 R  31.2   0.3   0:00.05 hostcfgd
+3417592 root      20   0 2585632 545668 103188 S  12.5  13.7   1397:11 syncd
+    310 root      20   0   45952  12208  10020 S   6.2   0.3  18:14.97 systemd-journal
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:08:27 up 20 days,  8:16,  2 users,  load average: 2.10, 2.29, 2.37
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2233         213          59        1452        1338
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 31.4 us, 21.4 sy,  0.0 ni, 47.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    209.7 free,   2237.4 used,   1452.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  25.0  13.7   1397:12 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:55.30 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.12 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:02.61 bgpd
+2014681 root      20   0 2048008  88368  32972 S   0.0   2.2  41:22.28 dockerd
+2014895 root      20   0  124656  60848   5140 S   0.0   1.5   1565:06 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:19.98 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.79 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.30 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,371      1,224,363      
+Ethernet1      U              1,146,304      1,224,477      
+Ethernet2      U              1,670,513      8,232,059      
+Ethernet3      U              1,146,342      1,224,541      
+Ethernet4      U              1,146,169      1,224,348      
+Ethernet5      U              1,146,242      1,224,386      
+Ethernet6      U              1,146,206      1,224,364      
+Ethernet7      U              1,146,322      1,224,523      
+Ethernet16     U              1,146,286      1,224,476      
+Ethernet17     U              1,146,256      1,224,432      
+Ethernet18     U              1,146,256      1,224,487      
+Ethernet19     U              1,146,260      1,224,432      
+Ethernet24     U              775,036        753,759        
+Ethernet25     U              775,131        753,705        
+Ethernet26     U              789,133        770,830        
+Ethernet27     U              974,016        1,048,957      
+Ethernet28     U              775,575        754,151        
+Ethernet29     U              776,580        753,479        
+Ethernet30     U              775,156        753,609        
+Ethernet31     U              776,642        754,296        
+Ethernet32     U              774,270        753,128        
+Ethernet33     U              775,092        752,880        
+Ethernet34     U              776,113        750,916        
+Ethernet35     U              776,162        752,908        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:08:37 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.76%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             5.69%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             4.17%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.28%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            15.58%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.13%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         9.21%     90.39MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 6 ----> 5
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 21.4 us,  8.6 sy,  0.0 ni, 70.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    208.9 free,   2238.0 used,   1452.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20572   7332 R  94.1   0.5   1517:16 systemd
+1130045 root      20   0   10784   3940   3260 R   5.9   0.1   0:00.02 top
+3417615 300       20   0  363728 117480   6832 S   5.9   2.9 133:02.78 bgpd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:08:50 up 20 days,  8:17,  2 users,  load average: 2.77, 2.46, 2.43
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2237         209          59        1452        1334
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 25.7 us, 21.4 sy,  0.0 ni, 52.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.9 free,   2240.9 used,   1452.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  23.5  13.7   1397:14 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:56.43 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.12 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:02.84 bgpd
+2014681 root      20   0 2048008  88752  32972 S   0.0   2.2  41:22.58 dockerd
+2014895 root      20   0  124656  61048   5140 S   0.0   1.5   1565:08 redis-server
+3417755 root      20   0 1393948  60432   6036 S   5.9   1.5  57:20.07 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.86 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.30 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,416      1,224,412      
+Ethernet1      U              1,146,349      1,224,526      
+Ethernet2      U              1,670,575      8,232,790      
+Ethernet3      U              1,146,385      1,224,588      
+Ethernet4      U              1,146,213      1,224,396      
+Ethernet5      U              1,146,285      1,224,433      
+Ethernet6      U              1,146,250      1,224,412      
+Ethernet7      U              1,146,367      1,224,572      
+Ethernet16     U              1,146,331      1,224,525      
+Ethernet17     U              1,146,301      1,224,481      
+Ethernet18     U              1,146,301      1,224,536      
+Ethernet19     U              1,146,305      1,224,481      
+Ethernet24     U              775,065        753,788        
+Ethernet25     U              775,160        753,734        
+Ethernet26     U              789,162        770,859        
+Ethernet27     U              974,055        1,049,000      
+Ethernet28     U              775,604        754,180        
+Ethernet29     U              776,609        753,508        
+Ethernet30     U              775,185        753,638        
+Ethernet31     U              776,671        754,325        
+Ethernet32     U              774,299        753,157        
+Ethernet33     U              775,121        752,909        
+Ethernet34     U              776,142        750,945        
+Ethernet35     U              776,191        752,937        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:08:59 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.76%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.02%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             10.51%    207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.56%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            16.69%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.15%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         18.14%    90.6MiB / 3.808GiB    2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 7 ----> 6
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 34.8 us, 21.7 sy,  0.0 ni, 43.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    209.5 free,   2237.2 used,   1452.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20572   7332 R  47.1   0.5   1517:31 systemd
+3417592 root      20   0 2585632 545668 103188 S  23.5  13.7   1397:16 syncd
+    451 message+  20   0    8048   3976   3224 S  11.8   0.1 160:56.62 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:09:12 up 20 days,  8:17,  2 users,  load average: 4.01, 2.80, 2.54
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2236         210          59        1452        1336
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 22.1 us, 22.1 sy,  0.0 ni, 55.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    206.7 free,   2239.8 used,   1452.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   5.9  13.7   1397:17 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:57.62 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.39 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:03.09 bgpd
+2014681 root      20   0 2048008  88752  32972 S   0.0   2.2  41:22.96 dockerd
+2014895 root      20   0  124656  60872   5140 S   0.0   1.5   1565:10 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.15 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:48.98 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.30 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,460      1,224,460      
+Ethernet1      U              1,146,393      1,224,574      
+Ethernet2      U              1,670,657      8,233,641      
+Ethernet3      U              1,146,435      1,224,642      
+Ethernet4      U              1,146,259      1,224,446      
+Ethernet5      U              1,146,333      1,224,487      
+Ethernet6      U              1,146,296      1,224,462      
+Ethernet7      U              1,146,411      1,224,620      
+Ethernet16     U              1,146,375      1,224,573      
+Ethernet17     U              1,146,345      1,224,529      
+Ethernet18     U              1,146,347      1,224,586      
+Ethernet19     U              1,146,351      1,224,531      
+Ethernet24     U              775,097        753,820        
+Ethernet25     U              775,192        753,766        
+Ethernet26     U              789,194        770,891        
+Ethernet27     U              974,094        1,049,043      
+Ethernet28     U              775,636        754,212        
+Ethernet29     U              776,641        753,540        
+Ethernet30     U              775,217        753,670        
+Ethernet31     U              776,703        754,357        
+Ethernet32     U              774,331        753,189        
+Ethernet33     U              775,153        752,941        
+Ethernet34     U              776,176        750,979        
+Ethernet35     U              776,225        752,971        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:09:23 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.69%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             0.14%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.04%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.31%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.17%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.34%     90.53MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 8 ----> 7
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 31.6 us, 11.8 sy,  0.0 ni, 56.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    207.9 free,   2238.3 used,   1453.0 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20572   7332 R  77.8   0.5   1517:52 systemd
+3417768 root      20   0  227896 134100  11048 S  16.7   3.4 734:58.66 python3
+3417592 root      20   0 2585632 545668 103188 S  11.1  13.7   1397:20 syncd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:09:41 up 20 days,  8:17,  2 users,  load average: 3.71, 2.83, 2.56
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2238         207          59        1452        1334
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 35.2 us, 12.7 sy,  0.0 ni, 52.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    192.1 free,   2254.3 used,   1452.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  56.2  13.7   1397:21 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 734:59.20 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.39 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:03.43 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:23.29 dockerd
+2014895 root      20   0  124656  60856   5140 S  18.8   1.5   1565:12 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.28 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   6.2   1.4  57:49.09 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.30 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,525      1,224,531      
+Ethernet1      U              1,146,458      1,224,645      
+Ethernet2      U              1,670,737      8,234,665      
+Ethernet3      U              1,146,496      1,224,709      
+Ethernet4      U              1,146,323      1,224,516      
+Ethernet5      U              1,146,396      1,224,554      
+Ethernet6      U              1,146,360      1,224,532      
+Ethernet7      U              1,146,476      1,224,691      
+Ethernet16     U              1,146,440      1,224,644      
+Ethernet17     U              1,146,410      1,224,600      
+Ethernet18     U              1,146,410      1,224,655      
+Ethernet19     U              1,146,414      1,224,600      
+Ethernet24     U              775,136        753,859        
+Ethernet25     U              775,233        753,807        
+Ethernet26     U              789,235        770,932        
+Ethernet27     U              974,146        1,049,101      
+Ethernet28     U              775,677        754,253        
+Ethernet29     U              776,682        753,581        
+Ethernet30     U              775,258        753,711        
+Ethernet31     U              776,742        754,396        
+Ethernet32     U              774,372        753,230        
+Ethernet33     U              775,194        752,982        
+Ethernet34     U              776,213        751,016        
+Ethernet35     U              776,262        753,008        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:09:51 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.71%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             10.81%    207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              11.19%    233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.06%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            12.24%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.24%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         6.17%     90.71MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 9 ----> 8
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 26.8 us,  8.5 sy,  0.0 ni, 63.4 id,  0.0 wa,  0.0 hi,  1.4 si,  0.0 st
+MiB Mem :   3899.2 total,    172.6 free,   2273.2 used,   1453.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20572   7332 R 100.0   0.5   1518:08 systemd
+3417592 root      20   0 2585632 545668 103188 S  25.0  13.7   1397:23 syncd
+1133823 root      20   0   10916   3948   3268 R   6.2   0.1   0:00.01 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:10:06 up 20 days,  8:18,  2 users,  load average: 2.79, 2.68, 2.52
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2238         207          59        1453        1334
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 26.8 us, 23.9 sy,  0.0 ni, 49.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.7 free,   2240.1 used,   1453.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   5.9  13.7   1397:24 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:00.31 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.39 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:03.69 bgpd
+2014681 root      20   0 2048008  89184  32972 S   0.0   2.2  41:23.72 dockerd
+2014895 root      20   0  124656  61184   5140 S   0.0   1.5   1565:14 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.36 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:49.17 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.69 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.31 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,574      1,224,582      
+Ethernet1      U              1,146,507      1,224,696      
+Ethernet2      U              1,670,809      8,235,472      
+Ethernet3      U              1,146,545      1,224,760      
+Ethernet4      U              1,146,373      1,224,567      
+Ethernet5      U              1,146,448      1,224,608      
+Ethernet6      U              1,146,410      1,224,584      
+Ethernet7      U              1,146,525      1,224,742      
+Ethernet16     U              1,146,489      1,224,695      
+Ethernet17     U              1,146,461      1,224,653      
+Ethernet18     U              1,146,461      1,224,708      
+Ethernet19     U              1,146,465      1,224,653      
+Ethernet24     U              775,173        753,894        
+Ethernet25     U              775,268        753,840        
+Ethernet26     U              789,277        770,972        
+Ethernet27     U              974,192        1,049,149      
+Ethernet28     U              775,715        754,289        
+Ethernet29     U              776,719        753,616        
+Ethernet30     U              775,296        753,747        
+Ethernet31     U              776,779        754,431        
+Ethernet32     U              774,411        753,267        
+Ethernet33     U              775,229        753,015        
+Ethernet34     U              776,250        751,051        
+Ethernet35     U              776,300        753,044        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:10:15 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.76%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             8.58%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             4.50%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.04%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.67%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            11.00%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.13%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         6.70%     90.41MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 10 ----> 9
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 25.7 us, 13.5 sy,  0.0 ni, 60.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.1 free,   2240.6 used,   1453.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20580   7332 R  76.5   0.5   1518:27 systemd
+1134997 root      20   0   10928   3932   3252 R   5.9   0.1   0:00.01 top
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.51 kthreadd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:10:32 up 20 days,  8:18,  2 users,  load average: 3.10, 2.78, 2.56
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2238         207          59        1453        1334
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 33.8 us,  7.0 sy,  0.0 ni, 57.7 id,  0.0 wa,  0.0 hi,  1.4 si,  0.0 st
+MiB Mem :   3899.2 total,    210.1 free,   2235.5 used,   1453.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  31.2  13.7   1397:27 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:01.66 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.39 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:03.97 bgpd
+2014681 root      20   0 2048008  89448  32972 S   0.0   2.2  41:23.99 dockerd
+2014895 root      20   0  124656  60768   5140 S  25.0   1.5   1565:16 redis-server
+3417755 root      20   0 1393948  60432   6036 S   6.2   1.5  57:20.47 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   6.2   1.4  57:49.30 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.70 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.31 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,639      1,224,653      
+Ethernet1      U              1,146,572      1,224,767      
+Ethernet2      U              1,670,902      8,236,505      
+Ethernet3      U              1,146,608      1,224,829      
+Ethernet4      U              1,146,431      1,224,630      
+Ethernet5      U              1,146,511      1,224,677      
+Ethernet6      U              1,146,466      1,224,645      
+Ethernet7      U              1,146,590      1,224,813      
+Ethernet16     U              1,146,554      1,224,766      
+Ethernet17     U              1,146,525      1,224,723      
+Ethernet18     U              1,146,524      1,224,777      
+Ethernet19     U              1,146,528      1,224,722      
+Ethernet24     U              775,210        753,931        
+Ethernet25     U              775,307        753,879        
+Ethernet26     U              789,314        771,009        
+Ethernet27     U              974,243        1,049,206      
+Ethernet28     U              775,752        754,326        
+Ethernet29     U              776,756        753,653        
+Ethernet30     U              775,333        753,784        
+Ethernet31     U              776,816        754,468        
+Ethernet32     U              774,448        753,304        
+Ethernet33     U              775,268        753,054        
+Ethernet34     U              776,287        751,088        
+Ethernet35     U              776,337        753,081        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:10:44 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.74%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.02%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             4.89%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              1.48%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.07%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            17.97%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.17%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.16%     90.68MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 11 ----> 10
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 31.4 us, 24.3 sy,  0.0 ni, 44.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.1 free,   2243.3 used,   1453.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20580   7332 S  25.0   0.5   1518:47 systemd
+    451 message+  20   0    8048   3976   3224 S  18.8   0.1 161:04.62 dbus-daemon
+2014895 root      20   0  124656  60880   5140 S  18.8   1.5   1565:17 redis-server
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:11:00 up 20 days,  8:19,  2 users,  load average: 3.33, 2.89, 2.60
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2235         209          58        1453        1337
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 25.4 us,  5.6 sy,  0.0 ni, 69.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    206.1 free,   2239.1 used,   1454.0 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1397:31 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:03.17 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.39 rest_server
+3417615 300       20   0  363728 117480   6832 S   6.2   2.9 133:04.30 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:24.41 dockerd
+2014895 root      20   0  124656  60880   5140 S   0.0   1.5   1565:18 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.60 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:49.39 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.70 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.31 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,688      1,224,706      
+Ethernet1      U              1,146,621      1,224,820      
+Ethernet2      U              1,670,979      8,237,436      
+Ethernet3      U              1,146,657      1,224,882      
+Ethernet4      U              1,146,486      1,224,690      
+Ethernet5      U              1,146,560      1,224,730      
+Ethernet6      U              1,146,522      1,224,706      
+Ethernet7      U              1,146,639      1,224,866      
+Ethernet16     U              1,146,603      1,224,819      
+Ethernet17     U              1,146,576      1,224,778      
+Ethernet18     U              1,146,573      1,224,830      
+Ethernet19     U              1,146,577      1,224,775      
+Ethernet24     U              775,249        753,970        
+Ethernet25     U              775,344        753,916        
+Ethernet26     U              789,351        771,046        
+Ethernet27     U              974,288        1,049,255      
+Ethernet28     U              775,789        754,363        
+Ethernet29     U              776,793        753,690        
+Ethernet30     U              775,370        753,821        
+Ethernet31     U              776,855        754,507        
+Ethernet32     U              774,485        753,341        
+Ethernet33     U              775,305        753,091        
+Ethernet34     U              776,326        751,127        
+Ethernet35     U              776,376        753,120        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:11:10 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.68%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             7.02%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.04%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.24%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            9.89%     468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.15%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.40%     91.1MiB / 3.808GiB    2.34%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 12 ----> 11
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 28.2 us, 11.3 sy,  0.0 ni, 60.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.0 free,   2239.9 used,   1454.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20580   7332 R  70.6   0.5   1519:04 systemd
+1137314 root      20   0   10928   3932   3252 R   5.9   0.1   0:00.01 top
+3417592 root      20   0 2585632 545668 103188 S   5.9  13.7   1397:32 syncd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:11:23 up 20 days,  8:19,  2 users,  load average: 3.07, 2.85, 2.60
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2234         210          58        1454        1338
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 29.2 us,  6.9 sy,  0.0 ni, 63.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    208.3 free,   2236.6 used,   1454.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  31.2  13.7   1397:33 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:04.20 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.39 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:04.53 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:24.71 dockerd
+2014895 root      20   0  124656  60836   5140 R   6.2   1.5   1565:19 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.68 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:49.47 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.70 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.31 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,733      1,224,755      
+Ethernet1      U              1,146,666      1,224,869      
+Ethernet2      U              1,671,046      8,238,200      
+Ethernet3      U              1,146,702      1,224,931      
+Ethernet4      U              1,146,531      1,224,739      
+Ethernet5      U              1,146,605      1,224,779      
+Ethernet6      U              1,146,567      1,224,755      
+Ethernet7      U              1,146,684      1,224,915      
+Ethernet16     U              1,146,648      1,224,868      
+Ethernet17     U              1,146,621      1,224,827      
+Ethernet18     U              1,146,618      1,224,879      
+Ethernet19     U              1,146,622      1,224,824      
+Ethernet24     U              775,280        754,001        
+Ethernet25     U              775,375        753,947        
+Ethernet26     U              789,384        771,079        
+Ethernet27     U              974,328        1,049,299      
+Ethernet28     U              775,822        754,396        
+Ethernet29     U              776,826        753,723        
+Ethernet30     U              775,403        753,854        
+Ethernet31     U              776,886        754,538        
+Ethernet32     U              774,518        753,374        
+Ethernet33     U              775,336        753,122        
+Ethernet34     U              776,357        751,158        
+Ethernet35     U              776,407        753,151        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:11:32 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.74%     137MiB / 3.808GiB     3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             10.61%    207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.06%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.59%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            14.23%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.10%     90.69MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 13 ----> 12
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 25.7 us, 25.7 sy,  0.0 ni, 48.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    200.4 free,   2244.3 used,   1454.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20584   7332 S  41.2   0.5   1519:20 systemd
+    451 message+  20   0    8048   3976   3224 S  23.5   0.1 161:08.04 dbus-daemon
+    310 root      20   0   45952  12840  10652 S  11.8   0.3  18:16.63 systemd-journal
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:11:48 up 20 days,  8:20,  2 users,  load average: 3.74, 3.01, 2.65
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2258         185          59        1454        1313
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 24.3 us,  7.1 sy,  0.0 ni, 68.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    203.4 free,   2241.4 used,   1454.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1397:36 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:05.56 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.66 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:04.80 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:25.06 dockerd
+2014895 root      20   0  124656  61084   5140 S   0.0   1.5   1565:21 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.78 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S  12.5   1.4  57:49.61 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.70 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.32 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,796      1,224,824      
+Ethernet1      U              1,146,729      1,224,938      
+Ethernet2      U              1,671,138      8,239,232      
+Ethernet3      U              1,146,766      1,225,001      
+Ethernet4      U              1,146,589      1,224,802      
+Ethernet5      U              1,146,670      1,224,850      
+Ethernet6      U              1,146,625      1,224,818      
+Ethernet7      U              1,146,747      1,224,985      
+Ethernet16     U              1,146,711      1,224,937      
+Ethernet17     U              1,146,682      1,224,894      
+Ethernet18     U              1,146,683      1,224,950      
+Ethernet19     U              1,146,687      1,224,895      
+Ethernet24     U              775,319        754,040        
+Ethernet25     U              775,414        753,986        
+Ethernet26     U              789,421        771,116        
+Ethernet27     U              974,380        1,049,357      
+Ethernet28     U              775,859        754,433        
+Ethernet29     U              776,863        753,760        
+Ethernet30     U              775,440        753,891        
+Ethernet31     U              776,925        754,577        
+Ethernet32     U              774,555        753,411        
+Ethernet33     U              775,375        753,161        
+Ethernet34     U              776,396        751,197        
+Ethernet35     U              776,446        753,190        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:12:02 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.77%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             12.69%    207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              2.92%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.04%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            14.84%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.19%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.41%     90.91MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 14 ----> 13
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 20.0 us, 24.0 sy,  0.0 ni, 56.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    206.5 free,   2237.9 used,   1454.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20584   7332 S  58.8   0.5   1519:43 systemd
+    451 message+  20   0    8048   3976   3224 R  17.6   0.1 161:10.36 dbus-daemon
+    481 root      20   0   13536   5304   4536 S  11.8   0.1  72:34.63 systemd-logind
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:12:21 up 20 days,  8:20,  2 users,  load average: 3.73, 3.05, 2.68
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2237         206          58        1454        1334
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 24.6 us,  4.3 sy,  0.0 ni, 71.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.8 free,   2238.4 used,   1455.0 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   6.2  13.7   1397:40 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:07.20 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.66 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:05.16 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:25.45 dockerd
+2014895 root      20   0  124656  60976   5140 S   0.0   1.5   1565:24 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:20.93 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:49.72 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.70 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.32 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,863      1,224,897      
+Ethernet1      U              1,146,796      1,225,011      
+Ethernet2      U              1,671,237      8,240,346      
+Ethernet3      U              1,146,833      1,225,074      
+Ethernet4      U              1,146,655      1,224,874      
+Ethernet5      U              1,146,737      1,224,923      
+Ethernet6      U              1,146,690      1,224,889      
+Ethernet7      U              1,146,814      1,225,058      
+Ethernet16     U              1,146,778      1,225,010      
+Ethernet17     U              1,146,749      1,224,967      
+Ethernet18     U              1,146,748      1,225,021      
+Ethernet19     U              1,146,752      1,224,966      
+Ethernet24     U              775,362        754,083        
+Ethernet25     U              775,459        754,031        
+Ethernet26     U              789,466        771,161        
+Ethernet27     U              974,435        1,049,418      
+Ethernet28     U              775,904        754,478        
+Ethernet29     U              776,908        753,805        
+Ethernet30     U              775,485        753,936        
+Ethernet31     U              776,968        754,620        
+Ethernet32     U              774,600        753,456        
+Ethernet33     U              775,420        753,206        
+Ethernet34     U              776,439        751,240        
+Ethernet35     U              776,489        753,233        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:12:34 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.75%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             2.50%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              1.52%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            14.51%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         3.48%     90.79MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 15 ----> 14
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 23.5 us,  4.4 sy,  0.0 ni, 72.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.7 free,   2238.2 used,   1455.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20588   7332 R 100.0   0.5   1520:04 systemd
+    481 root      20   0   13536   5304   4536 S   6.2   0.1  72:35.60 systemd-logind
+1141058 root      20   0   10784   3952   3268 R   6.2   0.1   0:00.01 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:12:49 up 20 days,  8:21,  2 users,  load average: 3.33, 3.02, 2.67
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2237         206          59        1455        1334
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 24.0 us, 14.7 sy,  0.0 ni, 61.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.3 free,   2241.5 used,   1455.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   5.6  13.7   1397:43 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:08.60 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.66 rest_server
+3417615 300       20   0  363728 117480   6832 S   5.6   2.9 133:05.47 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:25.76 dockerd
+2014895 root      20   0  124656  60892   5140 S   0.0   1.5   1565:26 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.04 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:49.81 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.71 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.32 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,912      1,224,950      
+Ethernet1      U              1,146,845      1,225,064      
+Ethernet2      U              1,671,313      8,241,243      
+Ethernet3      U              1,146,880      1,225,125      
+Ethernet4      U              1,146,710      1,224,934      
+Ethernet5      U              1,146,784      1,224,974      
+Ethernet6      U              1,146,746      1,224,950      
+Ethernet7      U              1,146,863      1,225,111      
+Ethernet16     U              1,146,827      1,225,063      
+Ethernet17     U              1,146,800      1,225,022      
+Ethernet18     U              1,146,797      1,225,074      
+Ethernet19     U              1,146,801      1,225,019      
+Ethernet24     U              775,399        754,120        
+Ethernet25     U              775,496        754,068        
+Ethernet26     U              789,503        771,198        
+Ethernet27     U              974,479        1,049,466      
+Ethernet28     U              775,941        754,515        
+Ethernet29     U              776,945        753,842        
+Ethernet30     U              775,522        753,973        
+Ethernet31     U              777,005        754,657        
+Ethernet32     U              774,637        753,493        
+Ethernet33     U              775,457        753,243        
+Ethernet34     U              776,476        751,277        
+Ethernet35     U              776,526        753,270        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:13:01 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.74%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             4.99%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.25%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            15.51%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.28%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.34%     90.7MiB / 3.808GiB    2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 16 ----> 15
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 21.4 us, 12.9 sy,  0.0 ni, 65.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    204.7 free,   2239.2 used,   1455.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1142106 root      20   0   48100  32844  14136 R  62.5   0.8   0:00.52 hostcfgd
+      1 root      20   0  175520  20588   7332 S  12.5   0.5   1520:27 systemd
+    377 root      16  -4    7164   4388   2944 S   6.2   0.1   1:18.49 audisp-tacplus
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:13:25 up 20 days,  8:21,  2 users,  load average: 2.88, 2.95, 2.66
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2237         206          58        1455        1335
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 27.1 us, 10.0 sy,  0.0 ni, 62.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.4 free,   2238.1 used,   1455.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  17.6  13.7   1397:48 syncd
+3417768 root      20   0  227896 134100  11048 S   5.9   3.4 735:10.46 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.66 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:05.85 bgpd
+2014681 root      20   0 2048008  88660  32972 S   0.0   2.2  41:26.13 dockerd
+2014895 root      20   0  124656  60840   5140 S  11.8   1.5   1565:28 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.19 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   5.9   1.4  57:49.98 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.71 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.33 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,146,991      1,225,025      
+Ethernet1      U              1,146,924      1,225,139      
+Ethernet2      U              1,671,440      8,242,504      
+Ethernet3      U              1,146,973      1,225,216      
+Ethernet4      U              1,146,790      1,225,010      
+Ethernet5      U              1,146,877      1,225,065      
+Ethernet6      U              1,146,827      1,225,027      
+Ethernet7      U              1,146,942      1,225,186      
+Ethernet16     U              1,146,908      1,225,142      
+Ethernet17     U              1,146,879      1,225,097      
+Ethernet18     U              1,146,880      1,225,153      
+Ethernet19     U              1,146,884      1,225,098      
+Ethernet24     U              775,458        754,169        
+Ethernet25     U              775,555        754,117        
+Ethernet26     U              789,562        771,247        
+Ethernet27     U              974,548        1,049,531      
+Ethernet28     U              776,000        754,564        
+Ethernet29     U              777,004        753,891        
+Ethernet30     U              775,581        754,022        
+Ethernet31     U              777,064        754,706        
+Ethernet32     U              774,696        753,542        
+Ethernet33     U              775,516        753,292        
+Ethernet34     U              776,535        751,326        
+Ethernet35     U              776,585        753,319        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:13:38 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.70%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.02%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             6.01%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.03%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.59%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.12%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.21%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.10%     90.59MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 17 ----> 16
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 27.1 us,  7.1 sy,  0.0 ni, 65.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.2 free,   2237.9 used,   1456.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20592   7332 R 100.0   0.5   1520:49 systemd
+3417768 root      20   0  227896 134100  11048 S  12.5   3.4 735:11.40 python3
+     13 root      20   0       0      0      0 I   6.2   0.0  40:02.71 rcu_sched
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:13:53 up 20 days,  8:22,  2 users,  load average: 2.42, 2.82, 2.63
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2242         200          59        1456        1329
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 24.6 us, 15.9 sy,  0.0 ni, 59.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    203.5 free,   2239.7 used,   1456.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  35.3  13.7   1397:51 syncd
+3417768 root      20   0  227896 134100  11048 S   0.0   3.4 735:11.77 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.66 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:06.16 bgpd
+2014681 root      20   0 2048008  89180  32972 S   0.0   2.2  41:26.49 dockerd
+2014895 root      20   0  124656  60896   5140 S  11.8   1.5   1565:30 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.28 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.06 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.71 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.33 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,052      1,225,092      
+Ethernet1      U              1,146,985      1,225,206      
+Ethernet2      U              1,671,514      8,243,386      
+Ethernet3      U              1,147,022      1,225,269      
+Ethernet4      U              1,146,844      1,225,069      
+Ethernet5      U              1,146,927      1,225,119      
+Ethernet6      U              1,146,879      1,225,084      
+Ethernet7      U              1,147,003      1,225,253      
+Ethernet16     U              1,146,967      1,225,205      
+Ethernet17     U              1,146,938      1,225,162      
+Ethernet18     U              1,146,937      1,225,216      
+Ethernet19     U              1,146,941      1,225,161      
+Ethernet24     U              775,493        754,204        
+Ethernet25     U              775,588        754,150        
+Ethernet26     U              789,595        771,280        
+Ethernet27     U              974,597        1,049,586      
+Ethernet28     U              776,030        754,597        
+Ethernet29     U              777,037        753,924        
+Ethernet30     U              775,614        754,055        
+Ethernet31     U              777,099        754,741        
+Ethernet32     U              774,729        753,575        
+Ethernet33     U              775,549        753,325        
+Ethernet34     U              776,570        751,361        
+Ethernet35     U              776,620        753,354        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:14:02 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.74%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.02%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             7.31%     207.1MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              1.70%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.03%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.87%     90.89MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 18 ----> 17
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 22.9 us,  7.1 sy,  0.0 ni, 70.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    204.1 free,   2238.8 used,   1456.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20592   7332 R  94.1   0.5   1521:07 systemd
+1145038 root      20   0   10784   3952   3260 R   5.9   0.1   0:00.01 top
+3417755 root      20   0 1393948  60432   6036 S   5.9   1.5  57:21.35 dialout_client_
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:14:18 up 20 days,  8:22,  2 users,  load average: 2.11, 2.72, 2.60
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2239         203          59        1456        1333
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 30.0 us,  7.1 sy,  0.0 ni, 62.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.8 free,   2239.9 used,   1456.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1397:54 syncd
+3417768 root      20   0  227896 134100  11048 S  17.6   3.4 735:13.00 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.93 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:06.43 bgpd
+2014681 root      20   0 2048008  89180  32972 S   0.0   2.2  41:26.87 dockerd
+2014895 root      20   0  124656  60920   5140 S   0.0   1.5   1565:32 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.37 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.18 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.71 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.33 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,099      1,225,143      
+Ethernet1      U              1,147,032      1,225,257      
+Ethernet2      U              1,671,586      8,244,250      
+Ethernet3      U              1,147,069      1,225,320      
+Ethernet4      U              1,146,898      1,225,128      
+Ethernet5      U              1,146,974      1,225,170      
+Ethernet6      U              1,146,934      1,225,144      
+Ethernet7      U              1,147,050      1,225,304      
+Ethernet16     U              1,147,014      1,225,256      
+Ethernet17     U              1,146,988      1,225,216      
+Ethernet18     U              1,146,984      1,225,267      
+Ethernet19     U              1,146,988      1,225,212      
+Ethernet24     U              775,528        754,239        
+Ethernet25     U              775,623        754,185        
+Ethernet26     U              789,632        771,317        
+Ethernet27     U              974,637        1,049,630      
+Ethernet28     U              776,061        754,634        
+Ethernet29     U              777,074        753,961        
+Ethernet30     U              775,651        754,092        
+Ethernet31     U              777,134        754,776        
+Ethernet32     U              774,766        753,612        
+Ethernet33     U              775,584        753,360        
+Ethernet34     U              776,605        751,396        
+Ethernet35     U              776,655        753,389        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:14:27 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.79%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             19.42%    207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              2.13%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.07%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            13.68%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.98MiB / 3.808GiB   1.79%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         7.30%     90.62MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 19 ----> 18
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 27.9 us, 23.5 sy,  0.0 ni, 48.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.5 free,   2240.0 used,   1456.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20592   7332 S  31.2   0.5   1521:23 systemd
+    451 message+  20   0    8048   3976   3224 S  18.8   0.1 161:20.84 dbus-daemon
+    481 root      20   0   13536   5304   4536 S  12.5   0.1  72:39.35 systemd-logind
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:14:40 up 20 days,  8:22,  2 users,  load average: 2.68, 2.83, 2.64
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2237         205          59        1456        1335
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 20.6 us, 11.8 sy,  0.0 ni, 67.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.6 free,   2236.9 used,   1456.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   6.2  13.7   1397:57 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:14.26 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.93 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:06.69 bgpd
+2014681 root      20   0 2048008  89180  32972 S   0.0   2.2  41:27.17 dockerd
+2014895 root      20   0  124656  60928   5140 S   0.0   1.5   1565:34 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.45 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.27 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.71 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.33 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,145      1,225,192      
+Ethernet1      U              1,147,076      1,225,305      
+Ethernet2      U              1,671,655      8,245,044      
+Ethernet3      U              1,147,113      1,225,368      
+Ethernet4      U              1,146,942      1,225,176      
+Ethernet5      U              1,147,018      1,225,218      
+Ethernet6      U              1,146,979      1,225,193      
+Ethernet7      U              1,147,095      1,225,352      
+Ethernet16     U              1,147,061      1,225,306      
+Ethernet17     U              1,147,033      1,225,264      
+Ethernet18     U              1,147,030      1,225,317      
+Ethernet19     U              1,147,034      1,225,262      
+Ethernet24     U              775,558        754,269        
+Ethernet25     U              775,653        754,215        
+Ethernet26     U              789,660        771,345        
+Ethernet27     U              974,675        1,049,672      
+Ethernet28     U              776,090        754,662        
+Ethernet29     U              777,102        753,979        
+Ethernet30     U              775,679        754,120        
+Ethernet31     U              777,164        754,806        
+Ethernet32     U              774,794        753,640        
+Ethernet33     U              775,614        753,390        
+Ethernet34     U              776,635        751,426        
+Ethernet35     U              776,685        753,419        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:14:50 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.68%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             1.20%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             4.28%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.52%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.04%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            14.34%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             1.58%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         7.18%     91.29MiB / 3.808GiB   2.34%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 20 ----> 19
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 57.7 us, 32.1 sy,  0.0 ni, 10.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    160.7 free,   2281.6 used,   1456.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+1147394 root      20   0   42908  26972  13416 R  50.0   0.7   0:00.28 route_check.py
+1147396 root      20   0   32204  24668   9480 R  50.0   0.6   0:00.29 python3
+1147399 root      20   0   28736  21056   9352 R  44.4   0.5   0:00.24 python3
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:15:04 up 20 days,  8:23,  2 users,  load average: 2.94, 2.88, 2.66
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2236         205          59        1457        1336
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 30.4 us, 11.6 sy,  0.0 ni, 58.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    207.2 free,   2235.3 used,   1456.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  37.5  13.7   1398:00 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:15.32 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.93 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:06.93 bgpd
+2014681 root      20   0 2048008  88332  32972 S   0.0   2.2  41:27.56 dockerd
+2014895 root      20   0  124656  61172   5140 R  12.5   1.5   1565:36 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.57 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.35 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.72 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.33 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,197      1,225,246      
+Ethernet1      U              1,147,129      1,225,360      
+Ethernet2      U              1,671,734      8,245,925      
+Ethernet3      U              1,147,164      1,225,421      
+Ethernet4      U              1,146,996      1,225,232      
+Ethernet5      U              1,147,069      1,225,271      
+Ethernet6      U              1,147,029      1,225,245      
+Ethernet7      U              1,147,146      1,225,405      
+Ethernet16     U              1,147,110      1,225,357      
+Ethernet17     U              1,147,085      1,225,318      
+Ethernet18     U              1,147,081      1,225,370      
+Ethernet19     U              1,147,086      1,225,316      
+Ethernet24     U              775,596        754,305        
+Ethernet25     U              775,692        754,252        
+Ethernet26     U              789,697        771,380        
+Ethernet27     U              974,720        1,049,719      
+Ethernet28     U              776,129        754,699        
+Ethernet29     U              777,139        753,998        
+Ethernet30     U              775,716        754,155        
+Ethernet31     U              777,201        754,841        
+Ethernet32     U              774,831        753,675        
+Ethernet33     U              775,651        753,425        
+Ethernet34     U              776,672        751,461        
+Ethernet35     U              776,724        753,456        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:15:14 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.65%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             2.42%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.67%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            13.87%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         7.48%     90.84MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 21 ----> 20
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 30.6 us, 22.2 sy,  0.0 ni, 47.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    203.4 free,   2238.6 used,   1457.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20592   7332 S  56.2   0.5   1521:56 systemd
+3417592 root      20   0 2585632 545668 103188 S  31.2  13.7   1398:02 syncd
+    451 message+  20   0    8048   3976   3224 R  18.8   0.1 161:24.36 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:15:29 up 20 days,  8:23,  2 users,  load average: 2.76, 2.84, 2.66
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2239         202          59        1457        1332
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 26.4 us, 11.1 sy,  0.0 ni, 62.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    204.5 free,   2237.4 used,   1457.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  18.8  13.7   1398:03 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:16.47 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.93 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:07.19 bgpd
+2014681 root      20   0 2048008  88332  32972 S   0.0   2.2  41:27.84 dockerd
+2014895 root      20   0  124656  61112   5140 S   0.0   1.5   1565:37 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.66 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.42 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.72 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.33 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,244      1,225,297      
+Ethernet1      U              1,147,176      1,225,411      
+Ethernet2      U              1,671,813      8,246,778      
+Ethernet3      U              1,147,223      1,225,486      
+Ethernet4      U              1,147,042      1,225,282      
+Ethernet5      U              1,147,128      1,225,336      
+Ethernet6      U              1,147,078      1,225,298      
+Ethernet7      U              1,147,193      1,225,456      
+Ethernet16     U              1,147,160      1,225,412      
+Ethernet17     U              1,147,132      1,225,369      
+Ethernet18     U              1,147,132      1,225,425      
+Ethernet19     U              1,147,145      1,225,381      
+Ethernet24     U              775,629        754,338        
+Ethernet25     U              775,725        754,285        
+Ethernet26     U              789,730        771,413        
+Ethernet27     U              974,760        1,049,763      
+Ethernet28     U              776,162        754,732        
+Ethernet29     U              777,172        754,015        
+Ethernet30     U              775,749        754,188        
+Ethernet31     U              777,234        754,874        
+Ethernet32     U              774,864        753,708        
+Ethernet33     U              775,684        753,458        
+Ethernet34     U              776,705        751,494        
+Ethernet35     U              776,757        753,489        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:15:38 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.71%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.02%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             5.80%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.05%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.34%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.68%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.15%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.76%     90.81MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 22 ----> 21
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 26.1 us,  7.2 sy,  0.0 ni, 66.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.1 free,   2239.4 used,   1457.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20596   7332 R  94.1   0.5   1522:13 systemd
+3417592 root      20   0 2585632 545668 103188 S  29.4  13.7   1398:05 syncd
+1149622 root      20   0   10916   3984   3300 R   5.9   0.1   0:00.01 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:15:51 up 20 days,  8:24,  2 users,  load average: 2.82, 2.85, 2.66
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2236         204          58        1457        1335
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 23.5 us,  5.9 sy,  0.0 ni, 70.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    205.0 free,   2236.5 used,   1457.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1398:06 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:17.68 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.93 rest_server
+3417615 300       20   0  363728 117480   6832 S   5.9   2.9 133:07.44 bgpd
+2014681 root      20   0 2048008  88592  32972 S   0.0   2.2  41:28.14 dockerd
+2014895 root      20   0  124656  60944   5140 S   0.0   1.5   1565:39 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.75 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.53 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.72 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.34 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,305      1,225,364      
+Ethernet1      U              1,147,237      1,225,478      
+Ethernet2      U              1,671,886      8,247,633      
+Ethernet3      U              1,147,270      1,225,537      
+Ethernet4      U              1,147,096      1,225,341      
+Ethernet5      U              1,147,175      1,225,387      
+Ethernet6      U              1,147,129      1,225,354      
+Ethernet7      U              1,147,254      1,225,523      
+Ethernet16     U              1,147,218      1,225,475      
+Ethernet17     U              1,147,191      1,225,434      
+Ethernet18     U              1,147,189      1,225,488      
+Ethernet19     U              1,147,192      1,225,432      
+Ethernet24     U              775,662        754,371        
+Ethernet25     U              775,758        754,318        
+Ethernet26     U              789,763        771,446        
+Ethernet27     U              974,808        1,049,816      
+Ethernet28     U              776,195        754,765        
+Ethernet29     U              777,205        754,032        
+Ethernet30     U              775,782        754,221        
+Ethernet31     U              777,267        754,907        
+Ethernet32     U              774,897        753,741        
+Ethernet33     U              775,717        753,491        
+Ethernet34     U              776,738        751,527        
+Ethernet35     U              776,790        753,522        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:16:02 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.71%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             11.95%    207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.04%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              3.33%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.06%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.09%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.06%     90.95MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 23 ----> 22
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 28.2 us, 16.7 sy,  0.0 ni, 55.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    197.5 free,   2243.6 used,   1458.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20600   7332 R  68.4   0.5   1522:31 systemd
+     12 root      20   0       0      0      0 S   5.3   0.0   3:43.29 ksoftirqd/0
+    451 message+  20   0    8048   3976   3224 S   5.3   0.1 161:27.95 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:16:18 up 20 days,  8:24,  2 users,  load average: 2.16, 2.69, 2.61
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2243         197          59        1458        1328
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 23.5 us,  4.4 sy,  0.0 ni, 72.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    206.8 free,   2234.6 used,   1457.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   5.9  13.7   1398:09 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:18.92 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:31.93 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:07.76 bgpd
+2014681 root      20   0 2048008  89116  32972 S   0.0   2.2  41:28.58 dockerd
+2014895 root      20   0  124656  60868   5140 S   0.0   1.5   1565:41 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.88 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   5.9   1.4  57:50.63 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.72 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,352      1,225,415      
+Ethernet1      U              1,147,284      1,225,529      
+Ethernet2      U              1,671,959      8,248,509      
+Ethernet3      U              1,147,319      1,225,590      
+Ethernet4      U              1,147,150      1,225,400      
+Ethernet5      U              1,147,224      1,225,440      
+Ethernet6      U              1,147,184      1,225,414      
+Ethernet7      U              1,147,301      1,225,574      
+Ethernet16     U              1,147,265      1,225,526      
+Ethernet17     U              1,147,240      1,225,487      
+Ethernet18     U              1,147,236      1,225,539      
+Ethernet19     U              1,147,241      1,225,485      
+Ethernet24     U              775,697        754,406        
+Ethernet25     U              775,795        754,355        
+Ethernet26     U              789,800        771,483        
+Ethernet27     U              974,849        1,049,861      
+Ethernet28     U              776,232        754,802        
+Ethernet29     U              777,242        754,051        
+Ethernet30     U              775,819        754,258        
+Ethernet31     U              777,302        754,942        
+Ethernet32     U              774,934        753,778        
+Ethernet33     U              775,754        753,528        
+Ethernet34     U              776,773        751,562        
+Ethernet35     U              776,825        753,557        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:16:27 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.80%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             19.53%    207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.04%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              3.12%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.35%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         6.24%     90.73MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 24 ----> 23
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 18.8 us, 13.0 sy,  0.0 ni, 68.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    204.2 free,   2237.1 used,   1457.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20600   7332 S  93.8   0.5   1522:48 systemd
+    451 message+  20   0    8048   3976   3224 S   6.2   0.1 161:29.74 dbus-daemon
+1151886 root      20   0   10784   3916   3232 R   6.2   0.1   0:00.01 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:16:42 up 20 days,  8:25,  2 users,  load average: 2.32, 2.69, 2.62
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2236         204          59        1458        1335
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 31.4 us, 24.3 sy,  0.0 ni, 44.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.3 free,   2238.5 used,   1458.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  23.5  13.7   1398:12 syncd
+3417768 root      20   0  228044 134100  11048 S   5.9   3.4 735:20.09 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:08.02 bgpd
+2014681 root      20   0 2048008  88912  32984 S   0.0   2.2  41:28.88 dockerd
+2014895 root      20   0  124656  60664   5140 S   5.9   1.5   1565:43 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:21.97 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   5.9   1.4  57:50.72 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.72 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,398      1,225,465      
+Ethernet1      U              1,147,330      1,225,579      
+Ethernet2      U              1,672,034      8,249,354      
+Ethernet3      U              1,147,365      1,225,640      
+Ethernet4      U              1,147,197      1,225,451      
+Ethernet5      U              1,147,270      1,225,490      
+Ethernet6      U              1,147,230      1,225,464      
+Ethernet7      U              1,147,347      1,225,624      
+Ethernet16     U              1,147,311      1,225,576      
+Ethernet17     U              1,147,286      1,225,537      
+Ethernet18     U              1,147,282      1,225,589      
+Ethernet19     U              1,147,287      1,225,535      
+Ethernet24     U              775,731        754,440        
+Ethernet25     U              775,827        754,387        
+Ethernet26     U              789,832        771,515        
+Ethernet27     U              974,889        1,049,905      
+Ethernet28     U              776,264        754,834        
+Ethernet29     U              777,274        754,067        
+Ethernet30     U              775,851        754,290        
+Ethernet31     U              777,336        754,976        
+Ethernet32     U              774,966        753,810        
+Ethernet33     U              775,786        753,560        
+Ethernet34     U              776,807        751,596        
+Ethernet35     U              776,859        753,591        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:16:53 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.79%     137MiB / 3.808GiB     3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             7.21%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              8.81%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 897MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            14.71%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.19%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.03%     91.2MiB / 3.808GiB    2.34%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 25 ----> 24
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 24.3 us,  7.1 sy,  0.0 ni, 68.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.6 free,   2238.1 used,   1458.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20604   7332 R 100.0   0.5   1523:06 systemd
+3417025 root      20   0  711032  15224   5960 S  12.5   0.4   1:54.24 containerd-shim
+1153088 root      20   0   10784   3952   3268 R   6.2   0.1   0:00.02 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:17:08 up 20 days,  8:25,  2 users,  load average: 2.01, 2.58, 2.58
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2236         204          59        1458        1336
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 38.2 us, 25.0 sy,  0.0 ni, 36.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    195.1 free,   2245.6 used,   1458.5 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  18.8  13.7   1398:15 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:21.48 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:08.29 bgpd
+2014681 root      20   0 2048008  88912  32984 S   0.0   2.2  41:29.26 dockerd
+2014895 root      20   0  124656  60852   5140 S   0.0   1.5   1565:45 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:22.07 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:50.83 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.73 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,461      1,225,534      
+Ethernet1      U              1,147,393      1,225,648      
+Ethernet2      U              1,672,120      8,250,333      
+Ethernet3      U              1,147,428      1,225,709      
+Ethernet4      U              1,147,252      1,225,511      
+Ethernet5      U              1,147,333      1,225,559      
+Ethernet6      U              1,147,286      1,225,525      
+Ethernet7      U              1,147,410      1,225,693      
+Ethernet16     U              1,147,374      1,225,645      
+Ethernet17     U              1,147,347      1,225,604      
+Ethernet18     U              1,147,345      1,225,658      
+Ethernet19     U              1,147,350      1,225,604      
+Ethernet24     U              775,768        754,477        
+Ethernet25     U              775,864        754,424        
+Ethernet26     U              789,869        771,552        
+Ethernet27     U              974,939        1,049,961      
+Ethernet28     U              776,301        754,871        
+Ethernet29     U              777,311        754,086        
+Ethernet30     U              775,888        754,327        
+Ethernet31     U              777,373        755,013        
+Ethernet32     U              775,003        753,847        
+Ethernet33     U              775,823        753,597        
+Ethernet34     U              776,844        751,633        
+Ethernet35     U              776,896        753,628        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:17:20 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.72%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             7.33%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              2.44%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 898MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            12.79%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         4.57%     90.84MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 26 ----> 25
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 32.9 us,  4.3 sy,  0.0 ni, 61.4 id,  0.0 wa,  0.0 hi,  1.4 si,  0.0 st
+MiB Mem :   3899.2 total,    203.1 free,   2237.4 used,   1458.8 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20604   7332 R 100.0   0.5   1523:25 systemd
+3417768 root      20   0  228044 134100  11048 S  25.0   3.4 735:22.45 python3
+1154260 root      20   0   10784   3936   3256 R   6.2   0.1   0:00.01 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:17:35 up 20 days,  8:25,  2 users,  load average: 2.55, 2.68, 2.62
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2236         204          59        1458        1336
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 23.5 us,  4.4 sy,  0.0 ni, 72.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    203.4 free,   2236.8 used,   1458.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1398:18 syncd
+3417768 root      20   0  228044 134100  11048 S   5.9   3.4 735:22.74 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:08.60 bgpd
+2014681 root      20   0 2048008  88912  32984 S   0.0   2.2  41:29.54 dockerd
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:22.19 dialout_client_
+2014895 root      20   0  124656  60428   5140 S   0.0   1.5   1565:47 redis-server
+3417691 root      20   0 1397968  57868   5604 S   5.9   1.4  57:50.94 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.73 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,508      1,225,585      
+Ethernet1      U              1,147,440      1,225,699      
+Ethernet2      U              1,672,192      8,251,180      
+Ethernet3      U              1,147,475      1,225,760      
+Ethernet4      U              1,147,306      1,225,570      
+Ethernet5      U              1,147,380      1,225,610      
+Ethernet6      U              1,147,340      1,225,584      
+Ethernet7      U              1,147,457      1,225,744      
+Ethernet16     U              1,147,421      1,225,696      
+Ethernet17     U              1,147,396      1,225,657      
+Ethernet18     U              1,147,392      1,225,709      
+Ethernet19     U              1,147,397      1,225,655      
+Ethernet24     U              775,803        754,512        
+Ethernet25     U              775,899        754,459        
+Ethernet26     U              789,906        771,589        
+Ethernet27     U              974,979        1,050,005      
+Ethernet28     U              776,338        754,908        
+Ethernet29     U              777,346        754,117        
+Ethernet30     U              775,923        754,364        
+Ethernet31     U              777,408        755,048        
+Ethernet32     U              775,040        753,884        
+Ethernet33     U              775,858        753,632        
+Ethernet34     U              776,879        751,668        
+Ethernet35     U              776,931        753,663        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:17:44 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.81%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.05%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             0.76%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.06%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              2.86%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 898MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            14.11%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.49%     90.93MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 27 ----> 26
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 21.7 us,  5.8 sy,  0.0 ni, 72.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    200.0 free,   2240.1 used,   1459.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20604   7332 R 100.0   0.5   1523:41 systemd
+1155292 root      20   0   10784   3932   3248 R   6.2   0.1   0:00.01 top
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.51 kthreadd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:17:58 up 20 days,  8:26,  2 users,  load average: 2.96, 2.77, 2.65
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2270         169          59        1459        1301
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 46.6 us, 21.9 sy,  0.0 ni, 28.8 id,  0.0 wa,  0.0 hi,  2.7 si,  0.0 st
+MiB Mem :   3899.2 total,    164.8 free,   2275.4 used,   1459.0 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  70.6  13.7   1398:21 syncd
+3417768 root      20   0  228044 134100  11048 S   0.0   3.4 735:23.81 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   5.9   2.9 133:08.85 bgpd
+2014681 root      20   0 2048008  89440  32984 S   0.0   2.2  41:29.97 dockerd
+2014895 root      20   0  124656  60592   5140 R  52.9   1.5   1565:49 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:22.27 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:51.01 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.73 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,553      1,225,634      
+Ethernet1      U              1,147,485      1,225,748      
+Ethernet2      U              1,672,259      8,251,961      
+Ethernet3      U              1,147,520      1,225,809      
+Ethernet4      U              1,147,351      1,225,619      
+Ethernet5      U              1,147,425      1,225,659      
+Ethernet6      U              1,147,386      1,225,634      
+Ethernet7      U              1,147,502      1,225,793      
+Ethernet16     U              1,147,468      1,225,747      
+Ethernet17     U              1,147,441      1,225,706      
+Ethernet18     U              1,147,439      1,225,760      
+Ethernet19     U              1,147,442      1,225,704      
+Ethernet24     U              775,834        754,543        
+Ethernet25     U              775,930        754,490        
+Ethernet26     U              789,935        771,604        
+Ethernet27     U              975,017        1,050,047      
+Ethernet28     U              776,367        754,937        
+Ethernet29     U              777,375        754,146        
+Ethernet30     U              775,952        754,393        
+Ethernet31     U              777,439        755,079        
+Ethernet32     U              775,069        753,913        
+Ethernet33     U              775,889        753,663        
+Ethernet34     U              776,910        751,699        
+Ethernet35     U              776,962        753,694        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:18:07 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.69%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             4.40%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.03%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              1.93%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 898MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            13.80%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.15%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         6.94%     90.69MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 28 ----> 27
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 27.9 us, 17.6 sy,  0.0 ni, 54.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    199.6 free,   2240.2 used,   1459.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20604   7332 R  68.8   0.5   1523:57 systemd
+3417592 root      20   0 2585632 545668 103188 S  37.5  13.7   1398:23 syncd
+    451 message+  20   0    8048   3976   3224 R  18.8   0.1 161:36.98 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:18:21 up 20 days,  8:26,  2 users,  load average: 2.55, 2.69, 2.62
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2239         199          59        1459        1332
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 31.1 us, 21.6 sy,  0.0 ni, 47.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    198.1 free,   2241.7 used,   1459.4 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   5.6  13.7   1398:24 syncd
+3417768 root      20   0  228044 134100  11048 S  11.1   3.4 735:25.12 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:09.09 bgpd
+2014681 root      20   0 2048008  89440  32984 S   0.0   2.2  41:30.29 dockerd
+2014895 root      20   0  124656  60748   5140 S   0.0   1.5   1565:51 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:22.36 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:51.13 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.73 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,608      1,225,683      
+Ethernet1      U              1,147,540      1,225,797      
+Ethernet2      U              1,672,337      8,252,752      
+Ethernet3      U              1,147,575      1,225,858      
+Ethernet4      U              1,147,406      1,225,668      
+Ethernet5      U              1,147,480      1,225,708      
+Ethernet6      U              1,147,441      1,225,683      
+Ethernet7      U              1,147,557      1,225,842      
+Ethernet16     U              1,147,523      1,225,796      
+Ethernet17     U              1,147,496      1,225,755      
+Ethernet18     U              1,147,494      1,225,809      
+Ethernet19     U              1,147,497      1,225,753      
+Ethernet24     U              775,875        754,574        
+Ethernet25     U              775,971        754,521        
+Ethernet26     U              789,978        771,621        
+Ethernet27     U              975,065        1,050,089      
+Ethernet28     U              776,410        754,970        
+Ethernet29     U              777,418        754,179        
+Ethernet30     U              775,995        754,426        
+Ethernet31     U              777,480        755,110        
+Ethernet32     U              775,112        753,946        
+Ethernet33     U              775,930        753,694        
+Ethernet34     U              776,951        751,730        
+Ethernet35     U              777,003        753,725        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:18:30 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.71%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             0.12%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              0.23%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 898MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.03%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.16%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         3.16%     90.84MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 29 ----> 28
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 30.4 us, 21.7 sy,  0.0 ni, 47.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    199.4 free,   2240.1 used,   1459.7 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20604   7332 R  41.2   0.5   1524:13 systemd
+    451 message+  20   0    8048   3976   3224 S  17.6   0.1 161:38.67 dbus-daemon
+3417592 root      20   0 2585632 545668 103188 S  11.8  13.7   1398:26 syncd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:18:43 up 20 days,  8:27,  2 users,  load average: 2.51, 2.68, 2.62
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2235         203          59        1459        1336
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 21.7 us, 10.1 sy,  0.0 ni, 68.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    202.8 free,   2236.8 used,   1459.6 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S   0.0  13.7   1398:26 syncd
+3417768 root      20   0  228044 134100  11048 S  17.6   3.4 735:26.12 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:09.33 bgpd
+2014681 root      20   0 2048008  88812  32984 S   0.0   2.2  41:30.58 dockerd
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:22.45 dialout_client_
+2014895 root      20   0  124656  60352   5140 S   0.0   1.5   1565:52 redis-server
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:51.20 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.73 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.35 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,652      1,225,731      
+Ethernet1      U              1,147,584      1,225,845      
+Ethernet2      U              1,672,403      8,253,516      
+Ethernet3      U              1,147,619      1,225,906      
+Ethernet4      U              1,147,450      1,225,716      
+Ethernet5      U              1,147,524      1,225,756      
+Ethernet6      U              1,147,485      1,225,731      
+Ethernet7      U              1,147,603      1,225,892      
+Ethernet16     U              1,147,567      1,225,844      
+Ethernet17     U              1,147,540      1,225,803      
+Ethernet18     U              1,147,538      1,225,857      
+Ethernet19     U              1,147,541      1,225,801      
+Ethernet24     U              775,903        754,602        
+Ethernet25     U              776,001        754,551        
+Ethernet26     U              790,006        771,649        
+Ethernet27     U              975,102        1,050,130      
+Ethernet28     U              776,438        754,998        
+Ethernet29     U              777,446        754,207        
+Ethernet30     U              776,023        754,454        
+Ethernet31     U              777,508        755,138        
+Ethernet32     U              775,140        753,974        
+Ethernet33     U              775,960        753,724        
+Ethernet34     U              776,979        751,758        
+Ethernet35     U              777,031        753,753        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:18:52 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.78%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.05%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             3.74%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             0.04%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.03%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              1.76%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 898MB    22
+a0f23d498f2f   teamd            0.05%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            11.31%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.15%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         5.45%     90.61MiB / 3.808GiB   2.32%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$
+
+
+
+######################################################################
+
+from snapshot 30 ----> 29
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 42.6 us, 14.7 sy,  0.0 ni, 42.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    164.3 free,   2275.0 used,   1459.9 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0  175520  20604   7332 R  52.9   0.5   1524:28 systemd
+3417592 root      20   0 2585632 545668 103188 S  23.5  13.7   1398:28 syncd
+    451 message+  20   0    8048   3976   3224 S  11.8   0.1 161:40.21 dbus-daemon
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.202205.161660-cfc9af71e
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: N/A
+Uptime: 01:19:04 up 20 days,  8:27,  2 users,  load average: 2.21, 2.60, 2.60
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+Thermal Not detected
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2237         201          59        1459        1335
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 37.7 us, 24.6 sy,  0.0 ni, 37.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    200.7 free,   2238.4 used,   1460.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+3417592 root      20   0 2585632 545668 103188 S  37.5  13.7   1398:29 syncd
+3417768 root      20   0  228044 134100  11048 S   6.2   3.4 735:27.11 python3
+3417538 root      20   0 1611092 124380  16136 S   0.0   3.1  20:32.20 rest_server
+3417615 300       20   0  363728 117480   6832 S   0.0   2.9 133:09.56 bgpd
+2014681 root      20   0 2048008  88812  32984 S   0.0   2.2  41:30.97 dockerd
+2014895 root      20   0  124656  60612   5140 R   6.2   1.5   1565:54 redis-server
+3417755 root      20   0 1393948  60432   6036 S   0.0   1.5  57:22.56 dialout_client_
+3417691 root      20   0 1397968  57868   5604 S   0.0   1.4  57:51.28 telemetry
+2015153 root      20   0 1350352  56416  30440 S   0.0   1.4   2:07.74 docker
+3417496 300       20   0  664968  55732   3804 S   0.0   1.4   1:08.36 zebra
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              1,147,697      1,225,780      
+Ethernet1      U              1,147,629      1,225,894      
+Ethernet2      U              1,672,469      8,254,254      
+Ethernet3      U              1,147,664      1,225,955      
+Ethernet4      U              1,147,495      1,225,765      
+Ethernet5      U              1,147,569      1,225,805      
+Ethernet6      U              1,147,529      1,225,779      
+Ethernet7      U              1,147,646      1,225,939      
+Ethernet16     U              1,147,610      1,225,891      
+Ethernet17     U              1,147,585      1,225,852      
+Ethernet18     U              1,147,581      1,225,904      
+Ethernet19     U              1,147,586      1,225,850      
+Ethernet24     U              775,932        754,631        
+Ethernet25     U              776,030        754,580        
+Ethernet26     U              790,035        771,678        
+Ethernet27     U              975,139        1,050,171      
+Ethernet28     U              776,467        755,027        
+Ethernet29     U              777,475        754,236        
+Ethernet30     U              776,052        754,483        
+Ethernet31     U              777,537        755,167        
+Ethernet32     U              775,169        754,003        
+Ethernet33     U              775,989        753,753        
+Ethernet34     U              777,008        751,787        
+Ethernet35     U              777,060        753,782        
+-----------------------------------------------------------------------------
+
+date
+
+Wed 30 Nov 2022 01:19:13 AM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+d4ff888e0ebf   telemetry        0.69%     136.9MiB / 3.808GiB   3.51%     0B / 0B   15.2MB / 106kB    26
+54cf82951fab   dhcp_relay       0.03%     28.76MiB / 3.808GiB   0.74%     0B / 0B   1.05MB / 77.8kB   6
+932a1af5ce48   snmp             3.97%     207.2MiB / 3.808GiB   5.31%     0B / 0B   3.67MB / 139kB    9
+95bfa79c960c   mgmt-framework   0.02%     115.3MiB / 3.808GiB   2.96%     0B / 0B   7.83MB / 69.6kB   16
+99606ae2936f   lldp             4.05%     59.43MiB / 3.808GiB   1.52%     0B / 0B   4.4MB / 115kB     11
+d6a780c42612   pmon             0.03%     45.56MiB / 3.808GiB   1.17%     0B / 0B   0B / 115kB        7
+094e4e77800d   radv             0.02%     28.48MiB / 3.808GiB   0.73%     0B / 0B   0B / 81.9kB       6
+aa21da2a8aee   bgp              2.25%     233.8MiB / 3.808GiB   6.00%     0B / 0B   13.2MB / 898MB    22
+a0f23d498f2f   teamd            0.04%     34.15MiB / 3.808GiB   0.88%     0B / 0B   504kB / 94.2kB    12
+6d9e69a4722e   syncd            10.16%    468.4MiB / 3.808GiB   12.01%    0B / 0B   6.1MB / 422kB     49
+86a4b6062eb7   swss             0.20%     69.99MiB / 3.808GiB   1.80%     0B / 0B   12.6MB / 430kB    40
+5f055752c6c2   database         3.54%     90.73MiB / 3.808GiB   2.33%     0B / 0B   3.22MB / 69.6kB   11
+root@belgite-t0-alpha-dut:/home/admin# exit
+exit
+admin@belgite-t0-alpha-dut:~$

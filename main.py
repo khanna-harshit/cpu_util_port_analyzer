@@ -29,7 +29,6 @@ from bokeh.models import TabPanel, Tabs
 from bokeh.transform import dodge
 from email_validator import validate_email, EmailNotValidError
 
-
 # reference
 
 # ['show process cpu', 'show version', 'show platform temperature', 'date',
@@ -55,6 +54,7 @@ counters_names = []
 counters = []
 process_memory = []
 process_memory_names = []
+ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
 
 
 def main(command, ip_address, username, password, snapshot_count, email):
@@ -250,6 +250,18 @@ def main(command, ip_address, username, password, snapshot_count, email):
             counters_names.append(counters[0][i][0])
         # print(counters_names)
 
+        final_result = '\n\n########################################################################## \n\n'
+
+        # adding minimum maximum average value in final_result
+        final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
+                                                      docker_stats_graph,
+                                                      docker_stats_sensor_names, counters, counters_names,
+                                                      process_memory, process_memory_names)
+        final_result = final_result + combined_result
+
+        # creating text file
+        text_file(final_result)
+
         # plotting cpu graph
         plot_cpu(cpu_graph, date)
 
@@ -271,25 +283,17 @@ def main(command, ip_address, username, password, snapshot_count, email):
         # making csv files
         to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph,
                docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
-        final_result = '\n\n########################################################################## \n\n'
 
-        # adding minimum maximum average value in final_result
-        final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
-                                                      docker_stats_graph,
-                                                      docker_stats_sensor_names, counters, counters_names,
-                                                      process_memory, process_memory_names)
-        final_result = final_result + combined_result
 
-        # creating text file
-        text_file(final_result)
 
         # Closing the connection
         # session.close()
+        print('\n\n SEE YOUR RESULTS IN /output/' + ts_label + " :)")
         connection.disconnect()
 
-    except:
-
-        # print(exception)
+    except Exception as e:
+        print(e)
+        # print 
         print(
             "\n* Not able to make connection with the device\n* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
         print("* Closing program... Bye!")
@@ -507,7 +511,7 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     header_process_memory.append("Time")
 
     # make directory for showing output
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -527,14 +531,14 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
 
     # creating and storing data in cpu_usage.csv
     if len(header_cpu) != 1:
-        f2 = open(CURR_DIR +  path +'/cpu_usage.csv', 'w')
+        f2 = open(CURR_DIR + path +'/cpu_usage.csv', 'w')
         writer = csv.writer(f2)
         writer.writerow(header_cpu)
         writer.writerows(cpu_list)
 
     # creating and storing data in memory_usage.csv
     if len(header_memory) != 1:
-        f3 = open(CURR_DIR + + path +'/memory_usage.csv', 'w')
+        f3 = open(CURR_DIR + path +'/memory_usage.csv', 'w')
         writer = csv.writer(f3)
         writer.writerow(header_memory)
         writer.writerows(memory_list)
@@ -562,7 +566,7 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
 
 # creating result.txt
 def text_file(final_result):
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -572,7 +576,8 @@ def text_file(final_result):
     path = path + '/text'
     if not os.path.exists(CURR_DIR + path):
         os.mkdir(CURR_DIR + path, mode=0o666)
-    f = open(path+"/result.txt", "w+")
+    path = path+'/result.txt'
+    f = open(CURR_DIR+path, "w+")
     f.write(final_result)
     f.close()
 
@@ -580,7 +585,7 @@ def text_file(final_result):
 # plotting processes memory
 def plot_process_memory(process_memory, process_memory_names, date):
     # saving file
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -633,7 +638,7 @@ def plot_process_memory(process_memory, process_memory_names, date):
 def plot_interface_counter(counters, counters_names, date):
     # saving file
     # saving file
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -742,7 +747,7 @@ def plot_interface_counter(counters, counters_names, date):
 # plotting docker stats graph
 def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
     # saving file
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -858,7 +863,7 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
 # plotting memory graphs
 def plot_memory(memory_graph, date):
     # saving file
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -934,7 +939,7 @@ def plot_memory(memory_graph, date):
 # plotting temperature graph
 def plot_temp(temp_graph, temp_sensor_names, date):
     # saving file
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -1022,7 +1027,7 @@ def plot_temp(temp_graph, temp_sensor_names, date):
 def plot_cpu(cpu_graph, date):
     # plotting the points
     # saving
-    ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
+    # ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
     CURR_DIR = os.getcwd()
     if not os.path.exists(CURR_DIR + '/output'):
         os.mkdir(CURR_DIR + '/output', mode=0o666)
@@ -1376,7 +1381,10 @@ def check(email):
         # replace with normalized form
         e = v["email"]
         return True
-    except:
+    except Exception as e:
+        print(e)
+
+
         # email is not valid, exception message is human-readable
         print("\nEmail id is not valid")
         return False
