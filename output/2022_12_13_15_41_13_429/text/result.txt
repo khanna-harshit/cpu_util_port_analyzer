@@ -1,0 +1,1212 @@
+
+
+########################################################################## 
+
+show processes cpu
+minimum CPU usage 2.8
+maximum CPU usage 10.1
+average CPU usage 4.88
+
+
+<------------------------------------------------------------->
+
+show platform temperature
+LM75_U4 Temperature data
+minimumLM75_U4 temperature 24.0
+maximumLM75_U4 temperature 24.0
+averageLM75_U4 temperature 24.0
+
+LM75_U7 Temperature data
+minimumLM75_U7 temperature 24.5
+maximumLM75_U7 temperature 24.5
+averageLM75_U7 temperature 24.5
+
+LM75_U10 Temperature data
+minimumLM75_U10 temperature 32.0
+maximumLM75_U10 temperature 32.0
+averageLM75_U10 temperature 32.0
+
+LM75_U60 Temperature data
+minimumLM75_U60 temperature 33.5
+maximumLM75_U60 temperature 33.5
+averageLM75_U60 temperature 33.5
+
+PSU1_TEMP1 Temperature data
+minimumPSU1_TEMP1 temperature 37.0
+maximumPSU1_TEMP1 temperature 37.0
+averagePSU1_TEMP1 temperature 37.0
+
+PSU2_TEMP1 Temperature data
+minimumPSU2_TEMP1 temperature 34.0
+maximumPSU2_TEMP1 temperature 34.0
+averagePSU2_TEMP1 temperature 34.0
+
+
+<------------------------------------------------------------->
+
+show platform fan
+Fantray1_1 data
+minimumFantray1_1 temperature 40
+maximumFantray1_1 temperature 40
+averageFantray1_1 temperature 40.0
+
+Fantray2_1 data
+minimumFantray2_1 temperature 40
+maximumFantray2_1 temperature 40
+averageFantray2_1 temperature 40.0
+
+Fantray3_1 data
+minimumFantray3_1 temperature 40
+maximumFantray3_1 temperature 40
+averageFantray3_1 temperature 40.0
+
+PSU1_FAN1 data
+minimumPSU1_FAN1 temperature 28
+maximumPSU1_FAN1 temperature 28
+averagePSU1_FAN1 temperature 28.0
+
+PSU2_FAN1 data
+minimumPSU2_FAN1 temperature 27
+maximumPSU2_FAN1 temperature 27
+averagePSU2_FAN1 temperature 27.0
+
+
+<------------------------------------------------------------->
+
+show system memory
+Total ---> Minimum 3899.0 Maximum 3899.0 Average 3899.0
+Used  ---> Minimum 2044.0 Maximum 2084.0 Average 2056.4
+Free  ---> Minimum 208.0 Maximum 248.0 Average 235.6
+Other ---> Minimum 1607.0 Maximum 1607.0 Average 1607.0
+
+
+<------------------------------------------------------------->
+
+docker stats  --no-stream
+telemetry   ---> Minimum 1.24 Maximum 1.52 Average 1.364
+mgmt-framework   ---> Minimum 0.02 Maximum 0.04 Average 0.032
+snmp   ---> Minimum 5.71 Maximum 19.65 Average 11.02
+lldp   ---> Minimum 0.04 Maximum 0.07 Average 0.052
+pmon   ---> Minimum 4.92 Maximum 9.39 Average 5.946
+radv   ---> Minimum 0.03 Maximum 0.07 Average 0.052
+syncd   ---> Minimum 10.6 Maximum 15.54 Average 12.378
+teamd   ---> Minimum 0.06 Maximum 0.39 Average 0.138
+bgp   ---> Minimum 0.05 Maximum 0.11 Average 0.084
+swss   ---> Minimum 0.21 Maximum 1.35 Average 0.454
+database   ---> Minimum 4.83 Maximum 9.38 Average 7.892
+
+<------------------------------------------------------------->
+
+show processes memory
+syncd_3306   ---> Minimum 14.7 Maximum 14.7 Average 14.7
+rest_server_6119   ---> Minimum 2.8 Maximum 2.8 Average 2.8
+dockerd_581   ---> Minimum 2.7 Maximum 2.7 Average 2.7
+telemetry_6151   ---> Minimum 1.8 Maximum 1.8 Average 1.8
+dialout_client__6184   ---> Minimum 1.6 Maximum 1.6 Average 1.6
+zebra_3251   ---> Minimum 1.5 Maximum 1.5 Average 1.5
+containerd_444   ---> Minimum 1.5 Maximum 1.5 Average 1.5
+docker_1704   ---> Minimum 1.5 Maximum 1.5 Average 1.5
+redis-server_957   ---> Minimum 1.5 Maximum 1.5 Average 1.5
+python3_6195   ---> Minimum 1.2 Maximum 1.2 Average 1.2
+
+<------------------------------------------------------------->
+
+
+show interface counters
+
+Total RX-OX from all interfaces ---> 4078517060952
+Total TX-OX from all interfaces ---> 449242
+
+Ethernet0
+ RX-OX   ---> Minimum 2297 Maximum 2299 Average 2298.2 Total 11491
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11491
+
+Ethernet1
+ RX-OX   ---> Minimum 2297 Maximum 2299 Average 2298.2 Total 11491
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11491
+
+Ethernet2
+ RX-OX   ---> Minimum 2297 Maximum 2299 Average 2298.2 Total 11491
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11491
+
+Ethernet3
+ RX-OX   ---> Minimum 2295 Maximum 2297 Average 2296.2 Total 11481
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11481
+
+Ethernet4
+ RX-OX   ---> Minimum 2332 Maximum 2333 Average 2332.6 Total 11663
+ TX-OX   ---> Minimum 2341 Maximum 2342 Average 2341.6 Total 11663
+
+Ethernet5
+ RX-OX   ---> Minimum 2297 Maximum 2299 Average 2298.2 Total 11491
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11491
+
+Ethernet6
+ RX-OX   ---> Minimum 2295 Maximum 2297 Average 2296.2 Total 11481
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11481
+
+Ethernet7
+ RX-OX   ---> Minimum 2311 Maximum 2312 Average 2311.6 Total 11558
+ TX-OX   ---> Minimum 2318 Maximum 2319 Average 2318.6 Total 11558
+
+Ethernet8
+ RX-OX   ---> Minimum 2298 Maximum 2299 Average 2298.4 Total 11492
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11492
+
+Ethernet9
+ RX-OX   ---> Minimum 2298 Maximum 2299 Average 2298.4 Total 11492
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11492
+
+Ethernet10
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet11
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet12
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet13
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet14
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet15
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet16
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet17
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet18
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet19
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet20
+ RX-OX   ---> Minimum 2311 Maximum 2312 Average 2311.6 Total 11558
+ TX-OX   ---> Minimum 2307 Maximum 2308 Average 2307.6 Total 11558
+
+Ethernet21
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet22
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet23
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet24
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet25
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet26
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet27
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet28
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet29
+ RX-OX   ---> Minimum 2299 Maximum 2300 Average 2299.4 Total 11497
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11497
+
+Ethernet30
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet31
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet32
+ RX-OX   ---> Minimum 2298 Maximum 2299 Average 2298.4 Total 11492
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11492
+
+Ethernet33
+ RX-OX   ---> Minimum 2298 Maximum 2299 Average 2298.4 Total 11492
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11492
+
+Ethernet34
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet35
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet36
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet37
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet38
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet39
+ RX-OX   ---> Minimum 2296 Maximum 2297 Average 2296.4 Total 11482
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11482
+
+Ethernet40
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet41
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet42
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet43
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet44
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet45
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet46
+ RX-OX   ---> Minimum 2308 Maximum 2309 Average 2308.6 Total 11543
+ TX-OX   ---> Minimum 2307 Maximum 2308 Average 2307.6 Total 11543
+
+Ethernet47
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet48
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 2303 Maximum 2305 Average 2304.0 Total 0
+
+Ethernet49
+ RX-OX   ---> Minimum 815703327080 Maximum 815703327080 Average 815703327080.0 Total 4078516635400
+ TX-OX   ---> Minimum 2302 Maximum 2304 Average 2303.0 Total 4078516635400
+
+Ethernet50
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet51
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet52
+ RX-OX   ---> Minimum 2300 Maximum 2301 Average 2300.4 Total 11502
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11502
+
+Ethernet53
+ RX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+ TX-OX   ---> Minimum 0 Maximum 0 Average 0.0 Total 0
+
+Ethernet54
+ RX-OX   ---> Minimum 2302 Maximum 2303 Average 2302.4 Total 11512
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11512
+
+Ethernet55
+ RX-OX   ---> Minimum 2297 Maximum 2298 Average 2297.4 Total 11487
+ TX-OX   ---> Minimum 2301 Maximum 2303 Average 2302.0 Total 11487
+
+
+
+
+######################################################################
+
+from snapshot 1 ----> 0
+
+######################################################################
+
+
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s):  8.6 us,  5.7 sy,  0.0 ni, 85.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    248.4 free,   2044.7 used,   1606.1 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   6195 root      20   0  138464  47740  14260 S  43.8   1.2  70:30.42 python3
+ 559668 root      20   0   10780   3836   3224 R   6.2   0.1   0:00.02 top
+      1 root      20   0  100052  12428   9060 S   0.0   0.3   1:14.51 systemd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.CLS_SONiC_staging_202205_QA_release_1
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: E1070F2B042524GD200086
+Uptime: 17:09:57 up 19:08,  2 users,  load average: 0.26, 0.52, 0.74
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+    Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
+----------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
+   LM75_U4           24         80.0       N/A             100          0.001      False  20221213 17:09:45
+   LM75_U7           24.5       80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U10           32         80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U60           33.5       78.0       N/A             100          0.001      False  20221213 17:09:45
+PSU1_TEMP1           37          N/A       N/A             100          0.001      False  20221213 17:09:45
+PSU2_TEMP1           34          N/A       N/A             100          0.001      False  20221213 17:09:45
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2044         248          21        1606        1598
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s):  5.7 us,  5.7 sy,  0.0 ni, 88.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    247.4 free,   2045.6 used,   1606.2 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S  31.2  14.7 139:30.08 syncd
+   6119 root      20   0 1467580 112776  20632 S   0.0   2.8   2:38.29 rest_server
+    581 root      20   0 1899968 106740  51308 S   0.0   2.7   6:29.79 dockerd
+   6151 root      20   0 1471956  72148  19592 S   0.0   1.8   7:51.50 telemetry
+   6184 root      20   0 1467680  64896  16816 S   0.0   1.6   7:44.50 dialout_client_
+   3251 300       20   0  664372  61456  10780 S   0.0   1.5   0:09.09 zebra
+    444 root      20   0 1565844  60308  29068 S   0.0   1.5   5:06.92 containerd
+   1704 root      20   0 1276876  60272  32400 S   0.0   1.5   0:09.38 docker
+    957 root      20   0  112368  60180   7752 S   6.2   1.5  99:10.85 redis-server
+   6195 root      20   0  138464  47740  14260 S   0.0   1.2  70:30.60 python3
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              2,297          2,301          
+Ethernet1      U              2,297          2,301          
+Ethernet2      U              2,297          2,301          
+Ethernet3      U              2,295          2,301          
+Ethernet4      U              2,332          2,341          
+Ethernet5      U              2,297          2,301          
+Ethernet6      U              2,295          2,301          
+Ethernet7      U              2,311          2,318          
+Ethernet8      U              2,298          2,301          
+Ethernet9      U              2,298          2,301          
+Ethernet10     U              2,296          2,301          
+Ethernet11     U              2,296          2,301          
+Ethernet12     U              2,296          2,301          
+Ethernet13     U              2,296          2,301          
+Ethernet14     U              2,296          2,301          
+Ethernet15     U              2,296          2,301          
+Ethernet16     D              0              0              
+Ethernet17     D              0              0              
+Ethernet18     D              0              0              
+Ethernet19     D              0              0              
+Ethernet20     U              2,311          2,307          
+Ethernet21     D              0              0              
+Ethernet22     D              0              0              
+Ethernet23     D              0              0              
+Ethernet24     U              2,302          2,301          
+Ethernet25     U              2,302          2,301          
+Ethernet26     U              2,302          2,301          
+Ethernet27     U              2,296          2,301          
+Ethernet28     U              2,302          2,301          
+Ethernet29     U              2,299          2,301          
+Ethernet30     U              2,302          2,301          
+Ethernet31     U              2,302          2,301          
+Ethernet32     U              2,298          2,301          
+Ethernet33     U              2,298          2,301          
+Ethernet34     U              2,296          2,301          
+Ethernet35     U              2,296          2,301          
+Ethernet36     U              2,296          2,301          
+Ethernet37     U              2,296          2,301          
+Ethernet38     U              2,296          2,301          
+Ethernet39     U              2,296          2,301          
+Ethernet40     D              0              0              
+Ethernet41     D              0              0              
+Ethernet42     D              0              0              
+Ethernet43     D              0              0              
+Ethernet44     D              0              0              
+Ethernet45     D              0              0              
+Ethernet46     U              2,308          2,307          
+Ethernet47     D              0              0              
+Ethernet48     U              0              2,303          
+Ethernet49     U              815,703,327,0802,302          
+Ethernet50     D              0              0              
+Ethernet51     D              0              0              
+Ethernet52     U              2,300          2,301          
+Ethernet53     D              0              0              
+Ethernet54     U              2,302          2,301          
+Ethernet55     U              2,297          2,301          
+-----------------------------------------------------------------------------
+
+date
+
+Tue 13 Dec 2022 05:10:02 PM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+9e52f28eab7c   telemetry        1.28%     122MiB / 3.808GiB     3.13%     0B / 0B   34.5MB / 90.1kB   28
+7d6a2b987e9b   mgmt-framework   0.03%     123.8MiB / 3.808GiB   3.18%     0B / 0B   68.7MB / 69.6kB   15
+991934acd64f   snmp             19.65%    83.52MiB / 3.808GiB   2.14%     0B / 0B   13.6MB / 135kB    9
+d1c4ff260d30   lldp             0.05%     57.44MiB / 3.808GiB   1.47%     0B / 0B   5.02MB / 111kB    11
+87699573b8be   pmon             5.32%     97.39MiB / 3.808GiB   2.50%     0B / 0B   2.6MB / 106kB     13
+b26bb3fddb2f   radv             0.04%     32.81MiB / 3.808GiB   0.84%     0B / 0B   430kB / 81.9kB    6
+5604eb20cdc3   syncd            15.54%    471.7MiB / 3.808GiB   12.10%    0B / 0B   232MB / 381kB     49
+ffe77ae3ebd8   teamd            0.39%     33.13MiB / 3.808GiB   0.85%     0B / 0B   5.96MB / 94.2kB   12
+7207f8cf82ba   bgp              0.07%     154.2MiB / 3.808GiB   3.96%     0B / 0B   17.1MB / 113MB    22
+acd8eb4fb284   swss             1.35%     64.26MiB / 3.808GiB   1.65%     0B / 0B   18.2MB / 254kB    37
+fce1a01cdfcc   database         7.40%     125.7MiB / 3.808GiB   3.22%     0B / 0B   44.3MB / 69.6kB   11
+-----------------------------------------------------------------------------
+
+show platform fan
+
+  Drawer    LED         FAN    Speed    Direction    Presence    Status          Timestamp
+--------  -----  ----------  -------  -----------  ----------  --------  -----------------
+Fantray1  green  Fantray1_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray2  green  Fantray2_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray3  green  Fantray3_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU1_FAN1      28%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU2_FAN1      27%      EXHAUST     Present        OK  20221213 17:09:45
+root@sonic:/home/admin# exit
+exit
+admin@sonic:~$
+
+
+
+######################################################################
+
+from snapshot 2 ----> 1
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s):  4.2 us,  2.8 sy,  0.0 ni, 93.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    244.4 free,   2048.7 used,   1606.2 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S   6.2  14.7 139:30.86 syncd
+   6151 root      20   0 1471956  72148  19592 S   6.2   1.8   7:51.54 telemetry
+ 559884 root      20   0   10780   3812   3200 R   6.2   0.1   0:00.02 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.CLS_SONiC_staging_202205_QA_release_1
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: E1070F2B042524GD200086
+Uptime: 17:10:08 up 19:08,  2 users,  load average: 0.29, 0.52, 0.73
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+    Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
+----------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
+   LM75_U4           24         80.0       N/A             100          0.001      False  20221213 17:09:45
+   LM75_U7           24.5       80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U10           32         80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U60           33.5       78.0       N/A             100          0.001      False  20221213 17:09:45
+PSU1_TEMP1           37          N/A       N/A             100          0.001      False  20221213 17:09:45
+PSU2_TEMP1           34          N/A       N/A             100          0.001      False  20221213 17:09:45
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2048         244          21        1606        1595
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s):  2.9 us,  2.9 sy,  0.0 ni, 94.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    245.1 free,   2048.0 used,   1606.2 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S   5.9  14.7 139:31.14 syncd
+   6119 root      20   0 1467580 112776  20632 S   0.0   2.8   2:38.29 rest_server
+    581 root      20   0 1899968 107000  51308 S   0.0   2.7   6:30.16 dockerd
+   6151 root      20   0 1471956  72148  19592 S   0.0   1.8   7:51.55 telemetry
+   6184 root      20   0 1467680  64896  16816 S   0.0   1.6   7:44.55 dialout_client_
+   3251 300       20   0  664372  61456  10780 S   0.0   1.5   0:09.09 zebra
+    957 root      20   0  112368  60440   7752 S   0.0   1.5  99:11.95 redis-server
+    444 root      20   0 1565844  60308  29068 S   0.0   1.5   5:07.02 containerd
+   1704 root      20   0 1276876  60272  32400 S   0.0   1.5   0:09.38 docker
+   6195 root      20   0  138464  47740  14260 S   0.0   1.2  70:31.21 python3
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              2,298          2,302          
+Ethernet1      U              2,298          2,302          
+Ethernet2      U              2,298          2,302          
+Ethernet3      U              2,296          2,302          
+Ethernet4      U              2,332          2,341          
+Ethernet5      U              2,298          2,302          
+Ethernet6      U              2,296          2,302          
+Ethernet7      U              2,311          2,318          
+Ethernet8      U              2,298          2,302          
+Ethernet9      U              2,298          2,302          
+Ethernet10     U              2,296          2,302          
+Ethernet11     U              2,296          2,302          
+Ethernet12     U              2,296          2,302          
+Ethernet13     U              2,296          2,302          
+Ethernet14     U              2,296          2,302          
+Ethernet15     U              2,296          2,302          
+Ethernet16     D              0              0              
+Ethernet17     D              0              0              
+Ethernet18     D              0              0              
+Ethernet19     D              0              0              
+Ethernet20     U              2,311          2,307          
+Ethernet21     D              0              0              
+Ethernet22     D              0              0              
+Ethernet23     D              0              0              
+Ethernet24     U              2,302          2,302          
+Ethernet25     U              2,302          2,302          
+Ethernet26     U              2,302          2,302          
+Ethernet27     U              2,296          2,302          
+Ethernet28     U              2,302          2,302          
+Ethernet29     U              2,299          2,302          
+Ethernet30     U              2,302          2,302          
+Ethernet31     U              2,302          2,302          
+Ethernet32     U              2,298          2,302          
+Ethernet33     U              2,298          2,302          
+Ethernet34     U              2,296          2,302          
+Ethernet35     U              2,296          2,302          
+Ethernet36     U              2,296          2,302          
+Ethernet37     U              2,296          2,302          
+Ethernet38     U              2,296          2,302          
+Ethernet39     U              2,296          2,302          
+Ethernet40     D              0              0              
+Ethernet41     D              0              0              
+Ethernet42     D              0              0              
+Ethernet43     D              0              0              
+Ethernet44     D              0              0              
+Ethernet45     D              0              0              
+Ethernet46     U              2,308          2,307          
+Ethernet47     D              0              0              
+Ethernet48     U              0              2,304          
+Ethernet49     U              815,703,327,0802,303          
+Ethernet50     D              0              0              
+Ethernet51     D              0              0              
+Ethernet52     U              2,300          2,302          
+Ethernet53     D              0              0              
+Ethernet54     U              2,302          2,302          
+Ethernet55     U              2,297          2,302          
+-----------------------------------------------------------------------------
+
+date
+
+Tue 13 Dec 2022 05:10:13 PM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+9e52f28eab7c   telemetry        1.52%     122.1MiB / 3.808GiB   3.13%     0B / 0B   34.5MB / 90.1kB   28
+7d6a2b987e9b   mgmt-framework   0.03%     123.8MiB / 3.808GiB   3.18%     0B / 0B   68.7MB / 69.6kB   15
+991934acd64f   snmp             8.08%     83.37MiB / 3.808GiB   2.14%     0B / 0B   13.6MB / 135kB    9
+d1c4ff260d30   lldp             0.05%     57.44MiB / 3.808GiB   1.47%     0B / 0B   5.02MB / 111kB    11
+87699573b8be   pmon             5.00%     97.39MiB / 3.808GiB   2.50%     0B / 0B   2.6MB / 106kB     13
+b26bb3fddb2f   radv             0.07%     32.81MiB / 3.808GiB   0.84%     0B / 0B   430kB / 81.9kB    6
+5604eb20cdc3   syncd            11.93%    471.8MiB / 3.808GiB   12.10%    0B / 0B   232MB / 381kB     49
+ffe77ae3ebd8   teamd            0.08%     33.13MiB / 3.808GiB   0.85%     0B / 0B   5.96MB / 94.2kB   12
+7207f8cf82ba   bgp              0.11%     154.2MiB / 3.808GiB   3.96%     0B / 0B   17.1MB / 113MB    22
+acd8eb4fb284   swss             0.22%     64.14MiB / 3.808GiB   1.64%     0B / 0B   18.2MB / 254kB    37
+fce1a01cdfcc   database         8.72%     125.5MiB / 3.808GiB   3.22%     0B / 0B   44.3MB / 69.6kB   11
+-----------------------------------------------------------------------------
+
+show platform fan
+
+  Drawer    LED         FAN    Speed    Direction    Presence    Status          Timestamp
+--------  -----  ----------  -------  -----------  ----------  --------  -----------------
+Fantray1  green  Fantray1_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray2  green  Fantray2_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray3  green  Fantray3_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU1_FAN1      28%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU2_FAN1      27%      EXHAUST     Present        OK  20221213 17:09:45
+root@sonic:/home/admin# exit
+exit
+admin@sonic:~$
+
+
+
+######################################################################
+
+from snapshot 3 ----> 2
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s): 23.2 us, 10.1 sy,  0.0 ni, 66.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    209.2 free,   2083.9 used,   1606.2 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 560158 root      20   0   24712  20080   9036 R 100.0   0.5   0:00.17 supervisorctl
+   3306 root      20   0 2588632 586756 141384 S  18.8  14.7 139:31.96 syncd
+ 560166 root      20   0   10780   3872   3260 R   6.2   0.1   0:00.02 top
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.CLS_SONiC_staging_202205_QA_release_1
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: E1070F2B042524GD200086
+Uptime: 17:10:19 up 19:08,  2 users,  load average: 0.32, 0.52, 0.73
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+    Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
+----------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
+   LM75_U4           24         80.0       N/A             100          0.001      False  20221213 17:09:45
+   LM75_U7           24.5       80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U10           32         80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U60           33.5       78.0       N/A             100          0.001      False  20221213 17:09:45
+PSU1_TEMP1           37          N/A       N/A             100          0.001      False  20221213 17:09:45
+PSU2_TEMP1           34          N/A       N/A             100          0.001      False  20221213 17:09:45
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2084         208          21        1606        1558
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s): 32.4 us,  9.9 sy,  0.0 ni, 57.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    210.0 free,   2083.0 used,   1606.2 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S  17.6  14.7 139:32.31 syncd
+   6119 root      20   0 1467580 112776  20632 S   0.0   2.8   2:38.29 rest_server
+    581 root      20   0 1899968 107000  51308 S   0.0   2.7   6:30.66 dockerd
+   6151 root      20   0 1471956  72148  19592 S   0.0   1.8   7:51.59 telemetry
+   6184 root      20   0 1467680  64896  16816 S   0.0   1.6   7:44.60 dialout_client_
+   3251 300       20   0  664372  61456  10780 S   0.0   1.5   0:09.09 zebra
+    444 root      20   0 1565844  60436  29068 S   0.0   1.5   5:07.26 containerd
+   1704 root      20   0 1276876  60272  32400 S   0.0   1.5   0:09.38 docker
+    957 root      20   0  112368  60240   7752 S  23.5   1.5  99:13.00 redis-server
+ 560397 root      20   0 1203144  49284  31044 S   0.0   1.2   0:00.05 docker
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              2,298          2,302          
+Ethernet1      U              2,298          2,302          
+Ethernet2      U              2,298          2,302          
+Ethernet3      U              2,296          2,302          
+Ethernet4      U              2,333          2,342          
+Ethernet5      U              2,298          2,302          
+Ethernet6      U              2,296          2,302          
+Ethernet7      U              2,312          2,319          
+Ethernet8      U              2,298          2,302          
+Ethernet9      U              2,298          2,302          
+Ethernet10     U              2,296          2,302          
+Ethernet11     U              2,296          2,302          
+Ethernet12     U              2,296          2,302          
+Ethernet13     U              2,296          2,302          
+Ethernet14     U              2,296          2,302          
+Ethernet15     U              2,296          2,302          
+Ethernet16     D              0              0              
+Ethernet17     D              0              0              
+Ethernet18     D              0              0              
+Ethernet19     D              0              0              
+Ethernet20     U              2,312          2,308          
+Ethernet21     D              0              0              
+Ethernet22     D              0              0              
+Ethernet23     D              0              0              
+Ethernet24     U              2,302          2,302          
+Ethernet25     U              2,302          2,302          
+Ethernet26     U              2,302          2,302          
+Ethernet27     U              2,296          2,302          
+Ethernet28     U              2,302          2,302          
+Ethernet29     U              2,299          2,302          
+Ethernet30     U              2,302          2,302          
+Ethernet31     U              2,302          2,302          
+Ethernet32     U              2,298          2,302          
+Ethernet33     U              2,298          2,302          
+Ethernet34     U              2,296          2,302          
+Ethernet35     U              2,296          2,302          
+Ethernet36     U              2,296          2,302          
+Ethernet37     U              2,296          2,302          
+Ethernet38     U              2,296          2,302          
+Ethernet39     U              2,296          2,302          
+Ethernet40     D              0              0              
+Ethernet41     D              0              0              
+Ethernet42     D              0              0              
+Ethernet43     D              0              0              
+Ethernet44     D              0              0              
+Ethernet45     D              0              0              
+Ethernet46     U              2,309          2,308          
+Ethernet47     D              0              0              
+Ethernet48     U              0              2,304          
+Ethernet49     U              815,703,327,0802,303          
+Ethernet50     D              0              0              
+Ethernet51     D              0              0              
+Ethernet52     U              2,300          2,302          
+Ethernet53     D              0              0              
+Ethernet54     U              2,302          2,302          
+Ethernet55     U              2,297          2,302          
+-----------------------------------------------------------------------------
+
+date
+
+Tue 13 Dec 2022 05:10:24 PM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+9e52f28eab7c   telemetry        1.34%     122MiB / 3.808GiB     3.13%     0B / 0B   34.5MB / 90.1kB   28
+7d6a2b987e9b   mgmt-framework   0.04%     123.8MiB / 3.808GiB   3.18%     0B / 0B   68.7MB / 69.6kB   15
+991934acd64f   snmp             11.24%    83.38MiB / 3.808GiB   2.14%     0B / 0B   13.6MB / 135kB    9
+d1c4ff260d30   lldp             0.05%     57.44MiB / 3.808GiB   1.47%     0B / 0B   5.02MB / 111kB    11
+87699573b8be   pmon             9.39%     97.39MiB / 3.808GiB   2.50%     0B / 0B   2.6MB / 106kB     13
+b26bb3fddb2f   radv             0.07%     32.81MiB / 3.808GiB   0.84%     0B / 0B   430kB / 81.9kB    6
+5604eb20cdc3   syncd            11.75%    471.8MiB / 3.808GiB   12.10%    0B / 0B   232MB / 381kB     49
+ffe77ae3ebd8   teamd            0.06%     33.13MiB / 3.808GiB   0.85%     0B / 0B   5.96MB / 94.2kB   12
+7207f8cf82ba   bgp              0.11%     154.2MiB / 3.808GiB   3.96%     0B / 0B   17.1MB / 113MB    22
+acd8eb4fb284   swss             0.28%     64.14MiB / 3.808GiB   1.65%     0B / 0B   18.2MB / 254kB    37
+fce1a01cdfcc   database         9.13%     125.1MiB / 3.808GiB   3.21%     0B / 0B   44.3MB / 69.6kB   11
+-----------------------------------------------------------------------------
+
+show platform fan
+
+  Drawer    LED         FAN    Speed    Direction    Presence    Status          Timestamp
+--------  -----  ----------  -------  -----------  ----------  --------  -----------------
+Fantray1  green  Fantray1_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray2  green  Fantray2_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray3  green  Fantray3_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU1_FAN1      28%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU2_FAN1      27%      EXHAUST     Present        OK  20221213 17:09:45
+root@sonic:/home/admin# exit
+exit
+admin@sonic:~$
+
+
+
+######################################################################
+
+from snapshot 4 ----> 3
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s):  2.9 us,  2.9 sy,  0.0 ni, 94.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    237.9 free,   2055.0 used,   1606.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S   5.9  14.7 139:33.01 syncd
+ 560605 root      20   0   10780   3964   3348 R   5.9   0.1   0:00.02 top
+      1 root      20   0  100052  12428   9060 S   0.0   0.3   1:14.57 systemd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.CLS_SONiC_staging_202205_QA_release_1
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: E1070F2B042524GD200086
+Uptime: 17:10:30 up 19:08,  2 users,  load average: 0.80, 0.62, 0.76
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+    Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
+----------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
+   LM75_U4           24         80.0       N/A             100          0.001      False  20221213 17:09:45
+   LM75_U7           24.5       80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U10           32         80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U60           33.5       78.0       N/A             100          0.001      False  20221213 17:09:45
+PSU1_TEMP1           37          N/A       N/A             100          0.001      False  20221213 17:09:45
+PSU2_TEMP1           34          N/A       N/A             100          0.001      False  20221213 17:09:45
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2052         240          21        1606        1590
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s):  5.6 us,  4.2 sy,  0.0 ni, 90.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    238.6 free,   2054.3 used,   1606.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S   6.2  14.7 139:33.32 syncd
+   6119 root      20   0 1467580 112776  20632 S   0.0   2.8   2:38.29 rest_server
+    581 root      20   0 1899968 108312  51308 S   0.0   2.7   6:31.05 dockerd
+   6151 root      20   0 1471956  72148  19592 S   0.0   1.8   7:51.65 telemetry
+   6184 root      20   0 1467680  64896  16816 S   0.0   1.6   7:44.64 dialout_client_
+   3251 300       20   0  664372  61456  10780 S   0.0   1.5   0:09.09 zebra
+    444 root      20   0 1565844  60420  29068 S   0.0   1.5   5:07.39 containerd
+   1704 root      20   0 1276876  60272  32400 S   0.0   1.5   0:09.38 docker
+    957 root      20   0  112368  59872   7752 S  12.5   1.5  99:14.01 redis-server
+   6195 root      20   0  138464  47740  14260 S   6.2   1.2  70:32.09 python3
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              2,299          2,302          
+Ethernet1      U              2,299          2,302          
+Ethernet2      U              2,299          2,302          
+Ethernet3      U              2,297          2,302          
+Ethernet4      U              2,333          2,342          
+Ethernet5      U              2,299          2,302          
+Ethernet6      U              2,297          2,302          
+Ethernet7      U              2,312          2,319          
+Ethernet8      U              2,299          2,302          
+Ethernet9      U              2,299          2,302          
+Ethernet10     U              2,297          2,302          
+Ethernet11     U              2,297          2,302          
+Ethernet12     U              2,297          2,302          
+Ethernet13     U              2,297          2,302          
+Ethernet14     U              2,297          2,302          
+Ethernet15     U              2,297          2,302          
+Ethernet16     D              0              0              
+Ethernet17     D              0              0              
+Ethernet18     D              0              0              
+Ethernet19     D              0              0              
+Ethernet20     U              2,312          2,308          
+Ethernet21     D              0              0              
+Ethernet22     D              0              0              
+Ethernet23     D              0              0              
+Ethernet24     U              2,303          2,302          
+Ethernet25     U              2,303          2,302          
+Ethernet26     U              2,303          2,302          
+Ethernet27     U              2,297          2,302          
+Ethernet28     U              2,303          2,302          
+Ethernet29     U              2,300          2,302          
+Ethernet30     U              2,303          2,302          
+Ethernet31     U              2,303          2,302          
+Ethernet32     U              2,299          2,302          
+Ethernet33     U              2,299          2,302          
+Ethernet34     U              2,297          2,302          
+Ethernet35     U              2,297          2,302          
+Ethernet36     U              2,297          2,302          
+Ethernet37     U              2,297          2,302          
+Ethernet38     U              2,297          2,302          
+Ethernet39     U              2,297          2,302          
+Ethernet40     D              0              0              
+Ethernet41     D              0              0              
+Ethernet42     D              0              0              
+Ethernet43     D              0              0              
+Ethernet44     D              0              0              
+Ethernet45     D              0              0              
+Ethernet46     U              2,309          2,308          
+Ethernet47     D              0              0              
+Ethernet48     U              0              2,304          
+Ethernet49     U              815,703,327,0802,303          
+Ethernet50     D              0              0              
+Ethernet51     D              0              0              
+Ethernet52     U              2,301          2,302          
+Ethernet53     D              0              0              
+Ethernet54     U              2,303          2,302          
+Ethernet55     U              2,298          2,302          
+-----------------------------------------------------------------------------
+
+date
+
+Tue 13 Dec 2022 05:10:35 PM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+9e52f28eab7c   telemetry        1.44%     122MiB / 3.808GiB     3.13%     0B / 0B   34.5MB / 90.1kB   28
+7d6a2b987e9b   mgmt-framework   0.02%     123.8MiB / 3.808GiB   3.18%     0B / 0B   68.7MB / 69.6kB   15
+991934acd64f   snmp             10.42%    83.39MiB / 3.808GiB   2.14%     0B / 0B   13.6MB / 135kB    9
+d1c4ff260d30   lldp             0.04%     57.44MiB / 3.808GiB   1.47%     0B / 0B   5.02MB / 111kB    11
+87699573b8be   pmon             5.10%     97.39MiB / 3.808GiB   2.50%     0B / 0B   2.6MB / 106kB     13
+b26bb3fddb2f   radv             0.03%     32.81MiB / 3.808GiB   0.84%     0B / 0B   430kB / 81.9kB    6
+5604eb20cdc3   syncd            10.60%    471.8MiB / 3.808GiB   12.10%    0B / 0B   232MB / 381kB     49
+ffe77ae3ebd8   teamd            0.08%     33.13MiB / 3.808GiB   0.85%     0B / 0B   5.96MB / 94.2kB   12
+7207f8cf82ba   bgp              0.05%     154.2MiB / 3.808GiB   3.96%     0B / 0B   17.1MB / 113MB    22
+acd8eb4fb284   swss             0.21%     64.15MiB / 3.808GiB   1.65%     0B / 0B   18.2MB / 254kB    37
+fce1a01cdfcc   database         9.38%     125.4MiB / 3.808GiB   3.22%     0B / 0B   44.3MB / 69.6kB   11
+-----------------------------------------------------------------------------
+
+show platform fan
+
+  Drawer    LED         FAN    Speed    Direction    Presence    Status          Timestamp
+--------  -----  ----------  -------  -----------  ----------  --------  -----------------
+Fantray1  green  Fantray1_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray2  green  Fantray2_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+Fantray3  green  Fantray3_1      40%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU1_FAN1      28%      EXHAUST     Present        OK  20221213 17:09:45
+     N/A  green   PSU2_FAN1      27%      EXHAUST     Present        OK  20221213 17:09:45
+root@sonic:/home/admin# exit
+exit
+admin@sonic:~$
+
+
+
+######################################################################
+
+from snapshot 5 ----> 4
+
+######################################################################
+
+
+sudo -s
+-----------------------------------------------------------------------------
+
+show process cpu
+
+%Cpu(s):  1.4 us,  2.9 sy,  0.0 ni, 95.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    237.9 free,   2055.0 used,   1606.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+ 560868 root      20   0   10780   3928   3304 R   6.2   0.1   0:00.02 top
+      1 root      20   0  100052  12428   9060 S   0.0   0.3   1:14.57 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd
+
+
+
+-----------------------------------------------------------------------------
+
+show version
+
+SONiC Software Version: SONiC.CLS_SONiC_staging_202205_QA_release_1
+Platform: x86_64-cel_belgite-r0
+HwSKU: CELESTICA-BELGITE
+ASIC: broadcom
+Serial Number: E1070F2B042524GD200086
+Uptime: 17:10:41 up 19:08,  2 users,  load average: 0.75, 0.62, 0.76
+
+
+-----------------------------------------------------------------------------
+
+show platform temperature
+
+    Sensor    Temperature    High TH    Low TH    Crit High TH    Crit Low TH    Warning          Timestamp
+----------  -------------  ---------  --------  --------------  -------------  ---------  -----------------
+   LM75_U4           24         80.0       N/A             100          0.001      False  20221213 17:09:45
+   LM75_U7           24.5       80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U10           32         80.0       N/A             100          0.001      False  20221213 17:09:45
+  LM75_U60           33.5       78.0       N/A             100          0.001      False  20221213 17:09:45
+PSU1_TEMP1           37          N/A       N/A             100          0.001      False  20221213 17:09:45
+PSU2_TEMP1           34          N/A       N/A             100          0.001      False  20221213 17:09:45
+-----------------------------------------------------------------------------
+
+show system memory
+
+               total        used        free      shared  buff/cache   available
+Mem:            3899        2054         238          21        1606        1589
+
+
+-----------------------------------------------------------------------------
+
+show processes memory
+
+%Cpu(s):  5.5 us,  5.5 sy,  0.0 ni, 89.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3899.2 total,    239.1 free,   2053.8 used,   1606.3 buff/cache
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+   3306 root      20   0 2588632 586756 141384 S   0.0  14.7 139:34.25 syncd
+   6119 root      20   0 1467580 112776  20632 S   0.0   2.8   2:38.29 rest_server
+    581 root      20   0 1899968 108312  51308 S   0.0   2.7   6:31.47 dockerd
+   6151 root      20   0 1471956  72148  19592 S   0.0   1.8   7:51.68 telemetry
+   6184 root      20   0 1467680  64896  16816 S   0.0   1.6   7:44.72 dialout_client_
+   3251 300       20   0  664372  61456  10780 S   0.0   1.5   0:09.09 zebra
+    444 root      20   0 1565844  60604  29132 S   0.0   1.5   5:07.47 containerd
+   1704 root      20   0 1276876  60272  32400 S   0.0   1.5   0:09.38 docker
+    957 root      20   0  112368  60004   7752 S   0.0   1.5  99:15.06 redis-server
+   6195 root      20   0  138464  47740  14260 R  12.5   1.2  70:32.52 python3
+
+
+
+-----------------------------------------------------------------------------
+
+show interface counters
+
+IFACE          STATE          RX_OK          TX_OK          
+Ethernet0      U              2,299          2,303          
+Ethernet1      U              2,299          2,303          
+Ethernet2      U              2,299          2,303          
+Ethernet3      U              2,297          2,303          
+Ethernet4      U              2,333          2,342          
+Ethernet5      U              2,299          2,303          
+Ethernet6      U              2,297          2,303          
+Ethernet7      U              2,312          2,319          
+Ethernet8      U              2,299          2,303          
+Ethernet9      U              2,299          2,303          
+Ethernet10     U              2,297          2,303          
+Ethernet11     U              2,297          2,303          
+Ethernet12     U              2,297          2,303          
+Ethernet13     U              2,297          2,303          
+Ethernet14     U              2,297          2,303          
+Ethernet15     U              2,297          2,303          
+Ethernet16     D              0              0              
+Ethernet17     D              0              0              
+Ethernet18     D              0              0              
+Ethernet19     D              0              0              
+Ethernet20     U              2,312          2,308          
+Ethernet21     D              0              0              
+Ethernet22     D              0              0              
+Ethernet23     D              0              0              
+Ethernet24     U              2,303          2,303          
+Ethernet25     U              2,303          2,303          
+Ethernet26     U              2,303          2,303          
+Ethernet27     U              2,297          2,303          
+Ethernet28     U              2,303          2,303          
+Ethernet29     U              2,300          2,303          
+Ethernet30     U              2,303          2,303          
+Ethernet31     U              2,303          2,303          
+Ethernet32     U              2,299          2,303          
+Ethernet33     U              2,299          2,303          
+Ethernet34     U              2,297          2,303          
+Ethernet35     U              2,297          2,303          
+Ethernet36     U              2,297          2,303          
+Ethernet37     U              2,297          2,303          
+Ethernet38     U              2,297          2,303          
+Ethernet39     U              2,297          2,303          
+Ethernet40     D              0              0              
+Ethernet41     D              0              0              
+Ethernet42     D              0              0              
+Ethernet43     D              0              0              
+Ethernet44     D              0              0              
+Ethernet45     D              0              0              
+Ethernet46     U              2,309          2,308          
+Ethernet47     D              0              0              
+Ethernet48     U              0              2,305          
+Ethernet49     U              815,703,327,0802,304          
+Ethernet50     D              0              0              
+Ethernet51     D              0              0              
+Ethernet52     U              2,301          2,303          
+Ethernet53     D              0              0              
+Ethernet54     U              2,303          2,303          
+Ethernet55     U              2,298          2,303          
+-----------------------------------------------------------------------------
+
+date
+
+Tue 13 Dec 2022 05:10:46 PM UTC
+
+
+-----------------------------------------------------------------------------
+
+show docker stats
+
+CONTAINER ID   NAME             CPU %     MEM USAGE / LIMIT     MEM %     NET I/O   BLOCK I/O         PIDS
+9e52f28eab7c   telemetry        1.24%     122MiB / 3.808GiB     3.13%     0B / 0B   34.5MB / 90.1kB   28
+7d6a2b987e9b   mgmt-framework   0.04%     123.8MiB / 3.808GiB   3.18%     0B / 0B   68.7MB / 69.6kB   15
+991934acd64f   snmp             5.71%     83.39MiB / 3.808GiB   2.14%     0B / 0B   13.6MB / 135kB    9
+d1c4ff260d30   lldp             0.07%     57.44MiB / 3.808GiB   1.47%     0B / 0B   5.02MB / 111kB    11
+87699573b8be   pmon             4.92%     97.39MiB / 3.808GiB   2.50%     0B / 0B   2.6MB / 106kB     13
+b26bb3fddb2f   radv             0.05%     32.81MiB / 3.808GiB   0.84%     0B / 0B   430kB / 81.9kB    6
+5604eb20cdc3   syncd            12.07%    471.8MiB / 3.808GiB   12.10%    0B / 0B   232MB / 381kB     49
+ffe77ae3ebd8   teamd            0.08%     33.13MiB / 3.808GiB   0.85%     0B / 0B   5.96MB / 94.2kB   12
+7207f8cf82ba   bgp              0.08%     154.2MiB / 3.808GiB   3.96%     0B / 0B   17.1MB / 113MB    22
+acd8eb4fb284   swss             0.21%     64.16MiB / 3.808GiB   1.65%     0B / 0B   18.2MB / 254kB    37
+fce1a01cdfcc   database         4.83%     125.2MiB / 3.808GiB   3.21%     0B / 0B   44.3MB / 69.6kB   11
+-----------------------------------------------------------------------------
+
+show platform fan
+
+  Drawer    LED         FAN    Speed    Direction    Presence    Status          Timestamp
+--------  -----  ----------  -------  -----------  ----------  --------  -----------------
+Fantray1  green  Fantray1_1      40%      EXHAUST     Present        OK  20221213 17:10:45
+Fantray2  green  Fantray2_1      40%      EXHAUST     Present        OK  20221213 17:10:45
+Fantray3  green  Fantray3_1      40%      EXHAUST     Present        OK  20221213 17:10:45
+     N/A  green   PSU1_FAN1      28%      EXHAUST     Present        OK  20221213 17:10:45
+     N/A  green   PSU2_FAN1      27%      EXHAUST     Present        OK  20221213 17:10:45
+root@sonic:/home/admin# exit
+exit
+admin@sonic:~$

@@ -32,14 +32,14 @@ from email_validator import validate_email, EmailNotValidError
 # reference
 
 # ['show process cpu', 'show version', 'show platform temperature', 'date',
-# 'show system memory', 'show processes memory', 'show interface counters', 'show processes summary', 'docker_stats']
+# 'show system memory', 'show processes memory', 'show interface counters', 'show processes summary', 'docker_stats', 'show platform fan']
 
 
 # initialising variable globally
 month = {'Jan': '01', 'Feb': '02', 'Mar': '03', "Apr": '04', "May": '05', "Jun": '06', "Jul": '07', "Aug": '08',
          "Sep": '09', "Oct": '10', "Nov": '11', "Dec": '12'}
-line_counter = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-command_running = [False, False, False, False, False, False, False, False, False]
+line_counter = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+command_running = [False, False, False, False, False, False, False, False, False, False]
 sep_line = '-----------------------------------------------------------------------------\n\n'
 overall_alert_temp = []
 overall_alert_cpu = []
@@ -54,6 +54,8 @@ counters_names = []
 counters = []
 process_memory = []
 process_memory_names = []
+platform_fan_names = []
+platform_fan = []
 ts_label = "_".join(ReSplit(':|-|\.| ', str(datetime.now())))[:-3]
 
 
@@ -95,6 +97,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
             temp_graph_temp = []
             docker_stats_graph_temp = []
             process_memory_temp = []
+            platform_fan_temp = []
             # f = ''
             # for i in command:
             # (stdin, stdout, stderr)=session.exec_command(i+'\n\n')
@@ -121,6 +124,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
                 interface_counters = re.search('show interface counters', x)
                 processes_summary = re.search('show processes summary', x)
                 docker_stats = re.search('docker stats  --no-stream', x)
+                fan = re.search('show platform fan', x)
 
                 # to update which command is running
                 if process_cpu:
@@ -149,6 +153,9 @@ def main(command, ip_address, username, password, snapshot_count, email):
 
                 if docker_stats:
                     update_command(line_counter, command_running, 8)
+
+                if fan:
+                    update_command(line_counter, command_running, 9)
 
                 # show process cpu
                 if command_running[0]:
@@ -230,6 +237,17 @@ def main(command, ip_address, username, password, snapshot_count, email):
                             if len(docker_stats_graph) == 0:
                                 docker_stats_sensor_names.append(lst[1])
                             docker_stats_graph_temp.append(float(lst[2][:-1]))
+                if command_running[9]:
+                    index = 9
+                    ans = show_platform_fan(index, x)
+                    result += ans[0]
+                    if ans[2] != '-1':
+                        lst = x.split()
+
+                        if len(platform_fan) == 0 and len(lst) == 9:
+                            platform_fan_names.append(lst[2])
+                        if len(lst) == 9:
+                            platform_fan_temp.append(int(lst[3][:-1]))
 
             docker_stats_graph.append(docker_stats_graph_temp)
             combined_result += '\n\n\n######################################################################\n\n'
@@ -242,6 +260,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
             overall_alert_temp.append(alert_temp)
             counters.append(counters_temp)
             process_memory.append(process_memory_temp)
+            platform_fan.append(platform_fan_temp)
         # alert
 
         # alert(overall_alert_temp, overall_alert_cpu)
@@ -250,13 +269,16 @@ def main(command, ip_address, username, password, snapshot_count, email):
             counters_names.append(counters[0][i][0])
         # print(counters_names)
 
+        # print(platform_fan)
+        # print(platform_fan_names)
         final_result = '\n\n########################################################################## \n\n'
 
         # adding minimum maximum average value in final_result
         final_result = final_result + min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph,
                                                       docker_stats_graph,
                                                       docker_stats_sensor_names, counters, counters_names,
-                                                      process_memory, process_memory_names)
+                                                      process_memory, process_memory_names, platform_fan,
+                                                      platform_fan_names)
         final_result = final_result + combined_result
 
         # creating text file
@@ -280,11 +302,12 @@ def main(command, ip_address, username, password, snapshot_count, email):
         # plotting process memory graph
         plot_process_memory(process_memory, process_memory_names, date)
 
+        # plotting process memory graph
+        plot_platform_fan(platform_fan, platform_fan_names, date)
+
         # making csv files
         to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph,
-               docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names)
-
-
+               docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names, platform_fan, platform_fan_names)
 
         # Closing the connection
         # session.close()
@@ -293,7 +316,7 @@ def main(command, ip_address, username, password, snapshot_count, email):
 
     except Exception as e:
         print(e)
-        # print 
+        # print
         print(
             "\n* Not able to make connection with the device\n* Invalid username or password :( \n* Please check the username/password file or the device configuration.")
         print("* Closing program... Bye!")
@@ -310,7 +333,8 @@ def average(lst):
 
 # minimum maximum average
 def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, docker_stats_graph,
-                    docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names):
+                    docker_stats_sensor_names, counters, counters_names, process_memory, process_memory_names,
+                    platform_fan, platform_fan_names):
     sep_line_for_min_max_average = '\n<------------------------------------------------------------->\n\n'
     result = ''
     # cpu data
@@ -331,6 +355,19 @@ def min_max_average(temp_graph, temp_sensor_names, cpu_graph, memory_graph, dock
         result += 'minimum' + temp_sensor_names[i] + ' temperature ' + str(min(temporary)) + '\n'
         result += 'maximum' + temp_sensor_names[i] + ' temperature ' + str(max(temporary)) + '\n'
         result += 'average' + temp_sensor_names[i] + ' temperature ' + str(round(average(temporary), 3)) + '\n\n'
+
+    # fan data
+    result += sep_line_for_min_max_average
+    result += "show platform fan\n"
+    for i in range(0, len(platform_fan_names)):
+        temporary = []
+        for j in range(0, len(platform_fan)):
+            temporary.append(platform_fan[j][i])
+
+        result += platform_fan_names[i] + ' data' + '\n'
+        result += 'minimum' + platform_fan_names[i] + ' temperature ' + str(min(temporary)) + '\n'
+        result += 'maximum' + platform_fan_names[i] + ' temperature ' + str(max(temporary)) + '\n'
+        result += 'average' + platform_fan_names[i] + ' temperature ' + str(round(average(temporary), 3)) + '\n\n'
 
     # memory data
     total_list = []
@@ -417,10 +454,9 @@ def total(lst):
 
 # create csv files
 def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_stats_graph, docker_stats_sensor_names,
-           counters, counters_names, process_memory, process_memory_names):
+           counters, counters_names, process_memory, process_memory_names, platform_fan, platform_fan_names):
     # to convert date string to datetime object
     date_time = datetime.now()
-
 
     date_ = []
     for i in date:
@@ -438,6 +474,8 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     interface_counters_list = []
     # process_memory_usage
     process_memory_list = []
+    # platform_fan_usage
+    platform_fan_list = []
 
     # adding temperature data in temp_list
     for i in range(0, len(temp_graph)):
@@ -446,6 +484,15 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
             temporary.append(temp_graph[i][j])
         temporary.append(date_[i])
         temp_list.append(temporary)
+
+    # adding fan data in platform_fan_list
+    for i in range(0, len(platform_fan)):
+        temporary = []
+        for j in range(0, len(platform_fan[0])):
+            temporary.append(platform_fan[i][j])
+        temporary.append(date_[i])
+        platform_fan_list.append(temporary)
+
 
     # adding cpu data in cpu_list
     for i in range(0, len(date)):
@@ -488,6 +535,12 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
         header_temp.append(i)
     header_temp.append('Time')
 
+    # header of platform fan
+    header_fan = []
+    for i in platform_fan_names:
+        header_fan.append(i)
+    header_fan.append('Time')
+
     # header of cpu_usage
     header_cpu = ['CPU usage percentage', 'Time']
 
@@ -522,43 +575,49 @@ def to_csv(temp_graph, temp_sensor_names, cpu_graph, memory_graph, date, docker_
     if not os.path.exists(CURR_DIR + path):
         os.mkdir(CURR_DIR + path, mode=0o666)
 
-    # creating and storing data in temp_graph_PSU1.csv
+    # creating and storing data in temp_usage.csv
     if len(header_temp) != 1:
         f1 = open(CURR_DIR + path + '/temp_graph.csv', 'w')
         writer = csv.writer(f1)
         writer.writerow(header_temp)
         writer.writerows(temp_list)
 
+    # creating and storing data in platform_fan.csv
+    if len(header_fan) != 1:
+        f7 = open(CURR_DIR + path + '/platform_fan_graph.csv', 'w')
+        writer = csv.writer(f7)
+        writer.writerow(header_fan)
+        writer.writerows(platform_fan_list)
     # creating and storing data in cpu_usage.csv
     if len(header_cpu) != 1:
-        f2 = open(CURR_DIR + path +'/cpu_usage.csv', 'w')
+        f2 = open(CURR_DIR + path + '/cpu_usage.csv', 'w')
         writer = csv.writer(f2)
         writer.writerow(header_cpu)
         writer.writerows(cpu_list)
 
     # creating and storing data in memory_usage.csv
     if len(header_memory) != 1:
-        f3 = open(CURR_DIR + path +'/memory_usage.csv', 'w')
+        f3 = open(CURR_DIR + path + '/memory_usage.csv', 'w')
         writer = csv.writer(f3)
         writer.writerow(header_memory)
         writer.writerows(memory_list)
 
     # creating and storing data in memory_usage.csv
     if len(header_docker) != 1:
-        f4 = open(CURR_DIR + path +'/docker_stats.csv', 'w')
+        f4 = open(CURR_DIR + path + '/docker_stats.csv', 'w')
         writer = csv.writer(f4)
         writer.writerow(header_docker)
         writer.writerows(docker_list)
 
     # creating and storing data in interface_counter_usage.csv
     if len(header_counter) != 1:
-        f5 = open(CURR_DIR + path +'/interface_counter_usage.csv', 'w')
+        f5 = open(CURR_DIR + path + '/interface_counter_usage.csv', 'w')
         writer = csv.writer(f5)
         writer.writerow(header_counter)
         writer.writerows(interface_counters_list)
     # creating and storing data in process_memory_usage.csv
     if len(header_counter) != 1:
-        f6 = open(CURR_DIR + path +'/processes_memory_usage.csv', 'w')
+        f6 = open(CURR_DIR + path + '/processes_memory_usage.csv', 'w')
         writer = csv.writer(f6)
         writer.writerow(header_process_memory)
         writer.writerows(process_memory_list)
@@ -576,10 +635,93 @@ def text_file(final_result):
     path = path + '/text'
     if not os.path.exists(CURR_DIR + path):
         os.mkdir(CURR_DIR + path, mode=0o666)
-    path = path+'/result.txt'
-    f = open(CURR_DIR+path, "w+")
+    path = path + '/result.txt'
+    f = open(CURR_DIR + path, "w+")
     f.write(final_result)
     f.close()
+
+def plot_platform_fan(platform_fan, platform_fan_names, date):
+    CURR_DIR = os.getcwd()
+    if not os.path.exists(CURR_DIR + '/output'):
+        os.mkdir(CURR_DIR + '/output', mode=0o666)
+    path = '/output/' + ts_label
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/graphs'
+    if not os.path.exists(CURR_DIR + path):
+        os.mkdir(CURR_DIR + path, mode=0o666)
+    path = path + '/paltform_fan_graphs.html'
+    output_file(CURR_DIR + path, title='platform fan graphs')
+
+    # storing datetime object
+    date_ = []
+    # storing time string
+    time = []
+
+    for i in date:
+        lst = i.split()
+        str_date = ''
+        str_date += month[lst[2]]
+        str_date += '/'
+        str_date += lst[1]
+        str_date += '/'
+        str_date += lst[3][2:]
+        datetime_str = str_date + " " + lst[4]
+        datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
+        date_.append(datetime_object)
+        time.append(lst[4])
+
+    # storing graphs in list
+    name_list = []
+    for i in range(0, len(platform_fan_names)):
+        temporary = []
+        for j in range(0, len(platform_fan)):
+            temporary.append(platform_fan[j][i])
+        from bokeh.models import DatetimeTickFormatter
+        data = pd.DataFrame({'date': date_, 'value': temporary, 'time': time})
+
+        # showing alerts
+        low_box = BoxAnnotation(bottom=0, top=50, fill_alpha=0.1, fill_color='green')
+        high_box = BoxAnnotation(bottom=50, fill_alpha=0.1, fill_color='red')
+        source = ColumnDataSource(data=data)
+
+        # plotting line graph
+        hover = HoverTool(tooltips=[('value', '@value'), ('time', '@time')])
+        name_line = figure(title="Platform fan plot of " + platform_fan_names[i], x_axis_label='Date Time',
+                           y_axis_label='fan speed', x_axis_type='datetime', toolbar_location=None,
+                           tools=[hover])
+        name_line.line(x='date', y='value', source=data, legend_label="fan speed", line_width=2)
+        name_line.add_layout(low_box)
+        name_line.add_layout(high_box)
+        tab1 = TabPanel(child=name_line, title="line")
+
+        # plotting circle graph
+        name_circle = figure(title="Platform fan plot of " + platform_fan_names[i], x_axis_label='Date Time',
+                             y_axis_label='fan speed', x_axis_type='datetime', toolbar_location=None,
+                             tools=[hover])
+        name_circle.circle(x='date', y='value', source=data, legend_label="fan speed", line_width=2)
+        name_circle.add_layout(low_box)
+        name_circle.add_layout(high_box)
+        tab2 = TabPanel(child=name_circle, title="circle")
+
+        # plotting bar chart
+        name_bar = figure(x_range=time, title="platform fan plot of " + platform_fan_names[i], toolbar_location=None,
+                          tools="", x_axis_label='Date Time',
+                          y_axis_label='fan speed')
+        name_bar.vbar(x='time', top='value', width=0.2, legend_label='fan speed', name='value', source=source,
+                      line_width=2)
+        name_bar.xgrid.grid_line_color = None
+        name_bar.y_range.start = 0
+        name_bar.add_tools(HoverTool(tooltips=[("Value", '@$name')]))
+        name_bar.xaxis.major_label_orientation = "vertical"
+        name_bar.add_layout(low_box)
+        name_bar.add_layout(high_box)
+        tab3 = TabPanel(child=name_bar, title="bar")
+        tabs = Tabs(tabs=[tab1, tab2, tab3])
+        name_list.append(tabs)
+    # storing graphs in interface_counters_graph.html page
+    if len(name_list) != 0:
+        save(name_list)
 
 
 # plotting processes memory
@@ -592,7 +734,7 @@ def plot_process_memory(process_memory, process_memory_names, date):
     path = '/output/' + ts_label
     if not os.path.exists(CURR_DIR + path):
         os.mkdir(CURR_DIR + path, mode=0o666)
-    path = path+'/graphs'
+    path = path + '/graphs'
     if not os.path.exists(CURR_DIR + path):
         os.mkdir(CURR_DIR + path, mode=0o666)
     path = path + '/process_memory_graph.html'
@@ -650,7 +792,6 @@ def plot_interface_counter(counters, counters_names, date):
         os.mkdir(CURR_DIR + path, mode=0o666)
     path = path + '/interface_counters_graphs.html'
     output_file(CURR_DIR + path, title='Interface counters graphs')
-
 
     # storing string of time
     time = []
@@ -759,7 +900,6 @@ def plot_docker(docker_stats_graph, docker_stats_sensor_names, cpu_graph, date):
         os.mkdir(CURR_DIR + path, mode=0o666)
     path = path + '/docker_graphs.html'
     output_file(CURR_DIR + path, title='Docker graphs')
-
 
     # strong date time object
     time = []
@@ -891,9 +1031,9 @@ def plot_memory(memory_graph, date):
     # plotting the pie chart
     name = 'p' + str(0)
     x = {
-        'used': average(used_list),
-        'free': average(free_list),
-        'other': average(other_list),
+        'used': round(average(used_list), 3),
+        'free': round(average(free_list), 3),
+        'other': round(average(other_list), 3)
     }
 
     data = pd.Series(x).reset_index(name='value').rename(columns={'index': 'memory'})
@@ -952,7 +1092,6 @@ def plot_temp(temp_graph, temp_sensor_names, date):
     path = path + '/temperature_graphs.html'
     output_file(CURR_DIR + path, title='Temperature graphs')
 
-
     # storing datetime object
     date_ = []
     # storing time string
@@ -1008,7 +1147,8 @@ def plot_temp(temp_graph, temp_sensor_names, date):
         name_bar = figure(x_range=time, title="Temperature plot of " + temp_sensor_names[i], toolbar_location=None,
                           tools="", x_axis_label='Date Time',
                           y_axis_label='Temperature')
-        name_bar.vbar(x='time', top='value', width=0.2, legend_label='Temperature', name='value', source=source)
+        name_bar.vbar(x='time', top='value', width=0.2, legend_label='Temperature', name='value', source=source,
+                      line_width=2)
         name_bar.xgrid.grid_line_color = None
         name_bar.y_range.start = 0
         name_bar.add_tools(HoverTool(tooltips=[("Value", '@$name')]))
@@ -1174,6 +1314,7 @@ def show_process_cpu(index, cpu_taken, cpu_count, x):
     a = re.search("%Cpu", x)
     b = re.search('MiB Mem :', x)
     c = re.search('PID', x)
+    # print(x)
     if a:
         result += x + '\n'
         cpulist = x.split()
@@ -1244,6 +1385,25 @@ def show_platform_temperature(index, x):
     return [result, alert_, add_or_not]
 
 
+def show_platform_fan(index, x):
+    result = ''
+    alert_ = '-1'
+    add_or_not = '-1'
+    if line_counter[index] == 1:
+        result += sep_line
+        result += 'show platform fan\n\n'
+
+    line_counter[index] += 1
+    # print(x + " " + str(line_counter[index]))
+    if line_counter[index] >= 5:
+        add_or_not = x
+
+    if line_counter[index] >= 3:
+        result += x + '\n'
+
+    return [result, alert_, add_or_not]
+
+
 # show date
 def show_date(index, x):
     result = ''
@@ -1300,6 +1460,7 @@ def show_processes_memory(index, process_taken, process_count, x):
         result += sep_line
         result += 'show processes memory\n\n'
     line_counter[index] += 1
+    # print(x)
     a = re.search("%Cpu", x)
     b = re.search('MiB Mem :', x)
     c = re.search('PID', x)
@@ -1365,7 +1526,7 @@ def show_interface_counters(counters_dict, index, x):
 
 command = ['show processes cpu', 'show version', 'show platform temperature', 'show system-memory',
            'show processes memory', 'show interface counters', 'date', 'show processes summary',
-           'docker stats  --no-stream']
+           'docker stats  --no-stream', 'show platform fan']
 
 ip_address = input("Enter the Ip address : ")
 username = input("Enter the username : ")
@@ -1383,7 +1544,6 @@ def check(email):
         return True
     except Exception as e:
         print(e)
-
 
         # email is not valid, exception message is human-readable
         print("\nEmail id is not valid")
